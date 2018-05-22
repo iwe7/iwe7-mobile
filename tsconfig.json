@@ -22,6 +22,9 @@
       ],
       "iwe7-web-storage": [
         "dist/iwe7-web-storage"
+      ],
+      "iwe7-lodash": [
+        "dist/iwe7-lodash"
       ]
     }
   }
