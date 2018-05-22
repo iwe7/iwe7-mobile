@@ -23,6 +23,7 @@
     "@angular/router": "^6.0.0",
     "antd-mobile": "^2.1.9",
     "core-js": "^2.5.4",
+    "iwe7-web-storage": "^0.0.1",
     "normalize.css": "^8.0.0",
     "rxjs": "^6.0.0",
     "weui": "^1.1.2",

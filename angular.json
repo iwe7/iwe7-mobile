@@ -29,10 +29,12 @@
           },
           "configurations": {
             "production": {
-              "fileReplacements": [{
-                "replace": "src/environments/environment.ts",
-                "with": "src/environments/environment.prod.ts"
-              }],
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
@@ -147,6 +149,46 @@
             "tsConfig": [
               "projects/iwe7-antd-mobile/tsconfig.lib.json",
               "projects/iwe7-antd-mobile/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "iwe7-web-storage": {
+      "root": "projects/iwe7-web-storage",
+      "sourceRoot": "projects/iwe7-web-storage/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/iwe7-web-storage/tsconfig.lib.json",
+            "project": "projects/iwe7-web-storage/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/iwe7-web-storage/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/iwe7-web-storage/src/test.ts",
+            "tsConfig": "projects/iwe7-web-storage/tsconfig.spec.json",
+            "karmaConfig": "projects/iwe7-web-storage/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/iwe7-web-storage/tsconfig.lib.json",
+              "projects/iwe7-web-storage/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"

@@ -19,6 +19,9 @@
     "paths": {
       "iwe7-antd-mobile": [
         "dist/iwe7-antd-mobile"
+      ],
+      "iwe7-web-storage": [
+        "dist/iwe7-web-storage"
       ]
     }
   }
