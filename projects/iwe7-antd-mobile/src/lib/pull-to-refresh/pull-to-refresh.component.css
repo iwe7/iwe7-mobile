@@ -1,0 +1,12 @@
+:host {
+  display: block;
+  height: 100%;
+}
+
+
+.am-pull-to-refresh-indicator {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}

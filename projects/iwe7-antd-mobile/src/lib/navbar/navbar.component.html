@@ -1,0 +1,31 @@
+<div class="am-navbar am-navbar-light">
+  <div class="am-navbar-left" (click)="onLeftMenu()">
+    <ng-container *ngIf="isLeftContentString">{{leftContent}}</ng-container>
+    <ng-container *ngIf="!isLeftContentString">
+      <ng-container *ngTemplateOutlet="leftContent"></ng-container>
+    </ng-container>
+  </div>
+  <div class="am-navbar-title">
+    <ng-container *ngIf="titleIsString">{{title}}</ng-container>
+    <ng-container *ngIf="!titleIsString">
+      <ng-container *ngTemplateOutlet="title"></ng-container>
+    </ng-container>
+  </div>
+  <div class="am-navbar-right">
+    <ng-container *ngIf="isRightContentString">{{rightContent}}</ng-container>
+    <ng-container *ngIf="!isRightContentString">
+      <ng-container *ngTemplateOutlet="rightContent"></ng-container>
+    </ng-container>
+  </div>
+</div>
+
+<ng-template #left>
+  <span class="am-navbar-left-icon">
+    <svg amIcon="left"></svg>
+  </span>
+</ng-template>
+
+<ng-template #right>
+  <svg amIcon="search" style="margin-right: 16px;"></svg>
+  <svg amIcon="ellipsis"></svg>
+</ng-template>

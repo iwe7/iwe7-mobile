@@ -1,0 +1,10 @@
+<ng-container *ngIf="childrenIsTemplateRef">
+  <ng-container *ngTemplateOutlet="children"></ng-container>
+</ng-container>
+<sup *ngIf="text || dot || hot" [ngClass]="scrollNumberCls">
+  {{text}}
+</sup>
+
+<ng-template #content>
+  <ng-content></ng-content>
+</ng-template>

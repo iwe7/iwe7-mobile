@@ -1,0 +1,14 @@
+@import "~swiper/dist/css/swiper.min.css";
+.swiper-container {
+  display: block;
+  .swiper-slide {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    img {
+      width: 100%;
+    }
+  }
+}

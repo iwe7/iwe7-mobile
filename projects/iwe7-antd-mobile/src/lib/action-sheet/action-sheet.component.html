@@ -1,0 +1,48 @@
+<ng-container *ngIf="show">
+  <ng-container *ngTemplateOutlet="action"></ng-container>
+</ng-container>
+
+<ng-template #action>
+  <div class="am-action-sheet-mask" (click)="onClickMask()"></div>
+  <div class="am-action-sheet-wrap">
+    <div class="am-action-sheet " [class.am-action-sheet-normal]="mode === 'normal'" [class.am-action-sheet-share]="mode === 'share'">
+      <div class="am-action-sheet-content">
+        <div class="am-action-sheet-body">
+          <div>
+            <div class="am-action-sheet-title" *ngIf="title">{{title}}</div>
+            <div class="am-action-sheet-message" *ngIf="message">{{message}}</div>
+            <ng-container *ngIf="mode === 'normal'">
+              <ng-container *ngTemplateOutlet="normal"></ng-container>
+            </ng-container>
+            <ng-container *ngIf="mode === 'share'">
+              <ng-container *ngTemplateOutlet="share"></ng-container>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #normal>
+  <div class="am-action-sheet-button-list" role="group">
+    <div class="am-action-sheet-button-list-item" (click)="onItem(item)" [class.am-action-sheet-button-list-item-active]="item.active" [class.am-action-sheet-destructive-button]="destructiveButtonIndex === i" *ngFor="let item of options;index as i;"
+      [class.am-action-sheet-cancel-button]="cancelButtonIndex === i">{{item.title}}
+      <span class="am-action-sheet-cancel-button-mask" *ngIf="cancelButtonIndex === i"></span>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #share>
+  <div class="am-action-sheet-share">
+    <div class="am-action-sheet-share-list">
+      <div class="am-action-sheet-share-list-item" *ngFor="let item of options">
+        <div class="am-action-sheet-share-list-item-icon">
+          <img [src]="item.icon" style="width: 36px;">
+        </div>
+        <div class="am-action-sheet-share-list-item-title">{{item.title}}</div>
+      </div>
+    </div>
+    <div class="am-action-sheet-share-cancel-button">取消</div>
+  </div>
+</ng-template>

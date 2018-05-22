@@ -1,0 +1,6 @@
+<div class="am-tab-bar-tab-icon" [routerLink]="item.pagePath" #link="routerLinkActive" routerLinkActive="am-tab-bar-tab-selected">
+  <span badge [text]="item.badge" [hot]="item.hot" [dot]="item.dot" class="am-tab-bar-tab-badge tab-badge">
+    <div [amIcon]="link.isActive ? item.selectedIconPath : item.iconPath"></div>
+  </span>
+</div>
+<p class="am-tab-bar-tab-title">{{item.text}}</p>

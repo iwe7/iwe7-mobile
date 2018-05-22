@@ -1,0 +1,12 @@
+<div class="am-tabs am-tabs-horizontal am-tabs-bottom">
+  <div class="am-tabs-content-wrap">
+    <div class="am-tabs-pane-wrap am-tabs-pane-wrap-active">
+      <ng-content></ng-content>
+    </div>
+  </div>
+  <div class="am-tabs-tab-bar-wrap">
+    <div class="am-tab-bar-bar" style="background-color: white;">
+      <tab-bar-item [item]="item" (click)="handleItem(i)" *ngFor="let item of tabs;index as i;"></tab-bar-item>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,4 @@
+.am-tabs-pane-wrap {
+  display: flex;
+  flex-direction: column;
+}

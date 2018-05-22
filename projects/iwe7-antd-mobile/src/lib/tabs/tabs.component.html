@@ -1,0 +1,13 @@
+<div class="am-tabs-tab-bar-wrap" [style.background-color]="bgColor">
+  <tab-bar [animated]="animated" [tabs]="tabs" [page]="page" [tabBarPosition]="tabBarPosition" (onTabClick)="handleTabClick($event)"
+    (onChange)="handleChange($event)"></tab-bar>
+</div>
+
+<div class="am-tabs-content-wrap" [class.am-tabs-content-wrap-animated]="animated" style="touch-action: pan-x pan-y;height: auto;">
+  <tab-pane *ngFor="let item of tabs;index as i;" [activeTab]="activeTab" [isVertical]="isTabBarVertical" [active]="activeTab === i"
+    [pane]="pane"></tab-pane>
+</div>
+
+<ng-template #pane let-index>
+  <ng-container *ngTemplateOutlet="tpl;context: {$implicit: tabs[index]}"></ng-container>
+</ng-template>

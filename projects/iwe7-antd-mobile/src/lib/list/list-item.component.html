@@ -1,0 +1,22 @@
+<div *ngIf="thumbIsString && thumb" [listThumb]="thumb"></div>
+<div *ngIf="!thumbIsString && thumb" listThumb>
+  <ng-container *ngTemplateOutlet="thumb"></ng-container>
+</div>
+<div listLine="multipleLine">
+  <div listContent>
+    <ng-content></ng-content>
+    <div class="am-list-brief" *ngIf="brief">
+      <ng-container *ngIf="briefIsString">{{brief}}</ng-container>
+      <ng-container *ngIf="!briefIsString">
+        <ng-container *ngTemplateOutlet="brief"></ng-container>
+      </ng-container>
+    </div>
+  </div>
+  <div listExtra *ngIf="extra">
+    <ng-container *ngIf="extraIsString">{{extra}}</ng-container>
+    <ng-container *ngIf="!extraIsString">
+      <ng-container *ngTemplateOutlet="extra"></ng-container>
+    </ng-container>
+  </div>
+  <div *ngIf="arrow || arrow !== 'empty'" [listArrow]="arrow"></div>
+</div>

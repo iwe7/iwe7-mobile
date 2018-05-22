@@ -1,0 +1,3 @@
+<div class="am-segment-item" (click)="onClick(i)" [class.am-segment-item-selected]="selectedIndex === i" *ngFor="let item of items;index as i;">
+  <div class="am-segment-item-inner"></div>{{item?.title}}
+</div>

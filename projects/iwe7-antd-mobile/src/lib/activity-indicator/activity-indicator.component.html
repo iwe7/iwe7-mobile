@@ -1,0 +1,15 @@
+<ng-container *ngTemplateOutlet="tpl"></ng-container>
+
+<ng-template #loadingTpl>
+  <div class="am-activity-indicator-content">
+    <span class="am-activity-indicator-spinner" [style.color]="color" [class.am-activity-indicator-spinner-lg]="size === 'large'"></span>
+    <div class="am-activity-indicator-toast" *ngIf="text">
+      {{text}}
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #tipTpl>
+  <span class="am-activity-indicator-spinner" [style.color]="color" [class.am-activity-indicator-spinner-lg]="size === 'large'"></span>
+  <div class="am-activity-indicator-tip" *ngIf="text">{{text}}</div>
+</ng-template>

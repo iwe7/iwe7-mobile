@@ -1,0 +1,30 @@
+<div class="am-pull-to-refresh-content-wrapper" [style.height.px]="height">
+  <div #content [ngClass]="contentClass">
+    <div *ngIf="direction === 'down'" class="am-pull-to-refresh-indicator">
+      <ng-container *ngTemplateOutlet="tpl"></ng-container>
+    </div>
+    <div>
+      <ng-content></ng-content>
+    </div>
+    <div *ngIf="direction === 'up'" class="am-pull-to-refresh-indicator">
+      <ng-container *ngTemplateOutlet="tpl"></ng-container>
+    </div>
+  </div>
+</div>
+
+
+<ng-template #deactivate>
+  {{indicator['deactivate']}}
+</ng-template>
+
+<ng-template #activate>
+  {{indicator['activate']}}
+</ng-template>
+
+<ng-template #release>
+  <activity-indicator></activity-indicator>
+</ng-template>
+
+<ng-template #finish>
+  {{indicator['finish']}}
+</ng-template>
