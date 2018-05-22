@@ -23,7 +23,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.less"
             ],
             "scripts": []
           },
@@ -70,7 +70,7 @@
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "styles": [
-              "src/styles.css"
+              "src/styles.less"
             ],
             "scripts": [],
             "assets": [
@@ -108,6 +108,46 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "iwe7-antd-mobile": {
+      "root": "projects/iwe7-antd-mobile",
+      "sourceRoot": "projects/iwe7-antd-mobile/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/iwe7-antd-mobile/tsconfig.lib.json",
+            "project": "projects/iwe7-antd-mobile/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/iwe7-antd-mobile/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/iwe7-antd-mobile/src/test.ts",
+            "tsConfig": "projects/iwe7-antd-mobile/tsconfig.spec.json",
+            "karmaConfig": "projects/iwe7-antd-mobile/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/iwe7-antd-mobile/tsconfig.lib.json",
+              "projects/iwe7-antd-mobile/tsconfig.spec.json"
+            ],
             "exclude": [
               "**/node_modules/**"
             ]

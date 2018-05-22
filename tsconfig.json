@@ -15,6 +15,11 @@
     "lib": [
       "es2017",
       "dom"
-    ]
+    ],
+    "paths": {
+      "iwe7-antd-mobile": [
+        "dist/iwe7-antd-mobile"
+      ]
+    }
   }
 }
