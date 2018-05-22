@@ -141,6 +141,12 @@
   dependencies:
     tslib "^1.9.0"
 
+"@angular/elements@^6.0.0":
+  version "6.0.2"
+  resolved "https://registry.yarnpkg.com/@angular/elements/-/elements-6.0.2.tgz#e45e21eba6e6640448398a183d3d28e326bd6cba"
+  dependencies:
+    tslib "^1.9.0"
+
 "@angular/forms@^6.0.0":
   version "6.0.2"
   resolved "https://registry.yarnpkg.com/@angular/forms/-/forms-6.0.2.tgz#a0647930e8b6e7fbd48f55eb69b399a41bcd091a"
