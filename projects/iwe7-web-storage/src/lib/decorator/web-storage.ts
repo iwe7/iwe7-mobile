@@ -16,13 +16,6 @@ export let WebStorage = (webStorage: Storage, key: string) => {
         return WebStorageUtility.get(webStorage, key);
       },
       set: function(value: any) {
-        if (!cache[key]) {
-          if (storedValue === null) {
-            WebStorageUtility.set(webStorage, key, value);
-          }
-          cache[key] = true;
-          return;
-        }
         WebStorageUtility.set(webStorage, key, value);
       }
     });
