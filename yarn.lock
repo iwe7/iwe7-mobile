@@ -3676,9 +3676,9 @@ iwe7-url@^0.0.2:
   dependencies:
     tslib "^1.9.0"
 
-iwe7-util@^0.0.3:
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/iwe7-util/-/iwe7-util-0.0.3.tgz#6a6d40d0cda7624f11d7452c3a64d2e12ba86607"
+iwe7-util@^0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/iwe7-util/-/iwe7-util-0.0.4.tgz#db84ce8fc2be031ba7e8e17d869c2245cf3beee5"
   dependencies:
     tslib "^1.9.0"
 
