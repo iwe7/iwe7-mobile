@@ -1,5 +1,7 @@
 <tabs [tabs]="tabs">
   <ng-template let-tab>
-    {{tab|json}}
+    <ul *ngFor="let item of list">
+      <li></li>
+    </ul>
   </ng-template>
 </tabs>

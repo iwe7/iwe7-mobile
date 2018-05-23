@@ -1,3 +1,5 @@
 <navbar [title]="title.title" (onLeftClick)="back()" [rightContent]="right"></navbar>
-<router-outlet></router-outlet>
+<div class="content">
+  <router-outlet></router-outlet>
+</div>
 <ng-template #right></ng-template>

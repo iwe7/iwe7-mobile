@@ -23,6 +23,7 @@ export class IndexComponent implements OnInit {
     }
   ];
 
+  list: any[] = [];
 
   constructor() {}
 

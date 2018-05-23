@@ -34,6 +34,9 @@
       ],
       "iwe7-router": [
         "dist/iwe7-router"
+      ],
+      "iwe7-forms": [
+        "dist/iwe7-forms"
       ]
     }
   }

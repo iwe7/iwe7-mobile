@@ -356,6 +356,46 @@
           }
         }
       }
+    },
+    "iwe7-forms": {
+      "root": "projects/iwe7-forms",
+      "sourceRoot": "projects/iwe7-forms/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/iwe7-forms/tsconfig.lib.json",
+            "project": "projects/iwe7-forms/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/iwe7-forms/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/iwe7-forms/src/test.ts",
+            "tsConfig": "projects/iwe7-forms/tsconfig.spec.json",
+            "karmaConfig": "projects/iwe7-forms/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/iwe7-forms/tsconfig.lib.json",
+              "projects/iwe7-forms/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "iwe7-mobile"

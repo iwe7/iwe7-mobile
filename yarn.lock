@@ -3666,6 +3666,12 @@ iwe7-url@^0.0.2:
   dependencies:
     tslib "^1.9.0"
 
+iwe7-util@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/iwe7-util/-/iwe7-util-0.0.3.tgz#6a6d40d0cda7624f11d7452c3a64d2e12ba86607"
+  dependencies:
+    tslib "^1.9.0"
+
 iwe7-web-storage@^0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/iwe7-web-storage/-/iwe7-web-storage-0.0.1.tgz#1366738ea349c705f4b1b632bf18eeb618db0b6d"

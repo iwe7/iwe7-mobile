@@ -15,4 +15,6 @@ export class IndexComponent implements OnInit {
   add() {
     this.router.navigate(["/service/add"]);
   }
+
+  back() {}
 }
