@@ -6,15 +6,24 @@ import { AddComponent } from "./add/add.component";
 const routes: Routes = [
   {
     path: "index",
-    component: IndexComponent
+    component: IndexComponent,
+    data: {
+      title: "服务管理"
+    }
   },
   {
     path: "add",
-    component: AddComponent
+    component: AddComponent,
+    data: {
+      title: "添加服务"
+    }
   },
   {
     path: "edit/:id",
-    component: AddComponent
+    component: AddComponent,
+    data: {
+      title: "编辑服务"
+    }
   }
 ];
 

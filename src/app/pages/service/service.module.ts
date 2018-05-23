@@ -4,11 +4,13 @@ import { CommonModule } from '@angular/common';
 import { ServiceRoutingModule } from './service-routing.module';
 import { IndexComponent } from './index/index.component';
 import { AddComponent } from './add/add.component';
+import { SharedModule } from '../../shared/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
-    ServiceRoutingModule
+    ServiceRoutingModule,
+    SharedModule
   ],
   declarations: [IndexComponent, AddComponent]
 })

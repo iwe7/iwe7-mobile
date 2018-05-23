@@ -1,3 +1,6 @@
-<p>
-  index works!
-</p>
+<navbar [title]="title" [leftContent]="left" (onLeftClick)="back()" [rightContent]="right"></navbar>
+<router-outlet></router-outlet>
+<ng-template #right>
+  <a (click)="add()">添加</a>
+</ng-template>
+<ng-template #left></ng-template>

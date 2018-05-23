@@ -16,7 +16,7 @@ export class TabsComponent implements OnInit, OnDestroy {
       pagePath: "/tabs/order/index"
     },
     {
-      text: "收入",
+      text: "营业额",
       iconPath: "./assets/icons/tab-bar/unactive/security.svg",
       selectedIconPath: "./assets/icons/tab-bar/active/security.svg",
       pagePath: "/tabs/money/index"

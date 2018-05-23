@@ -1,6 +1,6 @@
 :host {
   display: block;
-  padding: 5px 20px;
+  padding: 15px 20px;
   &:hover {
     opacity: .6;
   }
@@ -10,6 +10,7 @@
   font-size: .9em;
   margin-bottom: 10px;
   opacity: .9;
+  margin-top: 10px;
 }
 
 .money {
