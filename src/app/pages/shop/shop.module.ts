@@ -10,9 +10,10 @@ import { SettingComponent } from "./setting/setting.component";
 import { MemberComponent } from "./member/member.component";
 import { CommentComponent } from "./comment/comment.component";
 import { BugComponent } from "./bug/bug.component";
+import { SharedModule } from "../../shared/shared.module";
 
 @NgModule({
-  imports: [CommonModule, ShopRoutingModule],
+  imports: [CommonModule, ShopRoutingModule, SharedModule],
   declarations: [
     IndexComponent,
     ShopHeaderComponent,

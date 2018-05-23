@@ -9,4 +9,8 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     document.body.addEventListener("touchstart", function() {});
   }
+
+  tap(e: any) {
+    console.log(e);
+  }
 }

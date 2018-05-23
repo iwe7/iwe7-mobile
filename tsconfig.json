@@ -37,6 +37,12 @@
       ],
       "iwe7-forms": [
         "dist/iwe7-forms"
+      ],
+      "iwe7-directives": [
+        "dist/iwe7-directives"
+      ],
+      "iwe7-util": [
+        "dist/iwe7-util"
       ]
     }
   }

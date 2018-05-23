@@ -37,10 +37,10 @@ const WIDGETS = [];
   entryComponents: [...WIDGETS],
   exports: [...COMPONENTS]
 })
-export class DelonFormModule {
+export class Iwe7FormsModule {
   static forRoot(): ModuleWithProviders {
     return {
-      ngModule: DelonFormModule,
+      ngModule: Iwe7FormsModule,
       providers: [
         DelonFormConfig,
         {

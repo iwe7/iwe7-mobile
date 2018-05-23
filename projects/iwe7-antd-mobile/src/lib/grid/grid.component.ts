@@ -10,8 +10,8 @@ export class GridComponent implements OnInit {
 
   @Input()
   set data(val: any[]) {
-    let dataLength = val.length;
-    let rowCount = Math.ceil(dataLength / this.columnNum);
+    const dataLength = val.length;
+    const rowCount = Math.ceil(dataLength / this.columnNum);
     const rowsArr = [];
     for (let i = 0; i < rowCount; i++) {
       const rowArr: any[] = [];

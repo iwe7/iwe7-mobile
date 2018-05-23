@@ -6,11 +6,12 @@ import {
   EventEmitter,
   HostBinding,
   ViewEncapsulation,
-  Directive
+  Directive,
+  ElementRef
 } from "@angular/core";
 export const prefixCls: string = "am-button";
 import classnames from "classnames";
-
+import { fromEvent } from "rxjs";
 @Directive({
   selector: "[am-button]"
 })
@@ -22,15 +23,18 @@ export class ButtonComponent implements OnInit {
   @Input() inline: boolean = false;
   @Input() style: any;
   @Input() activeStyle: any = {};
-  @Input() activeClassName: string;
+  @Input() activeClassName: string = "am-button";
   @Input() icon: string;
   @Input() role: string;
   @Input() className: string;
   @Input() prefixCls: string = "am-button";
-  @Input() active: boolean = false;
+
+  @HostBinding("class.am-button-active")
+  @Input()
+  active: boolean = false;
 
   @Output() onClick: EventEmitter<any> = new EventEmitter();
-
+  @HostBinding("style.width.%") width: number = 100;
   @HostBinding("class") wrapCls: any;
   iconCls: any;
 
@@ -41,9 +45,19 @@ export class ButtonComponent implements OnInit {
     );
   }
 
-  constructor() {}
+  constructor(public ele: ElementRef) {}
 
   ngOnInit() {
+    const ele = this.ele.nativeElement;
+    fromEvent(ele, "touchstart").subscribe(res => {
+      this.active = true;
+    });
+    fromEvent(document, "touchcancel").subscribe(res => {
+      this.active = false;
+    });
+    fromEvent(document, "touchend").subscribe(res => {
+      this.active = false;
+    });
     this.render();
   }
 
@@ -71,8 +85,7 @@ export class ButtonComponent implements OnInit {
       [`${prefixCls}-inline`]: inline,
       [`${prefixCls}-disabled`]: disabled,
       [`${prefixCls}-loading`]: loading,
-      [`${prefixCls}-icon`]: !!iconType,
-      [`${this._activeClassName}`]: active
+      [`${prefixCls}-icon`]: !!iconType
     });
   }
 
