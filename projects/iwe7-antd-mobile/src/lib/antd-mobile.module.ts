@@ -27,8 +27,9 @@ import { loadSprite } from "./icon.service";
 import { PopoverComponent } from "./popover/popover.component";
 import { PopoverItemComponent } from "./popover/popover-item/popover-item.component";
 import { SegmentedControlComponent } from "./segmented-control/segmented-control.component";
-
 import { TabBarComponent } from "./tab-bar/tab-bar.component";
+import { PullToRefreshComponent } from "./pull-to-refresh/pull-to-refresh.component";
+
 export const components = [
   ButtonComponent,
   ActionSheetComponent,
@@ -66,7 +67,6 @@ import { BadgeModule } from "./badge/badge.module";
 import { TabBarItemComponent } from "./tab-bar/tab-bar-item/tab-bar-item.component";
 import { CarouselComponent } from "./carousel/carousel.component";
 import { RouterModule } from "@angular/router";
-import { PullToRefreshComponent } from "./pull-to-refresh/pull-to-refresh.component";
 
 @NgModule({
   imports: [CommonModule, TabsModule, BadgeModule, RouterModule],

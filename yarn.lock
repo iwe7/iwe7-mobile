@@ -106,6 +106,12 @@
   dependencies:
     tslib "^1.9.0"
 
+"@angular/cdk@^6.1.0":
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/@angular/cdk/-/cdk-6.1.0.tgz#14ae46730315d40b5a642daa8f5f80815930085c"
+  dependencies:
+    tslib "^1.7.1"
+
 "@angular/cli@~6.0.1":
   version "6.0.3"
   resolved "https://registry.yarnpkg.com/@angular/cli/-/cli-6.0.3.tgz#a7a2defdaa2a9f2914aadb7e0a25d9a43d8346c4"
@@ -1963,6 +1969,12 @@ dom-serializer@0:
     domelementtype "~1.1.1"
     entities "~1.1.1"
 
+dom7@^2.0.5:
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/dom7/-/dom7-2.0.5.tgz#d99e1f416cacd627c6d3ed7b90be47c8f3c7b258"
+  dependencies:
+    ssr-window "^1.0.0"
+
 domain-browser@^1.1.1:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/domain-browser/-/domain-browser-1.2.0.tgz#3d31f50191a6749dd1375a7f522e823d42e54eda"
@@ -3635,6 +3647,18 @@ istanbul@^0.4.5:
     supports-color "^3.1.0"
     which "^1.1.1"
     wordwrap "^1.0.0"
+
+iwe7-http@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/iwe7-http/-/iwe7-http-6.0.0.tgz#53472b6e9fe42d5adff05845186d8dcbe64c5a52"
+  dependencies:
+    tslib "^1.9.0"
+
+iwe7-url@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/iwe7-url/-/iwe7-url-0.0.2.tgz#bd0cd21ffb8b4553612964674551ed50e74361c4"
+  dependencies:
+    tslib "^1.9.0"
 
 iwe7-web-storage@^0.0.1:
   version "0.0.1"
@@ -6384,6 +6408,10 @@ sshpk@^1.7.0:
     jsbn "~0.1.0"
     tweetnacl "~0.14.0"
 
+ssr-window@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/ssr-window/-/ssr-window-1.0.0.tgz#8ed1b6beaa0a371ba7e74d6515d584c3f1cf973c"
+
 ssri@^5.2.4:
   version "5.3.0"
   resolved "https://registry.yarnpkg.com/ssri/-/ssri-5.3.0.tgz#ba3872c9c6d33a0704a7d71ff045e5ec48999d06"
@@ -6567,6 +6595,13 @@ supports-color@^5.1.0, supports-color@^5.3.0, supports-color@^5.4.0:
   resolved "https://registry.yarnpkg.com/supports-color/-/supports-color-5.4.0.tgz#1c6b337402c2137605efe19f10fec390f6faab54"
   dependencies:
     has-flag "^3.0.0"
+
+swiper@^4.2.6:
+  version "4.2.6"
+  resolved "https://registry.yarnpkg.com/swiper/-/swiper-4.2.6.tgz#9ee50527e3de7a49e2e56a58f8f6fa94a0358bf5"
+  dependencies:
+    dom7 "^2.0.5"
+    ssr-window "^1.0.0"
 
 symbol-observable@^1.2.0:
   version "1.2.0"

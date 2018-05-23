@@ -7,7 +7,12 @@ import {
   Output
 } from "@angular/core";
 import { ActivatedRoute, Router, NavigationEnd } from "@angular/router";
-
+export interface TabBarInterface {
+  text: string;
+  iconPath: string;
+  selectedIconPath: string;
+  pagePath: string;
+}
 @Component({
   selector: "tab-bar",
   templateUrl: "./tab-bar.component.html",

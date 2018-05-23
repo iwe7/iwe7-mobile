@@ -4,17 +4,17 @@ import {
   Renderer2,
   ElementRef,
   HostBinding,
-  Component
+  Component,
+  OnInit
 } from "@angular/core";
 
 @Component({
   selector: "[tabBarItem]",
   template: `
-    <span badge *ngIf="tab.badge" [text]="tab.text" [hot]="tab.hot" [dot]="tab.dot">{{tab.title}}</span>
-    <span badge *ngIf="!tab.badge">{{tab.title}}</span>
+    <span badge [text]="tab.text" [hot]="tab.hot" [dot]="tab.dot">{{tab.title}}</span>
   `
 })
-export class TabBarItemDirective {
+export class TabBarItemDirective implements OnInit {
   @Input() vertical: boolean = true;
   @Input() size: number = 0;
   @HostBinding("class.am-tabs-default-bar-tab") _tab: boolean = true;

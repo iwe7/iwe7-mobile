@@ -14,4 +14,3 @@ export const memoize = (resolver?: Resolver) => (
   descriptor.value = _.memoize(descriptor.value, resolver);
   return descriptor;
 };
-

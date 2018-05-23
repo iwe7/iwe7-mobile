@@ -25,6 +25,12 @@
       ],
       "iwe7-lodash": [
         "dist/iwe7-lodash"
+      ],
+      "iwe7-decorator": [
+        "dist/iwe7-decorator"
+      ],
+      "iwe7-http": [
+        "dist/iwe7-http"
       ]
     }
   }

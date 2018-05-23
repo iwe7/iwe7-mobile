@@ -11,6 +11,11 @@ import {
   ContentChild
 } from "@angular/core";
 import { getPxStyle, setPxStyle } from "./util";
+
+export interface TabInterface {
+  title: string;
+  dot?: boolean;
+}
 @Component({
   selector: "tabs",
   templateUrl: "./tabs.component.html",
@@ -55,7 +60,7 @@ export class TabsComponent {
   transform: any;
 
   // 项目
-  @Input() tabs: any[] = [];
+  @Input() tabs: TabInterface[] = [];
   // 动画
   @Input() animated: boolean = true;
   // 分页
@@ -65,7 +70,7 @@ export class TabsComponent {
   @ContentChild(TemplateRef) tpl: TemplateRef<any>;
   @Input() activeTab: number = 0;
 
-  @Input() bgColor: string = '#fff';
+  @Input() bgColor: string = "#fff";
 
   get isTabBarVertical() {
     return this.tabBarPosition === "left" || this.tabBarPosition === "right";
