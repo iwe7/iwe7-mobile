@@ -50,7 +50,7 @@ export class Iwe7TitleService {
     );
   }
 
-  handel(res: any): Observable<any> {
+  private handel(res: any): Observable<any> {
     return from(res.children).pipe(
       tap((res: any) => {
         this.datas.push(res.data);

@@ -1,5 +1,5 @@
 import { Component, OnInit, Injector, OnDestroy } from "@angular/core";
-import { Iwe7TitleService } from "../../../../projects/iwe7-router/src/public_api";
+import { Iwe7TitleService } from "iwe7-router";
 import { Subject } from "rxjs";
 import { takeUntil } from "rxjs/operators";
 @Component({
