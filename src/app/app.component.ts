@@ -6,7 +6,6 @@ import { Component, OnInit } from "@angular/core";
 })
 export class AppComponent implements OnInit {
   constructor() {}
-
   ngOnInit() {
     document.body.addEventListener("touchstart", function() {});
   }

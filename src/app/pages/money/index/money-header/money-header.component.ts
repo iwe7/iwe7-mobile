@@ -13,6 +13,7 @@ import {
 })
 export class MoneyHeaderComponent implements OnInit {
   @Input() money: string = "0.00";
+  @Input() title: string = "未提现金额";
   @Input()
   @HostBinding("style.background-color")
   bgColor: string = "#108ee9";

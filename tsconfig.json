@@ -31,6 +31,9 @@
       ],
       "iwe7-http": [
         "dist/iwe7-http"
+      ],
+      "iwe7-router": [
+        "dist/iwe7-router"
       ]
     }
   }
