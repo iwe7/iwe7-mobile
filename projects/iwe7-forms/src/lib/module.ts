@@ -26,8 +26,11 @@ const COMPONENTS = [
 
 import { WidgetRegistry } from "./widget.factory";
 import { NzWidgetRegistry } from "./widgets/nz-widget.registry";
+import { StringWidget } from "./widgets/string/string.widget";
 
-const WIDGETS = [];
+const WIDGETS = [
+  StringWidget
+];
 
 // endregion
 
