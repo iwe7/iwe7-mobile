@@ -1,0 +1,12 @@
+:host {
+  display: block;
+  min-width: 100%;
+  width: 100%;
+}
+
+.am-stepper-input-wrap {
+  display: inline-block;
+  input {
+    display: inline-block;
+  }
+}

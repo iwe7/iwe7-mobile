@@ -1,0 +1,15 @@
+<div class="am-stepper-handler-wrap">
+  <span class="am-stepper-handler am-stepper-handler-up" (click)="add()">
+    <svg class="am-icon am-icon-plus am-icon-xxs">
+      <use xlink:href="#plus"></use>
+    </svg>
+  </span>
+  <span class="am-stepper-handler am-stepper-handler-down" (click)="del()">
+    <svg class="am-icon am-icon-minus am-icon-xxs">
+      <use xlink:href="#minus"></use>
+    </svg>
+  </span>
+</div>
+<div class="am-stepper-input-wrap" style="display: inline-block;">
+  <input class="am-stepper-input" [value]="value" autocomplete="off" max="10" min="1" [step]="step">
+</div>

@@ -14,7 +14,24 @@
   <ng-container *ngIf="current ===0">
     <div class="container">
       <list>
-        <am-input></am-input>
+        <list-item>
+          <input placeholder="请输入车牌号">
+        </list-item>
+        <list-item>
+          <input placeholder="请输入车架号">
+        </list-item>
+        <list-item>
+          <input placeholder="请输入里程数">
+        </list-item>
+      </list>
+      <list style="margin-top: 10px;">
+        <list-item>
+          <input placeholder="请输入姓名">
+        </list-item>
+        <list-item>
+          <input placeholder="请输入电话">
+        </list-item>
+        <am-image-picker></am-image-picker>
       </list>
     </div>
     <button am-button type="primary" (click)="next()">下一步</button>

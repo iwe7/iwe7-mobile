@@ -3,7 +3,6 @@ import { CommonModule } from "@angular/common";
 import { ButtonComponent } from "./button/button.component";
 import { ActionSheetComponent } from "./action-sheet/action-sheet.component";
 import { ActivityIndicatorComponent } from "./activity-indicator/activity-indicator.component";
-import { FlexComponent } from "./flex/flex.component";
 import { FlexItemComponent } from "./flex-item/flex-item.component";
 import { GridComponent } from "./grid/grid.component";
 import { ColumnNumDirective } from "./grid/column-num.directive";
@@ -25,7 +24,6 @@ export const components = [
   ButtonComponent,
   ActionSheetComponent,
   ActivityIndicatorComponent,
-  FlexComponent,
   FlexItemComponent,
   GridComponent,
   ColumnNumDirective,
@@ -51,8 +49,10 @@ import { TabBarItemComponent } from "./tab-bar/tab-bar-item/tab-bar-item.compone
 import { CarouselComponent } from "./carousel/carousel.component";
 import { RouterModule } from "@angular/router";
 import { StepsModule } from "./steps/module";
-import { AmInputModule } from "./input/module";
 import { AmListModule } from "./list/module";
+import { AmStepperModule } from "./stepper/module";
+import { AmFlexBoxModule } from "./flex/module";
+import { AmImagePickerModule } from "./image-picker/module";
 
 @NgModule({
   imports: [
@@ -61,8 +61,10 @@ import { AmListModule } from "./list/module";
     BadgeModule,
     RouterModule,
     StepsModule,
-    AmInputModule,
-    AmListModule
+    AmListModule,
+    AmStepperModule,
+    AmFlexBoxModule,
+    AmImagePickerModule
   ],
   declarations: [...components],
   exports: [
@@ -70,8 +72,10 @@ import { AmListModule } from "./list/module";
     TabsModule,
     BadgeModule,
     StepsModule,
-    AmInputModule,
-    AmListModule
+    AmListModule,
+    AmStepperModule,
+    AmFlexBoxModule,
+    AmImagePickerModule
   ],
   providers: [
     {

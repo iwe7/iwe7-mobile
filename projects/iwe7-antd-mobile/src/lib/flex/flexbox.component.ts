@@ -1,13 +1,11 @@
-import { Directive, OnInit, Input, HostBinding } from "@angular/core";
+import { Directive, OnInit, Input, HostBinding, Injector } from "@angular/core";
+import { Iwe7BaseComponent } from "iwe7-base";
 
 @Directive({
-  selector: "[flex]"
+  selector: "am-flexbox"
 })
-export class FlexComponent {
-  @HostBinding("class.am-flexbox") _flexBox: boolean = true;
-
+export class AmFlexboxComponent extends Iwe7BaseComponent {
   @Input() direction: string;
-
   @HostBinding("class.am-flexbox-dir-row")
   get isDirRow() {
     return this.direction === "row";
@@ -29,7 +27,7 @@ export class FlexComponent {
   }
 
   // 换行
-  @Input() wrap: string;
+  @Input() wrap: string = 'wrap';
 
   @HostBinding("class.am-flexbox-nowrap")
   get isNoWrap() {
@@ -133,5 +131,9 @@ export class FlexComponent {
   @HostBinding("class.am-flexbox-align-content-stretch")
   get isALignContentstretch() {
     return this.alignContent === "stretch";
+  }
+
+  constructor(injector: Injector) {
+    super(injector, "am-flexbox");
   }
 }
