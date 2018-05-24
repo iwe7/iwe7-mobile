@@ -7,9 +7,9 @@ export interface TypeDecorator {
     parameterIndex?: number
   ): void;
 }
-export const ANNOTATIONS = "__annotations__";
-export const PARAMETERS = "__parameters__";
-export const PROP_METADATA = "__prop__metadata__";
+export const ANNOTATIONS = "__meepo__annotations__";
+export const PARAMETERS = "__meepo__parameters__";
+export const PROP_METADATA = "__meepo__prop__metadata__";
 // 定义
 export function makeDecorator(
   name: string,
