@@ -80,7 +80,7 @@ export class TabsComponent {
 
   handleTabClick(index: number) {
     this.activeTab = index;
-    this.onTabClick.emit(index);
+    this.onTabClick.emit(this.tabs[index]);
   }
 
   handleChange(e: any) {

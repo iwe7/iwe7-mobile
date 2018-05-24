@@ -28,7 +28,7 @@
     "antd-mobile": "^2.1.9",
     "core-js": "^2.5.4",
     "date-fns": "^1.29.0",
-    "iwe7-base": "^6.0.3-beta.19",
+    "iwe7-base": "^6.0.5",
     "iwe7-decorator": "^0.0.2",
     "iwe7-http": "^6.0.0",
     "iwe7-icss": "^6.0.2-bate.1",

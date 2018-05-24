@@ -13,3 +13,5 @@ export * from "./lib/module";
 
 export * from "./lib/iwe7-title.service";
 export * from "./lib/iwe7-page";
+export * from './lib/iwe7-page-detail';
+export * from './lib/iwe7-page-list';

@@ -1,4 +1,4 @@
-<tabs [tabs]="tabs">
+<tabs (onTabClick)="_tabClick($event)" [tabs]="tabs">
   <ng-template let-tab>
     <ul *ngFor="let item of list">
       <li></li>
