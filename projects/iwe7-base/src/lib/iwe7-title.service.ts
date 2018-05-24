@@ -39,7 +39,7 @@ export class Iwe7TitleService {
     );
   }
 
-  updateTitle(): Observable<any> {
+  private updateTitle(): Observable<any> {
     this.route = this.injector.get(ActivatedRoute);
     this.__title = this.injector.get(Title);
     this.datas.push(this.route.data);

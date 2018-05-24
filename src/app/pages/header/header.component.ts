@@ -9,30 +9,23 @@ import {
   debounceTime,
   takeUntil
 } from "rxjs/operators";
-import { Iwe7TitleService } from "iwe7-router";
+import { BaseWithTitle } from "iwe7-base";
 @Component({
   selector: "app-header",
   templateUrl: "./header.component.html",
   styleUrls: ["./header.component.scss"]
 })
-export class HeaderComponent implements OnInit, OnDestroy {
+export class HeaderComponent extends BaseWithTitle
+  implements OnInit, OnDestroy {
   public location: Location;
-  title: Iwe7TitleService;
-  destroyed: Subject<any> = new Subject();
-  constructor(public inejctor: Injector) {
-    this.title = this.inejctor.get(Iwe7TitleService);
-    this.title
-      .listener()
-      .pipe(takeUntil(this.destroyed))
-      .subscribe();
-    this.location = this.inejctor.get(Location);
+  constructor(injector: Injector) {
+    super(injector, "");
+    this.location = this.injector.get(Location);
   }
-
   ngOnInit() {}
 
   ngOnDestroy() {
-    this.destroyed.next();
-    this.destroyed.complete();
+    super.ngOnDestroy();
   }
 
   back() {
