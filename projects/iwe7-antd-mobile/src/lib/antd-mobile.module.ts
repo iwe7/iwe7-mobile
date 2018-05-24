@@ -3,7 +3,6 @@ import { CommonModule } from "@angular/common";
 import { ButtonComponent } from "./button/button.component";
 import { ActionSheetComponent } from "./action-sheet/action-sheet.component";
 import { ActivityIndicatorComponent } from "./activity-indicator/activity-indicator.component";
-import { FlexItemComponent } from "./flex-item/flex-item.component";
 import { GridComponent } from "./grid/grid.component";
 import { ColumnNumDirective } from "./grid/column-num.directive";
 import { WhiteSpaceDirective } from "./white-space.directive";
@@ -24,7 +23,6 @@ export const components = [
   ButtonComponent,
   ActionSheetComponent,
   ActivityIndicatorComponent,
-  FlexItemComponent,
   GridComponent,
   ColumnNumDirective,
   WhiteSpaceDirective,
@@ -51,7 +49,7 @@ import { RouterModule } from "@angular/router";
 import { StepsModule } from "./steps/module";
 import { AmListModule } from "./list/module";
 import { AmStepperModule } from "./stepper/module";
-import { AmFlexBoxModule } from "./flex/module";
+import { AmFlexBoxModule } from "./flexbox/module";
 import { AmImagePickerModule } from "./image-picker/module";
 
 @NgModule({
