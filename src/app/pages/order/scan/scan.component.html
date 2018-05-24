@@ -1,0 +1,26 @@
+<steps [current]="current">
+  <step>1
+    <ng-template #title>第一步</ng-template>
+  </step>
+  <step>2
+    <ng-template #title>第二步</ng-template>
+  </step>
+  <step>3
+    <ng-template #title>第三步</ng-template>
+  </step>
+</steps>
+
+<div class="content">
+  <ng-container *ngIf="current ===0">
+    <div class="container">
+      <div>开始扫描</div>
+    </div>
+    <button am-button type="primary" (click)="next()">下一步</button>
+  </ng-container>
+  <ng-container *ngIf="current ===1">
+    <button am-button type="primary" (click)="next()">下一步</button>
+  </ng-container>
+  <ng-container *ngIf="current ===2">
+    <button am-button type="primary" (click)="finish()">完成</button>
+  </ng-container>
+</div>

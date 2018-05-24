@@ -1,0 +1,18 @@
+<div class="am-steps-item-tail"></div>
+<div class="am-steps-item-icon">
+  <span class="am-steps-icon">
+    <ng-container *ngTemplateOutlet="icon"></ng-container>
+  </span>
+</div>
+<div class="am-steps-item-content">
+  <div class="am-steps-item-title">
+    <ng-container *ngTemplateOutlet="title"></ng-container>
+  </div>
+  <div class="am-steps-item-description">
+    <ng-container *ngTemplateOutlet="description"></ng-container>
+  </div>
+</div>
+
+<ng-template #icon>
+  <ng-content></ng-content>
+</ng-template>

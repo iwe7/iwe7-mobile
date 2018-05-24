@@ -2,7 +2,7 @@
 <div *ngIf="!thumbIsString && thumb" listThumb>
   <ng-container *ngTemplateOutlet="thumb"></ng-container>
 </div>
-<div listLine="multipleLine">
+<div [listLine]="multipleLine">
   <div listContent>
     <ng-content></ng-content>
     <div class="am-list-brief" *ngIf="brief">

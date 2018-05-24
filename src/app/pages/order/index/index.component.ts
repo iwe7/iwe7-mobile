@@ -1,5 +1,6 @@
 import { Component, OnInit, Injector } from "@angular/core";
 import { Iwe7PageList } from "iwe7-base";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-index",
@@ -7,7 +8,7 @@ import { Iwe7PageList } from "iwe7-base";
   styleUrls: ["./index.component.css"]
 })
 export class IndexComponent extends Iwe7PageList implements OnInit {
-  action: string = 'shibida/order/list';
+  action: string = "shibida/order/list";
   tabs: any[] = [
     {
       title: "待处理",
@@ -30,9 +31,11 @@ export class IndexComponent extends Iwe7PageList implements OnInit {
   ];
 
   list: any[] = [];
+  router: Router;
 
   constructor(injector: Injector) {
     super(injector, "app-index");
+    this.router = this.injector.get(Router);
   }
 
   ngOnInit() {
@@ -44,5 +47,13 @@ export class IndexComponent extends Iwe7PageList implements OnInit {
     this.load().subscribe(res => {
       console.log(res);
     });
+  }
+
+  addOrder() {
+    this.router.navigate(["/header/order/add"]);
+  }
+
+  qrCode() {
+    this.router.navigate(["/header/order/scan"]);
   }
 }

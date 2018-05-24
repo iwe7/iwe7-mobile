@@ -5,6 +5,8 @@ import { OrderRoutingModule } from './order-routing.module';
 import { IndexComponent } from './index/index.component';
 import { SharedModule } from '../../shared/shared.module';
 import { DetailComponent } from './detail/detail.component';
+import { AddComponent } from './add/add.component';
+import { ScanComponent } from './scan/scan.component';
 
 @NgModule({
   imports: [
@@ -12,6 +14,6 @@ import { DetailComponent } from './detail/detail.component';
     OrderRoutingModule,
     SharedModule
   ],
-  declarations: [IndexComponent, DetailComponent]
+  declarations: [IndexComponent, DetailComponent, AddComponent, ScanComponent]
 })
 export class OrderModule { }

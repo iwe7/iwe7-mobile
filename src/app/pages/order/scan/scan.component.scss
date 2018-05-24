@@ -1,0 +1,15 @@
+steps {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.container {
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: gray;
+  background: #fff;
+  margin-bottom: 10px;
+}

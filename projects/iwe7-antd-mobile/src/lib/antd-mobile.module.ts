@@ -11,15 +11,6 @@ import { WhiteSpaceDirective } from "./white-space.directive";
 import { WingBlankDirective } from "./wing-blank.directive";
 import { DrawerComponent } from "./drawer/drawer.component";
 
-import { ListHeaderDirective } from "./list/list-header.directive";
-import { ListBodyDirective } from "./list/list-body.directive";
-import { ListItemComponent } from "./list/list-item.component";
-import { ListLineDirective } from "./list/list-line.directive";
-import { ListContentDirective } from "./list/list-content.directive";
-import { ListExtraDirective } from "./list/list-extra.directive";
-import { ListComponent } from "./list/list.component";
-import { ListArrowDirective } from "./list/list-arrow.directive";
-import { ListThumbComponent } from "./list/list-thumb.component";
 import { MenuComponent } from "./menu/menu.component";
 import { NavbarComponent } from "./navbar/navbar.component";
 import { IconComponent } from "./icon/icon.component";
@@ -41,15 +32,7 @@ export const components = [
   WhiteSpaceDirective,
   WingBlankDirective,
   DrawerComponent,
-  ListHeaderDirective,
-  ListBodyDirective,
-  ListItemComponent,
-  ListLineDirective,
-  ListContentDirective,
-  ListExtraDirective,
-  ListComponent,
-  ListArrowDirective,
-  ListThumbComponent,
+
   MenuComponent,
   NavbarComponent,
   IconComponent,
@@ -67,11 +50,29 @@ import { BadgeModule } from "./badge/badge.module";
 import { TabBarItemComponent } from "./tab-bar/tab-bar-item/tab-bar-item.component";
 import { CarouselComponent } from "./carousel/carousel.component";
 import { RouterModule } from "@angular/router";
+import { StepsModule } from "./steps/module";
+import { AmInputModule } from "./input/module";
+import { AmListModule } from "./list/module";
 
 @NgModule({
-  imports: [CommonModule, TabsModule, BadgeModule, RouterModule],
+  imports: [
+    CommonModule,
+    TabsModule,
+    BadgeModule,
+    RouterModule,
+    StepsModule,
+    AmInputModule,
+    AmListModule
+  ],
   declarations: [...components],
-  exports: [...components, TabsModule, BadgeModule],
+  exports: [
+    ...components,
+    TabsModule,
+    BadgeModule,
+    StepsModule,
+    AmInputModule,
+    AmListModule
+  ],
   providers: [
     {
       provide: APP_INITIALIZER,
