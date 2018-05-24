@@ -13,7 +13,7 @@ import {
 @Injectable({
   providedIn: "root"
 })
-export class Iwe7TitleService {
+export abstract class Iwe7TitleService {
   _title: string;
   get title() {
     return this._title;

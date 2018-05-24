@@ -1,7 +1,7 @@
 import { BaseWithTheme } from "./with-theme";
 import { Injector, OnChanges, SimpleChanges, Input } from "@angular/core";
 import * as _ from "lodash";
-export class BaseWithClass extends BaseWithTheme implements OnChanges {
+export abstract class BaseWithClass extends BaseWithTheme implements OnChanges {
   // class样式
   private _classObj: { [key: string]: boolean } = {};
   @Input()

@@ -1,6 +1,6 @@
 import { BaseWithIcss } from "./with-icss";
 import { Injector, Renderer2, Input } from "@angular/core";
-export class BaseWithPrefix extends BaseWithIcss {
+export abstract class BaseWithPrefix extends BaseWithIcss {
   prefixCls: string = "";
   public render: Renderer2;
   constructor(injector: Injector, prefix: string = "") {

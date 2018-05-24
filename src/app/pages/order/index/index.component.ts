@@ -1,11 +1,12 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Injector } from "@angular/core";
+import { Iwe7PageBase } from "iwe7-base";
 
 @Component({
   selector: "app-index",
   templateUrl: "./index.component.html",
   styleUrls: ["./index.component.css"]
 })
-export class IndexComponent implements OnInit {
+export class IndexComponent extends Iwe7PageBase implements OnInit {
   tabs: any[] = [
     {
       title: "待处理",
@@ -25,7 +26,9 @@ export class IndexComponent implements OnInit {
 
   list: any[] = [];
 
-  constructor() {}
+  constructor(injector: Injector) {
+    super(injector, "app-index");
+  }
 
   ngOnInit() {}
 }

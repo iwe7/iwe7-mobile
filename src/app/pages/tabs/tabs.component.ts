@@ -2,12 +2,13 @@ import { Component, OnInit, Injector, OnDestroy } from "@angular/core";
 import { Iwe7TitleService } from "iwe7-router";
 import { Subject } from "rxjs";
 import { takeUntil } from "rxjs/operators";
+import { BaseWithTitle } from "iwe7-base";
 @Component({
   selector: "app-tabs",
   templateUrl: "./tabs.component.html",
   styleUrls: ["./tabs.component.css"]
 })
-export class TabsComponent implements OnInit, OnDestroy {
+export class TabsComponent extends BaseWithTitle {
   tabBars: any[] = [
     {
       text: "订单",
@@ -41,20 +42,7 @@ export class TabsComponent implements OnInit, OnDestroy {
     }
   ];
 
-  title: Iwe7TitleService;
-  destroyed: Subject<any> = new Subject();
-  constructor(public inejctor: Injector) {
-    this.title = this.inejctor.get(Iwe7TitleService);
-    this.title
-      .listener()
-      .pipe(takeUntil(this.destroyed))
-      .subscribe();
+  constructor(injector: Injector) {
+    super(injector, "");
   }
-
-  ngOnDestroy() {
-    this.destroyed.next();
-    this.destroyed.complete();
-  }
-
-  ngOnInit() {}
 }

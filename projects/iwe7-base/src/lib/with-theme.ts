@@ -7,7 +7,7 @@ import {
   OnChanges,
   Input
 } from "@angular/core";
-export class BaseWithTheme extends BaseWithPrefix implements OnChanges {
+export abstract class BaseWithTheme extends BaseWithPrefix implements OnChanges {
   @Input() theme: string = "default";
   constructor(injector: Injector, prefix: string = "") {
     super(injector, prefix);

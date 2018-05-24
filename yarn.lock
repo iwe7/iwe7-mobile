@@ -3658,9 +3658,9 @@ istanbul@^0.4.5:
     which "^1.1.1"
     wordwrap "^1.0.0"
 
-iwe7-base@^6.0.3-beta.12:
-  version "6.0.3-beta.12"
-  resolved "https://registry.yarnpkg.com/iwe7-base/-/iwe7-base-6.0.3-beta.12.tgz#cdd8620d16e229b6309373cd686ab744dc344d2f"
+iwe7-base@^6.0.3-beta.19:
+  version "6.0.3-beta.19"
+  resolved "https://registry.yarnpkg.com/iwe7-base/-/iwe7-base-6.0.3-beta.19.tgz#8b66b889f2637becf4244b6f059a79e3e5b3e6bb"
   dependencies:
     tslib "^1.9.0"
 

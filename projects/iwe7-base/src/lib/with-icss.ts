@@ -1,11 +1,11 @@
-import { BaseWithOnDestroy } from "./with-on-destroy";
+import { BaseWithLocation } from "./with-location";
 import { Iwe7IcssService } from "iwe7-icss";
 import { Injector, Input, ElementRef } from "@angular/core";
 import { BehaviorSubject } from "rxjs";
 import { takeUntil } from "rxjs/operators";
 import * as _ from "lodash";
 
-export class BaseWithIcss extends BaseWithOnDestroy {
+export abstract class BaseWithIcss extends BaseWithLocation {
   public ele: ElementRef;
   public icss: Iwe7IcssService;
   // style样式
@@ -23,8 +23,8 @@ export class BaseWithIcss extends BaseWithOnDestroy {
     return this._styleObj;
   }
 
-  constructor(public injector: Injector) {
-    super();
+  constructor(injector: Injector) {
+    super(injector);
     this.ele = this.injector.get(ElementRef);
     this.icss = this.injector.get(Iwe7IcssService);
     this.icss
