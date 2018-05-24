@@ -1,0 +1,11 @@
+<div class="am-search-input">
+  <div class="am-search-synthetic-ph" #ph (click)="onFocus($event)">
+    <span class="am-search-synthetic-ph-container">
+      <i class="am-search-synthetic-ph-icon"></i>
+      <span class="am-search-synthetic-ph-placeholder" [style.visibility]="_start ? 'hidden': 'visible'">{{placeholder}}</span>
+    </span>
+  </div>
+  <input type="search" class="am-search-value" (click)="onFocus($event)" [attr.placeholder]="placeholder">
+  <a [am-search-clear]="_start && clear"></a>
+</div>
+<div [am-search-cancel]="_start && cancel" (click)="_cancel()" class="am-search-cancel-anim">取消</div>
