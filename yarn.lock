@@ -3664,6 +3664,12 @@ iwe7-http@^6.0.0:
   dependencies:
     tslib "^1.9.0"
 
+iwe7-reflect@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/iwe7-reflect/-/iwe7-reflect-0.0.3.tgz#b30d3c06674f257f81596f18ad1ce885047044fc"
+  dependencies:
+    tslib "^1.9.0"
+
 iwe7-router@^6.0.6:
   version "6.0.6"
   resolved "https://registry.yarnpkg.com/iwe7-router/-/iwe7-router-6.0.6.tgz#3cdcfb651cfd914e1c56b36dc3354f0c1b3a53e2"

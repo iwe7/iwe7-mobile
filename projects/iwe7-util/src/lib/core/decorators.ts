@@ -50,7 +50,7 @@ export function makeDecorator(
   return DecoratorFactory as any;
 }
 // 类
-function makeMetadataCtor(props?: (...args: any[]) => any): any {
+export function makeMetadataCtor(props?: (...args: any[]) => any): any {
   return function ctor(...args: any[]) {
     if (props) {
       const values = props(...args);

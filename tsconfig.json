@@ -15,38 +15,6 @@
     "lib": [
       "es2017",
       "dom"
-    ],
-    "paths": {
-      "iwe7-antd-mobile": [
-        "dist/iwe7-antd-mobile"
-      ],
-      "iwe7-web-storage": [
-        "dist/iwe7-web-storage"
-      ],
-      "iwe7-lodash": [
-        "dist/iwe7-lodash"
-      ],
-      "iwe7-decorator": [
-        "dist/iwe7-decorator"
-      ],
-      "iwe7-http": [
-        "dist/iwe7-http"
-      ],
-      "iwe7-router": [
-        "dist/iwe7-router"
-      ],
-      "iwe7-forms": [
-        "dist/iwe7-forms"
-      ],
-      "iwe7-directives": [
-        "dist/iwe7-directives"
-      ],
-      "iwe7-util": [
-        "dist/iwe7-util"
-      ],
-      "iwe7-reflect": [
-        "dist/iwe7-reflect"
-      ]
-    }
+    ]
   }
 }

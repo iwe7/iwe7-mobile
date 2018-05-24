@@ -13,6 +13,6 @@ export class IndexComponent implements OnInit {
   ngOnInit() {}
 
   back() {
-    this.router.navigate(["/message/notice"]);
+    this.router.navigate(["/header/message/notice"]);
   }
 }

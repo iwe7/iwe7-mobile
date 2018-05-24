@@ -13,7 +13,7 @@ export class IndexComponent implements OnInit {
   ngOnInit() {}
 
   add() {
-    this.router.navigate(["/service/add"]);
+    this.router.navigate(["/header/service/add"]);
   }
 
   back() {}

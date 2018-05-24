@@ -5,7 +5,7 @@ import { MessageRoutingModule } from "./message-routing.module";
 import { IndexComponent } from "./index/index.component";
 import { DetailComponent } from "./detail/detail.component";
 import { SharedModule } from "../../shared/shared.module";
-import { NoticeComponent } from './notice/notice.component';
+import { NoticeComponent } from "./notice/notice.component";
 
 @NgModule({
   imports: [CommonModule, MessageRoutingModule, SharedModule],

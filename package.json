@@ -29,6 +29,7 @@
     "core-js": "^2.5.4",
     "date-fns": "^1.29.0",
     "iwe7-http": "^6.0.0",
+    "iwe7-reflect": "^0.0.3",
     "iwe7-router": "^6.0.6",
     "iwe7-url": "^0.0.2",
     "iwe7-util": "^0.0.8",
