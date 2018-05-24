@@ -43,6 +43,9 @@
       ],
       "iwe7-util": [
         "dist/iwe7-util"
+      ],
+      "iwe7-reflect": [
+        "dist/iwe7-reflect"
       ]
     }
   }

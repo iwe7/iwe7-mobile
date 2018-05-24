@@ -16,16 +16,23 @@ import { TestService } from "./test.service";
   styleUrls: ["./app.component.css"]
 })
 export class AppComponent implements OnInit {
-  @ViewChild('ele') _ele: ElementRef;
+  @ViewChild("ele") _ele: ElementRef;
+  public show: boolean = true;
+  name: string;
   constructor(public injector: Injector, public ele: ElementRef) {
     console.log(Reflect.ownKeys(AppComponent));
-    console.log(Reflect.getMetadataKeys(AppComponent));
-    console.log(Reflect.getOwnMetadataKeys(AppComponent));
-    console.log(Reflect.get(AppComponent, "__annotations__"));
+    console.log(Reflect);
+    console.log(
+      "__annotations__",
+      Reflect.get(AppComponent, "__annotations__")
+    );
     console.log(Reflect.get(AppComponent, "length"));
     console.log(Reflect.get(AppComponent, "name"));
     console.log(Reflect.get(AppComponent, "prototype"));
     console.log(Reflect.get(AppComponent, "__prop__metadata__"));
+    console.log(Reflect.get(AppComponent, "__parameters__"));
+    this.name = Reflect.get(AppComponent, "name");
+    console.log(this.name);
   }
   ngOnInit() {
     document.body.addEventListener("touchstart", function() {});
