@@ -387,6 +387,10 @@
     "@webassemblyjs/wast-parser" "1.4.3"
     long "^3.2.0"
 
+"@webcomponents/custom-elements@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@webcomponents/custom-elements/-/custom-elements-1.1.1.tgz#dd71c2faa82eb903f5e34271dc535cf80d1abcab"
+
 abbrev@1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/abbrev/-/abbrev-1.1.1.tgz#f8f2c887ad10bf67f634f005b6987fed3179aac8"
@@ -1959,6 +1963,12 @@ dns-txt@^2.0.2:
   resolved "https://registry.yarnpkg.com/dns-txt/-/dns-txt-2.0.2.tgz#b91d806f5d27188e4ab3e7d107d881a1cc4642b6"
   dependencies:
     buffer-indexof "^1.0.0"
+
+document-register-element@^1.8.1:
+  version "1.8.1"
+  resolved "https://registry.yarnpkg.com/document-register-element/-/document-register-element-1.8.1.tgz#db841ece6cba28e6e538ac8e815413b59e86047e"
+  dependencies:
+    lightercollective "^0.0.0"
 
 dom-align@1.x:
   version "1.6.7"
@@ -3676,9 +3686,9 @@ istanbul@^0.4.5:
     which "^1.1.1"
     wordwrap "^1.0.0"
 
-iwe7-base@^6.0.6:
-  version "6.0.6"
-  resolved "https://registry.yarnpkg.com/iwe7-base/-/iwe7-base-6.0.6.tgz#8099cd18dad64feb12e478d2f5908df66aa96bbe"
+iwe7-base@^6.0.9:
+  version "6.0.9"
+  resolved "https://registry.yarnpkg.com/iwe7-base/-/iwe7-base-6.0.9.tgz#24abfe9e8d4d00b1c8ee8a560cc5d97e0c1eaf38"
   dependencies:
     tslib "^1.9.0"
 
@@ -4004,6 +4014,10 @@ lie@~3.1.0:
   resolved "https://registry.yarnpkg.com/lie/-/lie-3.1.1.tgz#9a436b2cc7746ca59de7a41fa469b3efb76bd87e"
   dependencies:
     immediate "~3.0.5"
+
+lightercollective@^0.0.0:
+  version "0.0.0"
+  resolved "https://registry.yarnpkg.com/lightercollective/-/lightercollective-0.0.0.tgz#5b85f6755b78c1f94db590e479f954cbfeeb0409"
 
 load-json-file@^1.0.0:
   version "1.1.0"

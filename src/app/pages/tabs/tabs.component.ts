@@ -4,7 +4,7 @@ import { Subject } from "rxjs";
 import { takeUntil } from "rxjs/operators";
 import { BaseWithTitle } from "iwe7-base";
 @Component({
-  selector: "app-tabs",
+  selector: "router-tabs",
   templateUrl: "./tabs.component.html",
   styleUrls: ["./tabs.component.css"]
 })

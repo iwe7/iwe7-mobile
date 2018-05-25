@@ -19,6 +19,9 @@
     "paths": {
       "iwe7-abc": [
         "dist/iwe7-abc"
+      ],
+      "iwe7-elements": [
+        "dist/iwe7-elements"
       ]
     }
   }

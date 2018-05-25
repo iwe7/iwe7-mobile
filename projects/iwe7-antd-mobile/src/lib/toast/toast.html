@@ -1,0 +1,12 @@
+<div [class.am-toast-mask]="mask" [class.am-toast-nomask]="!mask" class="am-toast">
+  <div amToastNotice>
+    <div class="am-toast-notice-content">
+      <div class="am-toast-text" [class.am-toast-text-icon]="icon" [attr.role]="'alert'" [attr.aria-live]="'assertive'">
+        <ng-container *ngTemplateTypeString="icon"></ng-container>
+        <div class="am-toast-text-info">
+          <ng-container *ngTemplateTypeString="content"></ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -32,7 +32,7 @@ export class ElementService {
     const factoryResolver = injector.get(ComponentFactoryResolver);
     const _factories = (<any>factoryResolver)._factories;
     _factories.forEach((item, key) => {
-      this.registerElement(item.selector, item.componentType, injector);
+      this.registerElement("ele-" + item.selector, item.componentType, injector);
     });
   }
 

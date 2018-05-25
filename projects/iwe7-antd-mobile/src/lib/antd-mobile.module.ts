@@ -60,6 +60,7 @@ import { AmPickerModule } from "./picker/module";
 import { AmPickerDateModule } from "./picker-date/module";
 import { AmPickerPopupModule } from "./picker-popup/module";
 import { AmTextareaModule } from "./textarea/module";
+import { AmToastModule } from "./toast/module";
 
 @NgModule({
   imports: [
@@ -80,7 +81,8 @@ import { AmTextareaModule } from "./textarea/module";
     AmPickerModule,
     AmPickerDateModule,
     AmPickerPopupModule,
-    AmTextareaModule
+    AmTextareaModule,
+    AmToastModule
   ],
   declarations: [...components],
   exports: [
@@ -100,7 +102,8 @@ import { AmTextareaModule } from "./textarea/module";
     AmPickerModule,
     AmPickerDateModule,
     AmPickerPopupModule,
-    AmTextareaModule
+    AmTextareaModule,
+    AmToastModule
   ],
   providers: [
     {

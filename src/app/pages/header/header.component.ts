@@ -2,7 +2,7 @@ import { Component, OnInit, Injector, OnDestroy } from "@angular/core";
 import { Location } from "@angular/common";
 import { BaseWithTitle } from "iwe7-base";
 @Component({
-  selector: "app-header",
+  selector: "router-header",
   templateUrl: "./header.component.html",
   styleUrls: ["./header.component.scss"]
 })

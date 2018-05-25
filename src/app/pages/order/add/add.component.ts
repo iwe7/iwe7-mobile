@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { AmToastService } from "projects/iwe7-antd-mobile/src/lib/toast/toast.service";
 
 @Component({
   selector: "app-add",
@@ -15,9 +16,15 @@ export class AddComponent implements OnInit {
   ];
 
   value: any = ["10", "21", "31"];
-  constructor() {}
+  constructor(
+    public toast: AmToastService
+  ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.toast.success({
+      content: '成功'
+    });
+  }
 
   next() {
     this.current = this.current + 1;
