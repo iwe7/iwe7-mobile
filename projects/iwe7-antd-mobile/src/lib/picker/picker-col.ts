@@ -98,6 +98,8 @@ export class AmPickerColComponent extends Iwe7BaseComponent implements OnInit {
               } else {
                 if (res <= 0) {
                   this.current = 0;
+                } else {
+                  this.current = res;
                 }
               }
               this.styleObj = {

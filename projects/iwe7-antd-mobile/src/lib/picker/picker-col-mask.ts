@@ -1,10 +1,7 @@
-import { Directive, Injector, OnInit } from "@angular/core";
-import { Iwe7BaseComponent } from "iwe7-base";
+import { Directive, Injector, OnInit, HostBinding } from "@angular/core";
 @Directive({ selector: "[am-picker-col-mask]" })
-export class AmPickerColMaskDirective extends Iwe7BaseComponent
-  implements OnInit {
-  constructor(injector: Injector) {
-    super(injector, "am-picker-col-mask");
-  }
+export class AmPickerColMaskDirective implements OnInit {
+  @HostBinding("class.am-picker-col-mask") _content: boolean = true;
+  constructor(injector: Injector) {}
   ngOnInit() {}
 }

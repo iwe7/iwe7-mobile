@@ -4,7 +4,8 @@ import {
   Injector,
   Input,
   SimpleChanges,
-  OnChanges
+  OnChanges,
+  HostBinding
 } from "@angular/core";
 import { Iwe7BaseComponent } from "iwe7-base";
 
@@ -18,16 +19,15 @@ export interface AmPickerInter {
   templateUrl: "picker.html",
   styleUrls: ["./picker.scss"]
 })
-export class AmPickerComponent extends Iwe7BaseComponent
-  implements OnInit, OnChanges {
+export class AmPickerComponent implements OnInit, OnChanges {
   @Input() itemHeight: number = 34;
   @Input() colHeight: number = 238;
   @Input() data: AmPickerInter[][] = [];
   @Input() value: any[] = [];
 
-  constructor(injector: Injector) {
-    super(injector, "am-picker");
-  }
+  @HostBinding("class.am-picker") picker: boolean = true;
+
+  constructor(injector: Injector) {}
 
   ngOnInit() {}
 

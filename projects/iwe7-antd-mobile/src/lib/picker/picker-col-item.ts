@@ -1,9 +1,8 @@
 import { Directive, Injector, HostBinding, Input } from "@angular/core";
-import { Iwe7BaseComponent } from "iwe7-base";
 import { toBoolean } from "iwe7-util";
 
 @Directive({ selector: "[am-picker-col-item]" })
-export class AmPickerColItemDirective extends Iwe7BaseComponent {
+export class AmPickerColItemDirective {
   _checked: boolean = false;
   @HostBinding("class.am-picker-col-item-selected")
   @Input()
@@ -13,7 +12,8 @@ export class AmPickerColItemDirective extends Iwe7BaseComponent {
   get checked() {
     return this._checked;
   }
-  constructor(injector: Injector) {
-    super(injector, "am-picker-col-item");
-  }
+
+  @HostBinding("class.am-picker-col-item") _item: boolean = true;
+
+  constructor(injector: Injector) {}
 }

@@ -1,9 +1,6 @@
-import { Directive, Injector } from "@angular/core";
-import { Iwe7BaseComponent } from "iwe7-base";
-
+import { Directive, Injector, HostBinding } from "@angular/core";
 @Directive({ selector: "[am-picker-col-content]" })
-export class AmPickerColContentDirective extends Iwe7BaseComponent {
-  constructor(injector: Injector) {
-    super(injector, "am-picker-col-content");
-  }
+export class AmPickerColContentDirective {
+  @HostBinding("class.am-picker-col-content") _content: boolean = true;
+  constructor(injector: Injector) {}
 }
