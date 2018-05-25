@@ -39,7 +39,7 @@ export class AmSearchComponent extends Iwe7BaseComponent implements OnInit {
     };
   }
 
-  onFocus() {
+  onFocus(e: any) {
     this._start = true;
     this.render.setStyle(this.ph.nativeElement, "width", `69px`);
     this.styleObj = {

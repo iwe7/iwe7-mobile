@@ -13,7 +13,7 @@
 <div class="content">
   <ng-container *ngIf="current ===0">
     <div class="container">
-      <div>开始扫描</div>
+      <div am-image-picker-upload-btn (onload)="onload($event)">开始扫描</div>
     </div>
     <button am-button type="primary" (click)="next()">下一步</button>
   </ng-container>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+import { Iwe7UrlService } from "iwe7-url";
 
 @Component({
   selector: "app-scan",
@@ -7,7 +9,7 @@ import { Component, OnInit } from "@angular/core";
 })
 export class ScanComponent implements OnInit {
   current: number = 0;
-  constructor() {}
+  constructor(public http: HttpClient, public url: Iwe7UrlService) {}
 
   scan() {}
 
@@ -17,4 +19,14 @@ export class ScanComponent implements OnInit {
     this.current = this.current + 1;
   }
   finish() {}
+
+  onload(e: any) {
+    this.http
+      .post(this.url.getWebOpen("shibida/car/getCarByImage"), {
+        file: e
+      })
+      .subscribe(res => {
+        console.log(res);
+      });
+  }
 }

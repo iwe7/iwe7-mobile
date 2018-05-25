@@ -32,6 +32,13 @@ export class AmImagePickerUploadBtnDirective extends Iwe7BaseDirective
     input.type = "file";
     input.accept = "image/*";
     input.multiple = this.multi;
+    this.render.setStyle(input, "position", "absolute");
+    this.render.setStyle(input, "left", "0px");
+    this.render.setStyle(input, "right", "0px");
+    this.render.setStyle(input, "bottom", "0px");
+    this.render.setStyle(input, "top", "0px");
+    this.render.setStyle(input, "opacity", "0");
+    this.render.setStyle(input, "width", "100%");
     this.render.appendChild(this.ele.nativeElement, input);
     onChange(input)
       .pipe(takeUntil(this.destroyed$))
