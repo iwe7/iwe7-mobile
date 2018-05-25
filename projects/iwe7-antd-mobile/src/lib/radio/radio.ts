@@ -23,7 +23,6 @@ export class AmRadioComponent extends Iwe7BaseComponent implements OnInit {
   @Input()
   round: boolean = true;
 
-  @Input() label: string = "同意";
   constructor(injector: Injector) {
     super(injector, "am-radio");
   }
