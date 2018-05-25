@@ -1,5 +1,14 @@
-import { Component, Injector, HostBinding, Input, OnInit } from "@angular/core";
+import {
+  Component,
+  Injector,
+  HostBinding,
+  Input,
+  OnInit,
+  forwardRef
+} from "@angular/core";
 import { Iwe7BaseComponent } from "iwe7-base";
+import { NG_VALUE_ACCESSOR, ControlValueAccessor } from "@angular/forms";
+
 import {
   onTouchStart,
   onTouchCancel,
@@ -16,9 +25,17 @@ import { tap, switchMap, takeUntil, map, takeLast } from "rxjs/operators";
     <div am-picker-col-item [checked]="current === i" *ngFor="let item of items;index as i;">{{item.label}}</div>
   </div>
 `,
-  styleUrls: ["./picker-col.scss"]
+  styleUrls: ["./picker-col.scss"],
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => AmPickerColComponent),
+      multi: true
+    }
+  ]
 })
-export class AmPickerColComponent extends Iwe7BaseComponent implements OnInit {
+export class AmPickerColComponent extends Iwe7BaseComponent
+  implements OnInit, ControlValueAccessor {
   @Input() items: any[] = [];
 
   @Input() itemHeight: number = 34;
@@ -105,6 +122,7 @@ export class AmPickerColComponent extends Iwe7BaseComponent implements OnInit {
               this.styleObj = {
                 [`translate3dY`]: -this.current * this.itemHeight + "px"
               };
+              this._change(this.items[this.current].value);
             })
           );
         })
@@ -119,4 +137,16 @@ export class AmPickerColComponent extends Iwe7BaseComponent implements OnInit {
       [`translate3dY`]: -this.current * this.itemHeight + "px"
     };
   }
+
+  _change: (_: any) => {};
+  writeValue(obj: any): void {
+    if (obj) {
+      this.value = obj;
+    }
+  }
+  registerOnChange(fn: any): void {
+    this._change = fn;
+  }
+  registerOnTouched(fn: any): void {}
+  setDisabledState?(isDisabled: boolean): void {}
 }

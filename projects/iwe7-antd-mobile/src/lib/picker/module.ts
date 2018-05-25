@@ -7,9 +7,10 @@ import { AmPickerColIndicatorDirective } from "./picker-col-indicator";
 import { AmPickerColContentDirective } from "./picker-col-content";
 import { AmPickerColItemDirective } from "./picker-col-item";
 import { CommonModule } from "@angular/common";
+import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 
 @NgModule({
-  imports: [CommonModule],
+  imports: [CommonModule, ReactiveFormsModule, FormsModule],
   exports: [AmPickerComponent],
   declarations: [
     AmPickerComponent,

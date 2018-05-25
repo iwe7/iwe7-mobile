@@ -1,16 +1,25 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit, Input, forwardRef } from "@angular/core";
+import { NG_VALUE_ACCESSOR, ControlValueAccessor } from "@angular/forms";
 
 @Component({
   selector: "am-picker-date",
-  templateUrl: "picker-date.html"
+  templateUrl: "picker-date.html",
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => AmPickerDateComponent),
+      multi: true
+    }
+  ]
 })
-export class AmPickerDateComponent implements OnInit {
+export class AmPickerDateComponent implements OnInit, ControlValueAccessor {
   data: any[] = [];
   value: any[] = [];
 
   @Input() canBack: boolean = false;
+  _change: any = (_: any) => {};
+
   constructor() {
-    this.data = [this.years, this.months, this.days, this.hours, this.minutes];
     const now = new Date();
     this.value = [
       now.getFullYear(),
@@ -19,10 +28,15 @@ export class AmPickerDateComponent implements OnInit {
       now.getHours(),
       now.getMinutes()
     ];
-    console.log(this);
+    this.data = [this.years, this.months, this.days, this.hours, this.minutes];
   }
 
   ngOnInit() {}
+
+  _onChange(e: any) {
+    this._change(this.value);
+    this.data = [this.years, this.months, this.days, this.hours, this.minutes];
+  }
 
   get years() {
     const years = [];
@@ -118,4 +132,15 @@ export class AmPickerDateComponent implements OnInit {
     }
     return minutes;
   }
+
+  writeValue(obj: any): void {
+    if (obj) {
+      this.value = obj;
+    }
+  }
+  registerOnChange(fn: any): void {
+    this._change = fn;
+  }
+  registerOnTouched(fn: any): void {}
+  setDisabledState?(isDisabled: boolean): void {}
 }
