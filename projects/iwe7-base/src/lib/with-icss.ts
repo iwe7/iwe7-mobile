@@ -9,7 +9,7 @@ export abstract class BaseWithIcss extends BaseWithLocation {
   public ele: ElementRef;
   public icss: Iwe7IcssService;
   // style样式
-  private _styleObj: { [key: string]: any } = {};
+  private _styleObj: { [key: string]: any };
   public style$: BehaviorSubject<{ [key: string]: any }> = new BehaviorSubject(
     this._styleObj
   );
@@ -25,6 +25,7 @@ export abstract class BaseWithIcss extends BaseWithLocation {
 
   constructor(injector: Injector) {
     super(injector);
+    this._styleObj = {};
     this.ele = this.injector.get(ElementRef);
     this.icss = this.injector.get(Iwe7IcssService);
     this.icss

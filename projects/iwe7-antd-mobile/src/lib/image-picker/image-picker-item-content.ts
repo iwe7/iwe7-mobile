@@ -1,4 +1,12 @@
-import { Directive, Injector, HostBinding, Input, OnInit, Output, EventEmitter } from "@angular/core";
+import {
+  Directive,
+  Injector,
+  HostBinding,
+  Input,
+  OnInit,
+  Output,
+  EventEmitter
+} from "@angular/core";
 import { Iwe7BaseDirective } from "iwe7-base";
 import { onChange } from "iwe7-util";
 import { takeUntil } from "rxjs/operators";
@@ -44,7 +52,7 @@ export class AmImagePickerItemContentDirective extends Iwe7BaseDirective
       .subscribe((res: any) => {
         const file = res.target.files[0];
         const reader = new FileReader();
-        reader.onload = e => {
+        reader.onload = (e: any) => {
           this.onload.emit(e.target.result);
         };
         reader.readAsDataURL(file);

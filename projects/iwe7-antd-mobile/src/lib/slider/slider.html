@@ -1,0 +1,5 @@
+<div am-slider-rail [style.height.px]="height" [style.background-color]="unActiveColor" ></div>
+<div am-slider-track [style.height.px]="height" [style.width.%]="_width" [style.left.%]="0"[style.background-color]="activeColor" style="visibility: visible;"></div>
+<div am-slider-step></div>
+<div [valuemin]="min" [valuemax]="max" [valuenow]="value" (valuenowChange)="_valueChange($event)" am-slider-handle></div>
+<div am-slider-mark></div>

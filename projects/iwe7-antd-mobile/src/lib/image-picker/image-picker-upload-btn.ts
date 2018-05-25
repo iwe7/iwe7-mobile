@@ -42,7 +42,7 @@ export class AmImagePickerUploadBtnDirective extends Iwe7BaseDirective
             map((file: any) => {
               return Observable.create((observer: any) => {
                 const reader = new FileReader();
-                reader.onload = e => {
+                reader.onload = (e: any) => {
                   observer.next(e.target.result);
                   observer.complete();
                 };

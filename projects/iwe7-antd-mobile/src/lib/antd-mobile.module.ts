@@ -52,6 +52,9 @@ import { AmStepperModule } from "./stepper/module";
 import { AmFlexBoxModule } from "./flexbox/module";
 import { AmImagePickerModule } from "./image-picker/module";
 import { AmSearchModule } from "./search/module";
+import { AmSwitchModule } from "./switch/module";
+import { AmSLiderModule } from "./slider/module";
+
 @NgModule({
   imports: [
     CommonModule,
@@ -63,7 +66,9 @@ import { AmSearchModule } from "./search/module";
     AmStepperModule,
     AmFlexBoxModule,
     AmImagePickerModule,
-    AmSearchModule
+    AmSearchModule,
+    AmSwitchModule,
+    AmSLiderModule
   ],
   declarations: [...components],
   exports: [
@@ -75,7 +80,9 @@ import { AmSearchModule } from "./search/module";
     AmStepperModule,
     AmFlexBoxModule,
     AmImagePickerModule,
-    AmSearchModule
+    AmSearchModule,
+    AmSwitchModule,
+    AmSLiderModule
   ],
   providers: [
     {
