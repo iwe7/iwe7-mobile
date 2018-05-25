@@ -54,6 +54,7 @@ import { AmImagePickerModule } from "./image-picker/module";
 import { AmSearchModule } from "./search/module";
 import { AmSwitchModule } from "./switch/module";
 import { AmSLiderModule } from "./slider/module";
+import { AmRadioModule } from "./radio/module";
 
 @NgModule({
   imports: [
@@ -68,7 +69,8 @@ import { AmSLiderModule } from "./slider/module";
     AmImagePickerModule,
     AmSearchModule,
     AmSwitchModule,
-    AmSLiderModule
+    AmSLiderModule,
+    AmRadioModule
   ],
   declarations: [...components],
   exports: [
@@ -82,7 +84,8 @@ import { AmSLiderModule } from "./slider/module";
     AmImagePickerModule,
     AmSearchModule,
     AmSwitchModule,
-    AmSLiderModule
+    AmSLiderModule,
+    AmRadioModule
   ],
   providers: [
     {
