@@ -59,6 +59,7 @@ import { AmCheckboxModule } from "./checkbox/module";
 import { AmPickerModule } from "./picker/module";
 import { AmPickerDateModule } from "./picker-date/module";
 import { AmPickerPopupModule } from "./picker-popup/module";
+import { AmTextareaModule } from "./textarea/module";
 
 @NgModule({
   imports: [
@@ -78,7 +79,8 @@ import { AmPickerPopupModule } from "./picker-popup/module";
     AmCheckboxModule,
     AmPickerModule,
     AmPickerDateModule,
-    AmPickerPopupModule
+    AmPickerPopupModule,
+    AmTextareaModule
   ],
   declarations: [...components],
   exports: [
@@ -97,7 +99,8 @@ import { AmPickerPopupModule } from "./picker-popup/module";
     AmCheckboxModule,
     AmPickerModule,
     AmPickerDateModule,
-    AmPickerPopupModule
+    AmPickerPopupModule,
+    AmTextareaModule
   ],
   providers: [
     {

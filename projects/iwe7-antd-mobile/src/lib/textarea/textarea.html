@@ -1,0 +1,5 @@
+<div class="am-textarea-control">
+  <textarea [attr.maxlength]="maxlength" [attr.placeholder]="placeholder" [attr.rows]="rows"></textarea>
+</div>
+<span class="am-textarea-count" *ngIf="hasCount">
+  <span>{{nowCount}}</span>/{{maxlength}}</span>
