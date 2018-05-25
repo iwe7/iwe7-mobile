@@ -56,6 +56,7 @@ import { AmSwitchModule } from "./switch/module";
 import { AmSLiderModule } from "./slider/module";
 import { AmRadioModule } from "./radio/module";
 import { AmCheckboxModule } from "./checkbox/module";
+import { AmPickerModule } from "./picker/module";
 
 @NgModule({
   imports: [
@@ -72,7 +73,8 @@ import { AmCheckboxModule } from "./checkbox/module";
     AmSwitchModule,
     AmSLiderModule,
     AmRadioModule,
-    AmCheckboxModule
+    AmCheckboxModule,
+    AmPickerModule
   ],
   declarations: [...components],
   exports: [
@@ -88,7 +90,8 @@ import { AmCheckboxModule } from "./checkbox/module";
     AmSwitchModule,
     AmSLiderModule,
     AmRadioModule,
-    AmCheckboxModule
+    AmCheckboxModule,
+    AmPickerModule
   ],
   providers: [
     {

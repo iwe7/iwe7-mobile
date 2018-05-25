@@ -1,0 +1,13 @@
+[am-picker-col-indicator] {
+  height: var(--item-height);
+  top: var(--content-top);
+}
+
+[am-picker-col-content] {
+  padding: var(--content-top) 0px;
+  transform: translate3d(0px, var(--translate3dY), 0px);
+}
+
+[am-picker-col-mask] {
+  background-size: 100% var(--content-top);
+}
