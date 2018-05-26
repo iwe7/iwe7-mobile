@@ -27,6 +27,7 @@
     "@types/lodash": "^4.14.109",
     "@webcomponents/custom-elements": "^1.1.1",
     "antd-mobile": "^2.1.9",
+    "classlist.js": "^1.1.20150312",
     "core-js": "^2.5.4",
     "date-fns": "^1.29.0",
     "document-register-element": "^1.8.1",
