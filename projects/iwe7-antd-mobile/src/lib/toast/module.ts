@@ -6,8 +6,10 @@ import { AmToastNoticeDirective } from "./toast-notice";
 import { AmTextModule } from "../text/module";
 import { NgTemplateTypeStringDirective } from "./ng-template-type-string.directive";
 import { Iwe7BaseModule } from "iwe7-base";
+import { AmIconModule } from "../icon/module";
+import { AmInnerHtmlModule } from "../inner-html/module";
 @NgModule({
-  imports: [CommonModule, AmTextModule],
+  imports: [CommonModule, AmTextModule, AmIconModule, AmInnerHtmlModule],
   exports: [AmToastComponent],
   declarations: [
     AmToastComponent,
@@ -20,6 +22,6 @@ import { Iwe7BaseModule } from "iwe7-base";
 export class AmToastModule extends Iwe7BaseModule {
   constructor(injector: Injector) {
     super(injector);
-    console.log(injector);
+    this.registerElement("am-toast", AmToastComponent, this.injector);
   }
 }

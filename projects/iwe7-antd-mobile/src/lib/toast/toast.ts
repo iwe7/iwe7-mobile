@@ -7,7 +7,9 @@ import {
   HostBinding,
   ChangeDetectorRef,
   SimpleChanges,
-  OnChanges
+  OnChanges,
+  Output,
+  EventEmitter
 } from "@angular/core";
 
 @Component({
@@ -20,21 +22,27 @@ export class AmToastComponent implements OnInit, OnChanges {
   @Input() onClose: Function;
   @Input() mask: boolean = true;
   @Input() icon: string | TemplateRef<any> | Type<any>;
+  @Output() hide: EventEmitter<any> = new EventEmitter();
+  @HostBinding("class.am-toast-mask")
+  get toastMask() {
+    return this.mask;
+  }
 
-  // @HostBinding("class.am-toast-mask")
-  // get toastMask() {
-  //   return this.mask;
-  // }
+  @HostBinding("class.am-toast-nomask")
+  get toastNoMask() {
+    return !this.mask;
+  }
 
-  // @HostBinding("class.am-toast-nomask")
-  // get toastNoMask() {
-  //   return !this.mask;
-  // }
-
-  // @HostBinding("class.am-toast") _toast: boolean = true;
+  @HostBinding("class.am-toast") _toast: boolean = true;
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    if (this.duration > 0) {
+      setTimeout(() => {
+        this.hide.emit();
+      }, this.duration * 1000);
+    }
+  }
 
   ngOnChanges(changes: SimpleChanges) {}
 }

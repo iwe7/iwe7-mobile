@@ -4678,9 +4678,15 @@ isurl@^1.0.0-alpha5:
     has-to-string-tag-x "^1.2.0"
     is-object "^1.0.1"
 
-iwe7-base@^6.0.9:
-  version "6.0.9"
-  resolved "https://registry.yarnpkg.com/iwe7-base/-/iwe7-base-6.0.9.tgz#24abfe9e8d4d00b1c8ee8a560cc5d97e0c1eaf38"
+iwe7-antd-mobile@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/iwe7-antd-mobile/-/iwe7-antd-mobile-0.0.1.tgz#5e88bd10d3be81f92af83414f01395b688c3e62b"
+  dependencies:
+    tslib "^1.9.0"
+
+iwe7-base@^6.1.7:
+  version "6.1.7"
+  resolved "https://registry.yarnpkg.com/iwe7-base/-/iwe7-base-6.1.7.tgz#5af006933d0b1dd3c2d93cb23b22b4ea2d384d4a"
   dependencies:
     tslib "^1.9.0"
 

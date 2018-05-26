@@ -9,51 +9,69 @@ import {
   ViewContainerRef
 } from "@angular/core";
 import { AmToastComponent } from "./toast";
+import { Observable, fromEvent, of } from "rxjs";
+import { switchMap, tap } from "rxjs/operators";
+
+import { Iwe7Types } from "iwe7-base";
 export interface AmToastInterface {
-  content?: string | TemplateRef<any> | Type<any>;
+  content?: Iwe7Types;
   duration?: number;
   onClose?: Function;
   mask?: boolean;
+  icon?: Iwe7Types;
 }
 @Injectable({
   providedIn: "root"
 })
 export class AmToastService {
-  componentRef: ComponentRef<any>;
-  constructor(
-    public componentFactoryResolver: ComponentFactoryResolver,
-    public appRef: ApplicationRef,
-    public injector: Injector
-  ) {
-    console.log(appRef);
+  success(cfg: AmToastInterface): Observable<AmToastService> {
+    cfg["icon"] = {
+      type: "icon",
+      data: "success"
+    };
+    return this.createToast(cfg);
   }
-  success(cfg: AmToastInterface) {
-    this.createToast(cfg);
+  fail(cfg: AmToastInterface): Observable<AmToastService> {
+    cfg["icon"] = {
+      type: "icon",
+      data: "fail"
+    };
+    return this.createToast(cfg);
   }
-  fail(cfg: AmToastInterface) {
-    this.createToast(cfg);
+  info(cfg: AmToastInterface): Observable<AmToastService> {
+    return this.createToast(cfg);
   }
-  info(cfg: AmToastInterface) {
-    this.createToast(cfg);
+  loading(cfg: AmToastInterface): Observable<AmToastService> {
+    cfg["icon"] = {
+      type: "icon",
+      data: "loading"
+    };
+    return this.createToast(cfg);
   }
-  loading(cfg: AmToastInterface) {
-    this.createToast(cfg);
+  offline(cfg: AmToastInterface): Observable<AmToastService> {
+    cfg["icon"] = {
+      type: "icon",
+      data: "dislike"
+    };
+    return this.createToast(cfg);
   }
-  offline(cfg: AmToastInterface) {
-    this.createToast(cfg);
+  hide(toast: HTMLElement): void {
+    document.body.removeChild(toast);
   }
-  hide() {
-    this.appRef.detachView(this.componentRef.hostView);
-  }
-  createToast(cfg: AmToastInterface) {
-    this.componentRef = this.componentFactoryResolver
-      .resolveComponentFactory(AmToastComponent)
-      .create(this.injector, []);
-    const instance: AmToastComponent = this.componentRef.instance;
+  createToast(cfg: AmToastInterface): Observable<AmToastService> {
+    const toast = document.createElement("am-toast");
     for (const key in cfg) {
-      instance[key] = cfg[key];
+      toast[key] = cfg[key];
     }
-    console.log(instance);
-    this.appRef.attachView(this.componentRef.hostView);
+    document.body.appendChild(toast);
+    return fromEvent(toast, "hide").pipe(
+      switchMap((res: any) => {
+        return of(this).pipe(
+          tap(res => {
+            document.body.removeChild(toast);
+          })
+        );
+      })
+    );
   }
 }

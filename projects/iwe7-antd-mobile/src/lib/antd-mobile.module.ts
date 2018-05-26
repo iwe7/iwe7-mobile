@@ -11,7 +11,6 @@ import { DrawerComponent } from "./drawer/drawer.component";
 
 import { MenuComponent } from "./menu/menu.component";
 import { NavbarComponent } from "./navbar/navbar.component";
-import { IconComponent } from "./icon/icon.component";
 import { loadSprite } from "./icon.service";
 import { PopoverComponent } from "./popover/popover.component";
 import { PopoverItemComponent } from "./popover/popover-item/popover-item.component";
@@ -31,7 +30,6 @@ export const components = [
 
   MenuComponent,
   NavbarComponent,
-  IconComponent,
   PopoverComponent,
   PopoverItemComponent,
   SegmentedControlComponent,
@@ -61,6 +59,8 @@ import { AmPickerDateModule } from "./picker-date/module";
 import { AmPickerPopupModule } from "./picker-popup/module";
 import { AmTextareaModule } from "./textarea/module";
 import { AmToastModule } from "./toast/module";
+import { AmIconModule } from "./icon/module";
+import { AmInnerHtmlModule } from "./inner-html/module";
 
 @NgModule({
   imports: [
@@ -82,7 +82,9 @@ import { AmToastModule } from "./toast/module";
     AmPickerDateModule,
     AmPickerPopupModule,
     AmTextareaModule,
-    AmToastModule
+    AmToastModule,
+    AmIconModule,
+    AmInnerHtmlModule
   ],
   declarations: [...components],
   exports: [
@@ -103,7 +105,9 @@ import { AmToastModule } from "./toast/module";
     AmPickerDateModule,
     AmPickerPopupModule,
     AmTextareaModule,
-    AmToastModule
+    AmToastModule,
+    AmIconModule,
+    AmInnerHtmlModule
   ],
   providers: []
 })

@@ -5,17 +5,23 @@ import {
   Input,
   Renderer2,
   ElementRef,
-  Directive
+  Directive,
+  ViewChild
 } from "@angular/core";
-import { DomSanitizer } from "@angular/platform-browser";
+import { DomSanitizer, SafeValue } from "@angular/platform-browser";
 
-@Directive({
-  selector: "[amIcon]"
+@Component({
+  selector: "svg.am-icon,[amIcon]",
+  template: ``
 })
-export class IconComponent implements OnInit {
+export class AmIconComponent implements OnInit {
   @HostBinding("class.am-icon") _amIcon: boolean = true;
 
   _icon: string;
+  @Input()
+  set name(val: string) {
+    this.amIcon = val;
+  }
   @Input()
   set amIcon(val: string) {
     this._icon = val;
@@ -33,17 +39,9 @@ export class IconComponent implements OnInit {
   }
 
   // @HostBinding("style.background")
-  // get background() {
-  //   if (
-  //     this._icon.indexOf("http://") > -1 ||
-  //     this._icon.indexOf("https://") > -1 ||
-  //     this._icon.indexOf(".svg") > -1
-  //   ) {
-  //     return this.bg;
-  //   } else {
-  //     return false;
-  //   }
-  // }
+  get background(): SafeValue {
+    return this.bg;
+  }
 
   @Input() size: string = "md";
 
@@ -84,8 +82,8 @@ export class IconComponent implements OnInit {
     }
   }
 
-  get bg() {
-    let bg = this.dm.bypassSecurityTrustStyle(
+  get bg(): SafeValue {
+    const bg = this.dm.bypassSecurityTrustStyle(
       `url(${this.amIcon || ""}) center center / 21px 21px no-repeat`
     );
     return bg;

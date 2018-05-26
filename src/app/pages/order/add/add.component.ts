@@ -16,15 +16,9 @@ export class AddComponent implements OnInit {
   ];
 
   value: any = ["10", "21", "31"];
-  constructor(
-    public toast: AmToastService
-  ) {}
+  constructor(public toast: AmToastService) {}
 
-  ngOnInit() {
-    this.toast.success({
-      content: '成功'
-    });
-  }
+  ngOnInit() {}
 
   next() {
     this.current = this.current + 1;
