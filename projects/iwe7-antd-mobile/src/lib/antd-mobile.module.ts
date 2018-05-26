@@ -105,16 +105,6 @@ import { AmToastModule } from "./toast/module";
     AmTextareaModule,
     AmToastModule
   ],
-  providers: [
-    {
-      provide: APP_INITIALIZER,
-      useFactory: () => {
-        return () => {
-          loadSprite();
-        };
-      },
-      multi: true
-    }
-  ]
+  providers: []
 })
 export class AntdMobileModule {}

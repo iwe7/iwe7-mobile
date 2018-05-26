@@ -32,17 +32,18 @@ export class IconComponent implements OnInit {
     return this._icon;
   }
 
-  @HostBinding("style.background")
-  get background() {
-    if (
-      this._icon.indexOf("http://") > -1 ||
-      this._icon.indexOf("https://") > -1 ||
-      this._icon.indexOf(".svg") > -1
-    ) {
-      return this.bg;
-    }
-    return false;
-  }
+  // @HostBinding("style.background")
+  // get background() {
+  //   if (
+  //     this._icon.indexOf("http://") > -1 ||
+  //     this._icon.indexOf("https://") > -1 ||
+  //     this._icon.indexOf(".svg") > -1
+  //   ) {
+  //     return this.bg;
+  //   } else {
+  //     return false;
+  //   }
+  // }
 
   @Input() size: string = "md";
 
@@ -69,14 +70,15 @@ export class IconComponent implements OnInit {
   constructor(
     public render: Renderer2,
     public ele: ElementRef,
-    private dm: DomSanitizer
+    private dm: DomSanitizer,
+    public ds: DomSanitizer
   ) {}
 
   ngOnInit() {
     if (this.amIcon) {
       if (this.amIcon.indexOf(".svg") > -1) {
       } else {
-        let html = `<use xlink:href="#${this.amIcon}"></use>`;
+        const html = `<use xlink:href="#${this.amIcon}"></use>`;
         this.ele.nativeElement.innerHTML = html;
       }
     }
