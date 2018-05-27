@@ -9,5 +9,7 @@ export class AmTextComponent extends Iwe7BaseComponent implements OnInit {
   constructor(injector: Injector) {
     super(injector, "am-text");
   }
-  ngOnInit() {}
+  ngOnInit() {
+    console.log(this.text);
+  }
 }

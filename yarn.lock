@@ -4684,9 +4684,9 @@ iwe7-antd-mobile@^0.0.1:
   dependencies:
     tslib "^1.9.0"
 
-iwe7-base@^6.1.7:
-  version "6.1.7"
-  resolved "https://registry.yarnpkg.com/iwe7-base/-/iwe7-base-6.1.7.tgz#5af006933d0b1dd3c2d93cb23b22b4ea2d384d4a"
+iwe7-base@^6.2.0:
+  version "6.2.0"
+  resolved "https://registry.yarnpkg.com/iwe7-base/-/iwe7-base-6.2.0.tgz#f16c1631527b3d4c4d5dea66542a563eff7fb948"
   dependencies:
     tslib "^1.9.0"
 
@@ -4726,9 +4726,9 @@ iwe7-url@^0.0.2:
   dependencies:
     tslib "^1.9.0"
 
-iwe7-util@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/iwe7-util/-/iwe7-util-0.1.0.tgz#cd21aa64d18b625d052992ab1532a0dcf5e77f8b"
+iwe7-util@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/iwe7-util/-/iwe7-util-0.1.2.tgz#a14e4e6f47c436bf6f686fb9791c8bb37cc76096"
   dependencies:
     tslib "^1.9.0"
 

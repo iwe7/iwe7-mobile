@@ -1,0 +1,11 @@
+<div class="am-modal-content">
+  <div class="am-modal-header" *ngIf="title">
+    <ng-container *ngTemplateComponentStringOutlet="title"></ng-container>
+  </div>
+  <div class="am-modal-body" #bodyContainer>
+    <ng-container *ngTemplateComponentStringOutlet="content"></ng-container>
+  </div>
+  <div class="am-modal-footer">
+    <ng-container *ngTemplateComponentStringOutlet="footer"></ng-container>
+  </div>
+</div>

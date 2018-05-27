@@ -1,0 +1,10 @@
+.am-overlay {
+  z-index: 999;
+  height: auto;
+  top: auto;
+  overflow: visible;
+  .am-modal-popup {
+    z-index: 999;
+  }
+}
+

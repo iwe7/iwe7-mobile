@@ -61,6 +61,7 @@ import { AmTextareaModule } from "./textarea/module";
 import { AmToastModule } from "./toast/module";
 import { AmIconModule } from "./icon/module";
 import { AmInnerHtmlModule } from "./inner-html/module";
+import { AmModalModule } from "./modal/module";
 
 @NgModule({
   imports: [
@@ -84,7 +85,8 @@ import { AmInnerHtmlModule } from "./inner-html/module";
     AmTextareaModule,
     AmToastModule,
     AmIconModule,
-    AmInnerHtmlModule
+    AmInnerHtmlModule,
+    AmModalModule
   ],
   declarations: [...components],
   exports: [
@@ -107,7 +109,8 @@ import { AmInnerHtmlModule } from "./inner-html/module";
     AmTextareaModule,
     AmToastModule,
     AmIconModule,
-    AmInnerHtmlModule
+    AmInnerHtmlModule,
+    AmModalModule
   ],
   providers: []
 })

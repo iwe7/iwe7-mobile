@@ -17,3 +17,4 @@ export * from './lib/iwe7-page-detail';
 export * from './lib/iwe7-page-list';
 
 export * from './lib/create';
+export * from './lib/overlay-builder';

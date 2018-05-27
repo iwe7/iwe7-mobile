@@ -22,6 +22,9 @@
       ],
       "iwe7-elements": [
         "dist/iwe7-elements"
+      ],
+      "iwe7-dialog": [
+        "dist/iwe7-dialog"
       ]
     }
   }
