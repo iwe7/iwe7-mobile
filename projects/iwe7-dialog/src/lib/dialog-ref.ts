@@ -6,13 +6,16 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-
-import {OverlayRef, GlobalPositionStrategy, OverlaySizeConfig} from '@angular/cdk/overlay';
-import {ESCAPE} from '@angular/cdk/keycodes';
-import {Observable} from 'rxjs';
-import {map, filter} from 'rxjs/operators';
-import {DialogPosition} from './dialog-config';
-import {CdkDialogContainer} from './dialog-container';
+import {
+  OverlayRef,
+  GlobalPositionStrategy,
+  OverlaySizeConfig
+} from "@angular/cdk/overlay";
+import { ESCAPE } from "@angular/cdk/keycodes";
+import { Observable } from "rxjs";
+import { map, filter } from "rxjs/operators";
+import { DialogPosition } from "./dialog-config";
+import { CdkDialogContainer } from "./dialog-container";
 
 /** Unique id for the created dialog. */
 let uniqueId = 0;
@@ -33,8 +36,8 @@ export class DialogRef<T, R = any> {
   constructor(
     public _overlayRef: OverlayRef,
     protected _containerInstance: CdkDialogContainer,
-    readonly id: string = `dialog-${uniqueId++}`) {
-
+    readonly id: string = `dialog-${uniqueId++}`
+  ) {
     // If the dialog has a backdrop, handle clicks from the backdrop.
     if (_containerInstance._config.hasBackdrop) {
       _overlayRef.backdropClick().subscribe(() => {
@@ -55,7 +58,8 @@ export class DialogRef<T, R = any> {
     });
 
     // Close when escape keydown event occurs
-    _overlayRef.keydownEvents()
+    _overlayRef
+      .keydownEvents()
       .pipe(filter(event => event.keyCode === ESCAPE && !this.disableClose))
       .subscribe(() => this.close());
   }
@@ -82,13 +86,17 @@ export class DialogRef<T, R = any> {
     const strategy = this._getPositionStrategy();
 
     if (position && (position.left || position.right)) {
-      position.left ? strategy.left(position.left) : strategy.right(position.right);
+      position.left
+        ? strategy.left(position.left)
+        : strategy.right(position.right);
     } else {
       strategy.centerHorizontally();
     }
 
     if (position && (position.top || position.bottom)) {
-      position.top ? strategy.top(position.top) : strategy.bottom(position.bottom);
+      position.top
+        ? strategy.top(position.top)
+        : strategy.bottom(position.bottom);
     } else {
       strategy.centerVertically();
     }
@@ -123,7 +131,8 @@ export class DialogRef<T, R = any> {
 
   /** Fetches the position strategy object from the overlay ref. */
   private _getPositionStrategy(): GlobalPositionStrategy {
-    return this._overlayRef.getConfig().positionStrategy as GlobalPositionStrategy;
+    return this._overlayRef.getConfig()
+      .positionStrategy as GlobalPositionStrategy;
   }
 
   /** Gets an observable that emits when dialog begins opening. */

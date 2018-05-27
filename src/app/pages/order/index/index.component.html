@@ -16,3 +16,12 @@
     </ul>
   </ng-template>
 </tabs>
+
+
+<cdk-virtual-scroll-viewport autosize>
+  <div *cdkVirtualFor="let item of list">{{item}}</div>
+</cdk-virtual-scroll-viewport>
+
+<cdk-virtual-scroll-viewport autosize>
+    <div *cdkVirtualFor="let item of list">{{item}}</div>
+  </cdk-virtual-scroll-viewport>

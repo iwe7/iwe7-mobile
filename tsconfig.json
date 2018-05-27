@@ -25,6 +25,9 @@
       ],
       "iwe7-dialog": [
         "dist/iwe7-dialog"
+      ],
+      "iwe7-scrolling": [
+        "dist/iwe7-scrolling"
       ]
     }
   }

@@ -8,10 +8,12 @@ import { SharedModule } from "./shared/shared.module";
 import { APP_BASE_HREF } from "@angular/common";
 
 import { loadSprite } from "../../projects/iwe7-antd-mobile/src/public_api";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     RouterModule.forRoot(
       [
         {

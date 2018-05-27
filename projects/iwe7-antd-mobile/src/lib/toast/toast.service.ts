@@ -13,6 +13,8 @@ import { Observable, fromEvent, of } from "rxjs";
 import { switchMap, tap } from "rxjs/operators";
 
 import { Iwe7Types } from "iwe7-base";
+
+import { Dialog } from 'iwe7-dialog';
 export interface AmToastInterface {
   content?: Iwe7Types;
   duration?: number;
@@ -24,6 +26,7 @@ export interface AmToastInterface {
   providedIn: "root"
 })
 export class AmToastService {
+  constructor(public dialog: Dialog){}
   success(cfg: AmToastInterface): Observable<AmToastService> {
     cfg["icon"] = {
       type: "icon",

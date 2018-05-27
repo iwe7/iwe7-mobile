@@ -32,8 +32,7 @@ import {
   OverlayRef,
   OverlayConfig
 } from "@angular/cdk/overlay";
-import { startWith } from "rxjs/operators";
-
+import { startWith, map, tap, switchMap } from "rxjs/operators";
 import {
   DIALOG_SCROLL_STRATEGY,
   DIALOG_DATA,
@@ -107,9 +106,8 @@ export class Dialog {
   openFromComponent<T>(
     component: ComponentType<T>,
     config?: DialogConfig
-  ): DialogRef<any> {
+  ): Observable<DialogRef<any>> {
     config = this._applyConfigDefaults(config);
-
     if (config.id && this.getById(config.id)) {
       throw Error(
         `Dialog with id "${
@@ -117,25 +115,25 @@ export class Dialog {
         }" exists already. The dialog id must be unique.`
       );
     }
-
     const overlayRef = this._createOverlay(config);
-    const dialogContainer = this._attachDialogContainer(overlayRef, config);
-    const dialogRef = this._attachDialogContentForComponent(
-      component,
-      dialogContainer,
-      overlayRef,
-      config
+    return this._attachDialogContainer(overlayRef, config).pipe(
+      map(dialogContainer => {
+        return this._attachDialogContentForComponent(
+          component,
+          dialogContainer,
+          overlayRef,
+          config
+        );
+      }),
+      tap(dialogRef => this.registerDialogRef(dialogRef))
     );
-
-    this.registerDialogRef(dialogRef);
-    return dialogRef;
   }
 
   /** Opens a dialog from a template. */
   openFromTemplate<T>(
     template: TemplateRef<T>,
     config?: DialogConfig
-  ): DialogRef<any> {
+  ): Observable<DialogRef<any>> {
     config = this._applyConfigDefaults(config);
 
     if (config.id && this.getById(config.id)) {
@@ -147,16 +145,17 @@ export class Dialog {
     }
 
     const overlayRef = this._createOverlay(config);
-    const dialogContainer = this._attachDialogContainer(overlayRef, config);
-    const dialogRef = this._attachDialogContentForTemplate(
-      template,
-      dialogContainer,
-      overlayRef,
-      config
+    return this._attachDialogContainer(overlayRef, config).pipe(
+      map(dialogContainer =>
+        this._attachDialogContentForTemplate(
+          template,
+          dialogContainer,
+          overlayRef,
+          config
+        )
+      ),
+      tap(dialogRef => this.registerDialogRef(dialogRef))
     );
-
-    this.registerDialogRef(dialogRef);
-    return dialogRef;
   }
 
   /**
@@ -164,12 +163,10 @@ export class Dialog {
    */
   private registerDialogRef(dialogRef: DialogRef<any>): void {
     this.openDialogs.push(dialogRef);
-
     const dialogOpenSub = dialogRef.afterOpen().subscribe(() => {
       this.afterOpen.next(dialogRef);
       dialogOpenSub.unsubscribe();
     });
-
     const dialogCloseSub = dialogRef.afterClosed().subscribe(() => {
       const dialogIdx = this._openDialogs.indexOf(dialogRef);
       if (dialogIdx !== -1) {
@@ -200,7 +197,6 @@ export class Dialog {
       maxWidth: config.maxWidth,
       maxHeight: config.maxHeight
     });
-
     if (config.backdropClass) {
       overlayConfig.backdropClass = config.backdropClass;
     }
@@ -216,7 +212,7 @@ export class Dialog {
   protected _attachDialogContainer(
     overlay: OverlayRef,
     config: DialogConfig
-  ): CdkDialogContainer {
+  ): Observable<CdkDialogContainer> {
     const container =
       config.containerComponent || this.injector.get(DIALOG_CONTAINER);
     const userInjector =
@@ -230,12 +226,16 @@ export class Dialog {
       config.viewContainerRef,
       injector
     );
-    const containerRef: ComponentRef<CdkDialogContainer> = overlay.attach(
-      containerPortal
-    );
-    containerRef.instance._config = config;
-
-    return containerRef.instance;
+    return Observable.create(obser => {
+      setTimeout(() => {
+        const containerRef: ComponentRef<CdkDialogContainer> = overlay.attach(
+          containerPortal
+        );
+        containerRef.instance._config = config;
+        obser.next(containerRef.instance);
+        obser.complete();
+      }, 0);
+    });
   }
 
   /**
@@ -253,14 +253,11 @@ export class Dialog {
     overlayRef: OverlayRef,
     config: DialogConfig
   ): DialogRef<any> {
-    // Create a reference to the dialog we're creating in order to give the user a handle
-    // to modify and close it.
     const dialogRef = new this.dialogRefConstructor(
       overlayRef,
       dialogContainer,
       config.id
     );
-
     const injector = this._createInjector<T>(
       config,
       dialogRef,
@@ -269,11 +266,12 @@ export class Dialog {
     const contentRef = dialogContainer.attachComponentPortal(
       new ComponentPortal(componentOrTemplateRef, undefined, injector)
     );
-    dialogRef.componentInstance = contentRef.instance;
-
-    dialogRef
-      .updateSize({ width: config.width, height: config.height })
-      .updatePosition(config.position);
+    setTimeout(() => {
+      (<any>dialogRef).componentInstance = contentRef.instance;
+      dialogRef
+        .updateSize({ width: config.width, height: config.height })
+        .updatePosition(config.position);
+    }, 0);
 
     return dialogRef;
   }

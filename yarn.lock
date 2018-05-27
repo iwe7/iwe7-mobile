@@ -4696,6 +4696,12 @@ iwe7-decorator@^0.0.2:
   dependencies:
     tslib "^1.9.0"
 
+iwe7-dialog@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/iwe7-dialog/-/iwe7-dialog-0.0.1.tgz#951ec54ac6321354d001eaef4e2876b8f5de40a8"
+  dependencies:
+    tslib "^1.9.0"
+
 iwe7-http@^6.0.0:
   version "6.0.0"
   resolved "https://registry.yarnpkg.com/iwe7-http/-/iwe7-http-6.0.0.tgz#53472b6e9fe42d5adff05845186d8dcbe64c5a52"
@@ -4717,6 +4723,12 @@ iwe7-reflect@^0.0.3:
 iwe7-router@^6.0.6:
   version "6.0.6"
   resolved "https://registry.yarnpkg.com/iwe7-router/-/iwe7-router-6.0.6.tgz#3cdcfb651cfd914e1c56b36dc3354f0c1b3a53e2"
+  dependencies:
+    tslib "^1.9.0"
+
+iwe7-scrolling@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/iwe7-scrolling/-/iwe7-scrolling-0.0.1.tgz#a8e40f85579bdb47250ef69f8b61a95b2f12885d"
   dependencies:
     tslib "^1.9.0"
 

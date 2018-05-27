@@ -30,7 +30,30 @@ export class IndexComponent extends Iwe7PageList implements OnInit {
     }
   ];
 
-  list: any[] = [];
+  list: any[] = [
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20
+  ];
   router: Router;
 
   constructor(injector: Injector) {

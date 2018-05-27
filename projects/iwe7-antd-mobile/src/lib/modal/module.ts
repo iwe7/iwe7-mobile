@@ -6,9 +6,10 @@ import { NgTemplateComponentStringOutletDirective } from "./directives/ng-templa
 import { OverlayModule } from "@angular/cdk/overlay";
 import { AmInnerComponent } from "./directives/inner";
 import { AmTextModule } from "../text/module";
+import { DialogModule } from "../../../../iwe7-dialog/src/public_api";
 
 @NgModule({
-  imports: [CommonModule, OverlayModule, AmTextModule],
+  imports: [CommonModule, OverlayModule, DialogModule],
   exports: [AmModalComponent],
   declarations: [
     AmModalComponent,

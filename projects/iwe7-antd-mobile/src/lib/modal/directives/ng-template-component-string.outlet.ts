@@ -26,10 +26,6 @@ export class NgTemplateComponentStringOutletDirective
   ) {}
 
   ngOnInit() {
-    console.log(
-      "ng template component string outlet on init",
-      this.ngTemplateComponentStringOutlet
-    );
     this.update();
   }
 
@@ -43,11 +39,7 @@ export class NgTemplateComponentStringOutletDirective
 
   update() {
     if (typeof this.ngTemplateComponentStringOutlet === "string") {
-      console.dir(this.ele.nativeElement);
       this.ele.nativeElement.parentElement.innerHTML = this.ngTemplateComponentStringOutlet;
     }
-    console.log(typeof this.ngTemplateComponentStringOutlet);
-    console.log(this.ngTemplateComponentStringOutlet instanceof TemplateRef);
-    console.log(this.ngTemplateComponentStringOutlet instanceof Component);
   }
 }

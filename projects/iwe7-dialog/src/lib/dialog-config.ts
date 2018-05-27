@@ -89,4 +89,10 @@ export class DialogConfig<D = any> {
 
   /** Whether the dialog should focus the first focusable element on open. */
   autoFocus?: boolean = true;
+
+  popup?: boolean = false;
+
+  transparent?: boolean = true;
+
+  animationType?: string = "slide-up";
 }

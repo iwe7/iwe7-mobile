@@ -34,7 +34,8 @@ import {
   OnDestroy,
   Optional,
   ViewChild,
-  ViewEncapsulation
+  ViewEncapsulation,
+  Input
 } from "@angular/core";
 import { Subject } from "rxjs";
 import { DialogConfig } from "./dialog-config";
@@ -50,7 +51,6 @@ export function throwDialogContentAlreadyAttachedError() {
  * @docs-private
  */
 @Component({
-  moduleId: module.id,
   selector: "cdk-dialog-container",
   templateUrl: "./dialog-container.html",
   styleUrls: ["dialog-container.css"],
@@ -123,6 +123,26 @@ export class CdkDialogContainer extends BasePortalOutlet implements OnDestroy {
 
   /** A subject emitting after the dialog exits the view. */
   _afterExit: Subject<void> = new Subject();
+
+  @HostBinding("class.am-modal") modal: boolean = true;
+  @HostBinding("class.am-modal-transparent")
+  get transparent() {
+    return !this._config.popup && this._config.transparent;
+  }
+  @HostBinding("class.am-modal-popup")
+  get popup() {
+    return this._config.popup;
+  }
+
+  @HostBinding("class.am-modal-popup-slide-up")
+  get slideUp() {
+    return this._config.animationType === "slide-up" && this._config.popup;
+  }
+
+  @HostBinding("class.am-modal-popup-slide-down")
+  get slideDown() {
+    return this._config.animationType === "slide-down" && this._config.popup;
+  }
 
   constructor(
     private _elementRef: ElementRef,
