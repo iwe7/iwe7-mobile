@@ -7,6 +7,9 @@ import { Iwe7FormsModule } from "projects/iwe7-forms/src/lib/form";
 import { Iwe7DirectivesModule } from "projects/iwe7-directives/src/lib/module";
 import { DialogModule } from "iwe7-dialog";
 import { ScrollingModule } from "iwe7-scrolling";
+import {
+  Iwe7ButtonComponent,
+} from "./button.example";
 @NgModule({
   imports: [
     CommonModule,
@@ -18,13 +21,14 @@ import { ScrollingModule } from "iwe7-scrolling";
     DialogModule,
     ScrollingModule
   ],
-  declarations: [],
+  declarations: [Iwe7ButtonComponent],
   exports: [
     AntdMobileModule,
     ComponentsModule,
     Iwe7DirectivesModule,
     DialogModule,
-    ScrollingModule
+    ScrollingModule,
+    Iwe7ButtonComponent
   ]
 })
 export class SharedModule {}
