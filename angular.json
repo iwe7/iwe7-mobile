@@ -789,38 +789,38 @@
         }
       }
     },
-    "iwe7-dialog": {
-      "root": "projects/iwe7-dialog",
-      "sourceRoot": "projects/iwe7-dialog/src",
+    "iwe7-base": {
+      "root": "projects/iwe7-base",
+      "sourceRoot": "projects/iwe7-base/src",
       "projectType": "library",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {
-            "tsConfig": "projects/iwe7-dialog/tsconfig.lib.json",
-            "project": "projects/iwe7-dialog/ng-package.json"
+            "tsConfig": "projects/iwe7-base/tsconfig.lib.json",
+            "project": "projects/iwe7-base/ng-package.json"
           },
           "configurations": {
             "production": {
-              "project": "projects/iwe7-dialog/ng-package.prod.json"
+              "project": "projects/iwe7-base/ng-package.prod.json"
             }
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/iwe7-dialog/src/test.ts",
-            "tsConfig": "projects/iwe7-dialog/tsconfig.spec.json",
-            "karmaConfig": "projects/iwe7-dialog/karma.conf.js"
+            "main": "projects/iwe7-base/src/test.ts",
+            "tsConfig": "projects/iwe7-base/tsconfig.spec.json",
+            "karmaConfig": "projects/iwe7-base/karma.conf.js"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/iwe7-dialog/tsconfig.lib.json",
-              "projects/iwe7-dialog/tsconfig.spec.json"
+              "projects/iwe7-base/tsconfig.lib.json",
+              "projects/iwe7-base/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
