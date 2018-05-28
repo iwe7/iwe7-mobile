@@ -16,7 +16,7 @@ import { DomSanitizer } from "@angular/platform-browser";
   styleUrls: ["./tab-bar-item.component.css"],
   encapsulation: ViewEncapsulation.None
 })
-export class TabBarItemComponent implements OnInit {
+export class AmTabBarItemComponent implements OnInit {
   @Input() item: any = {};
   @HostBinding("class.am-tab-bar-tab") _tab: boolean = true;
   @Output() click: EventEmitter<any> = new EventEmitter();

@@ -1,123 +1,68 @@
 import {
   Component,
   OnInit,
-  Input,
-  Output,
-  EventEmitter,
-  HostBinding,
-  ViewEncapsulation,
   Directive,
-  ElementRef,
-  OnChanges
+  Injector,
+  Optional,
+  SkipSelf
 } from "@angular/core";
-export const prefixCls: string = "am-button";
-import classnames from "classnames";
-import { fromEvent, merge, of } from "rxjs";
-import { switchMap, takeUntil, tap } from "rxjs/operators";
-import { onTouchStart, onTouchCancel, onTouchEnd } from "iwe7-util";
-@Directive({
-  selector: "[am-button]"
+
+import {
+  AmButtonInputsInterface,
+  AmButtonType,
+  AmButtonSize,
+  AmButtonInputsDefault,
+  AmButtonAbstrace,
+  AmButtonRef
+} from "./button.interface";
+
+@Component({
+  selector: "a[am-button],button[am-button],[am-button]",
+  host: {
+    [`[class.am-button]`]: "'true'",
+    [`[class.am-button-primary]`]: "isPrimary",
+    [`[class.am-button-warning]`]: "isWarning",
+    [`[class.am-button-ghost]`]: "isGhost",
+    [`[class.am-button-small]`]: "isSmall",
+    [`[class.am-button-large]`]: "isLarge",
+    [`[class.am-button-disabled]`]: "disabled",
+    [`[class.am-button-loading]`]: "loading",
+    [`[class.am-button-inline]`]: "inline",
+    [`[class.am-button-block]`]: "!inline",
+    [`[class.am-button-icon]`]: "buttonIcon",
+    ["(click)"]: "handleClick($event)"
+  },
+  template: `<svg class="am-button-icon" amIcon="loading" *ngIf="loading"></svg><svg class="am-button-icon" [amIcon]="icon" *ngIf="!loading && icon"></svg><ng-content></ng-content>`
 })
-export class ButtonComponent implements OnInit, OnChanges {
-  @Input() type: "primary" | "warning" | "ghost" = "primary";
-
-  @HostBinding("class.am-button")
-  get amButton() {
-    return true;
-  }
-
-  @HostBinding("class.am-button-primary")
-  get buttonPrimary() {
+export class AmButtonComponent extends AmButtonRef
+  implements OnInit, AmButtonInputsInterface {
+  get isPrimary() {
     return this.type === "primary";
   }
-
-  @HostBinding("class.am-button-warning")
-  get buttonWarning() {
+  get isWarning() {
     return this.type === "warning";
   }
-
-  @HostBinding("class.am-button-ghost")
-  get buttonGhost() {
+  get isGhost() {
     return this.type === "ghost";
   }
-
-  @Input() size: "large" | "small" = "large";
-
-  @HostBinding("class.am-button-small")
-  get buttonSmall() {
+  get isSmall(): boolean {
     return this.size === "small";
   }
-
-  @HostBinding("class.am-button-large")
-  get buttonLarge() {
+  get isLarge(): boolean {
     return this.size === "large";
   }
-
-  @HostBinding("class.am-button-disabled")
-  get buttonDisabled() {
-    return !!this.disabled;
-  }
-  @Input() disabled: boolean = false;
-
-  @HostBinding("class.am-button-loading")
-  @Input()
-  loading: boolean = false;
-
-  @HostBinding("class.am-button-inline")
-  @Input()
-  inline: boolean = false;
-
-  @Input() icon: string;
-  @HostBinding("class.am-button-icon")
   get buttonIcon() {
     return this.loading ? "loading" : this.icon;
   }
-
-  @Input() activeStyle: any = {};
-  @Input() activeClassName: string = "am-button";
-
-  @HostBinding("class.am-button-active")
-  @Input()
-  active: boolean = false;
-
-  @Output() clickStream: EventEmitter<any> = new EventEmitter();
-  @HostBinding("style.width.%") width: number = 100;
-
-  get _activeClassName() {
-    return (
-      this.activeClassName ||
-      (this.activeStyle ? `${prefixCls}-active` : undefined)
-    );
+  constructor(
+    injector: Injector,
+    @Optional()
+    @SkipSelf()
+    parent: AmButtonComponent
+  ) {
+    super(injector, parent);
   }
-
-  constructor(public ele: ElementRef) {}
-
-  ngOnChanges() {}
-
   ngOnInit() {
-    const ele = this.ele.nativeElement;
-    onTouchStart(ele)
-      .pipe(
-        tap((res: any) => {
-          res.stopPropagation();
-          res.preventDefault();
-          this.active = true;
-        }),
-        switchMap(res =>
-          of(res).pipe(takeUntil(merge(onTouchEnd(ele), onTouchCancel(ele))))
-        )
-      )
-      .subscribe(res => {
-        this.doClick(res);
-      });
-  }
-
-  doClick(e: any) {
-    if (!this.disabled) {
-      this.clickStream.emit(e);
-      setTimeout(() => {
-        this.active = false;
-      }, 300);
-    }
+    this.bindingEvent();
   }
 }

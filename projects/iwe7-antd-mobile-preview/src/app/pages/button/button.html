@@ -1,0 +1,58 @@
+<app-demo name="Button">
+  <app-demo-container title="类型、尺寸">
+    <a am-button>default</a>
+    <white-space></white-space>
+    <a am-button disabled>default disabled</a>
+    <white-space></white-space>
+    <a am-button type="primary">primary</a>
+    <white-space></white-space>
+    <a am-button type="primary" disabled>primary dieabled</a>
+
+    <white-space></white-space>
+    <a am-button type="warning">warning</a>
+    <white-space></white-space>
+    <a am-button type="warning" disabled>warning dieabled</a>
+
+    <white-space></white-space>
+    <a am-button loading>loading button</a>
+
+    <white-space></white-space>
+    <a am-button icon="check-circle-o">with icon</a>
+
+    <white-space></white-space>
+    <a am-button icon="https://gw.alipayobjects.com/zos/rmsportal/jBfVSpDwPbitsABtDDlB.svg">
+      with custom icon
+    </a>
+    <white-space></white-space>
+    <a am-button inline type="primary" style="margin-right: 4px;">inline primary</a>
+    <a am-button inline type="ghost">inline ghost</a>
+    <white-space></white-space>
+    <a am-button inline size="small" type="primary" style="margin-right: 4px;">primary</a>
+    <a am-button inline size="small" type="primary" disabled>primary disabled</a>
+    <white-space></white-space>
+    <a am-button inline size="small" type="ghost" style="margin-right: 4px;">ghost</a>
+    <a am-button inline size="small" type="ghost" disabled>ghost disabled</a>
+  </app-demo-container>
+  <app-demo-container title="其他">
+    <am-list>
+      <am-list-item>
+        Regional manager
+        <ng-template #brief>
+          Can be collected, refund, discount management, view data and other operations
+        </ng-template>
+        <ng-template #extra>
+          <a am-button type="ghost" size="small" inline>small</a>
+        </ng-template>
+      </am-list-item>
+      <am-list-item>
+        Regional manager
+        <ng-template #brief>
+          Can be collected, refund, discount management, view data and other operations
+        </ng-template>
+        <ng-template #extra>
+          <a am-button type="primary" size="small" inline>small</a>
+        </ng-template>
+      </am-list-item>
+    </am-list>
+  </app-demo-container>
+</app-demo>

@@ -7,12 +7,19 @@ import {
 } from "@angular/core";
 
 @Component({
-  selector: "[listItem],list-item",
+  selector: "[listItem],am-list-item",
   templateUrl: "./list-item.component.html"
 })
 export class ListItemComponent {
   @HostBinding("class.am-list-item") _item: boolean = true;
   @Input() brief: string | TemplateRef<any>;
+
+  @ContentChild("brief", { read: TemplateRef })
+  set briefContent(val: TemplateRef<any>) {
+    if (val) {
+      this.brief = val;
+    }
+  }
   get briefIsString() {
     return typeof this.brief === "string";
   }
@@ -21,6 +28,13 @@ export class ListItemComponent {
     return typeof this.thumb === "string";
   }
   @Input() extra: string | TemplateRef<any>;
+
+  @ContentChild("extra", { read: TemplateRef })
+  set extraContent(val: TemplateRef<any>) {
+    if (val) {
+      this.extra = val;
+    }
+  }
 
   get extraIsString() {
     return typeof this.extra === "string";

@@ -33,7 +33,9 @@
         </list-item>
       </list>
     </div>
-    <button am-button type="primary" [disabled]="!step1.valid" (clickStream)="next()">下一步</button>
+    <a am-button type="primary" [disabled]="!step1.valid" (onClick)="next()">
+    </a>
+    <a am-button type="primary" loading="true" (onClick)="next()">下一步</a>
   </ng-container>
   <ng-container *ngIf="current ===1">
     <div class="container" [formGroup]="step2">
@@ -44,6 +46,8 @@
     <button am-button type="primary" (click)="next()">下一步</button>
   </ng-container>
   <ng-container *ngIf="current ===2">
-    <button am-button type="primary" (click)="finish()">完成</button>
+    <button am-button type="primary" (click)="finish()">
+      完成
+    </button>
   </ng-container>
 </div>

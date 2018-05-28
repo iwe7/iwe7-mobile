@@ -2,9 +2,13 @@
   <div flexItem class="am-grid-item" [class.am-grid-item-active]="item?.active" *ngFor="let item of items" [style.width.%]="100/columnNum">
     <div class="am-grid-item-content">
       <div class="am-grid-item-inner-content" [columnNum]="columnNum">
-        <img class="am-grid-icon" [src]="item?.icon">
+        <ng-container *ngTemplateOutlet="iconTpl;context: {$implicit: item}"></ng-container>
         <div class="am-grid-text">{{item?.title}}</div>
       </div>
     </div>
   </div>
 </div>
+
+<ng-template #tpl let-item>
+  <svg [amIcon]="item?.icon"></svg>
+</ng-template>

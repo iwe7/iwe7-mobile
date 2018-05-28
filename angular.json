@@ -868,6 +868,120 @@
           }
         }
       }
+    },
+    "iwe7-antd-mobile-preview": {
+      "root": "projects/iwe7-antd-mobile-preview/",
+      "sourceRoot": "projects/iwe7-antd-mobile-preview/src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/iwe7-antd-mobile-preview",
+            "index": "projects/iwe7-antd-mobile-preview/src/index.html",
+            "main": "projects/iwe7-antd-mobile-preview/src/main.ts",
+            "polyfills": "projects/iwe7-antd-mobile-preview/src/polyfills.ts",
+            "tsConfig": "projects/iwe7-antd-mobile-preview/tsconfig.app.json",
+            "assets": [
+              "projects/iwe7-antd-mobile-preview/src/favicon.ico",
+              "projects/iwe7-antd-mobile-preview/src/assets"
+            ],
+            "styles": [
+              "projects/iwe7-antd-mobile-preview/src/styles.less"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/iwe7-antd-mobile-preview/src/environments/environment.ts",
+                  "with": "projects/iwe7-antd-mobile-preview/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "iwe7-antd-mobile-preview:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "iwe7-antd-mobile-preview:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "iwe7-antd-mobile-preview:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/iwe7-antd-mobile-preview/src/test.ts",
+            "polyfills": "projects/iwe7-antd-mobile-preview/src/polyfills.ts",
+            "tsConfig": "projects/iwe7-antd-mobile-preview/tsconfig.spec.json",
+            "karmaConfig": "projects/iwe7-antd-mobile-preview/karma.conf.js",
+            "styles": [
+              "projects/iwe7-antd-mobile-preview/src/styles.less"
+            ],
+            "scripts": [],
+            "assets": [
+              "projects/iwe7-antd-mobile-preview/src/favicon.ico",
+              "projects/iwe7-antd-mobile-preview/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/iwe7-antd-mobile-preview/tsconfig.app.json",
+              "projects/iwe7-antd-mobile-preview/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "iwe7-antd-mobile-preview-e2e": {
+      "root": "projects/iwe7-antd-mobile-preview-e2e/",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/iwe7-antd-mobile-preview-e2e/protractor.conf.js",
+            "devServerTarget": "iwe7-antd-mobile-preview:serve"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "projects/iwe7-antd-mobile-preview-e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "iwe7-mobile"

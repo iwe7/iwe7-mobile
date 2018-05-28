@@ -2,7 +2,7 @@ import { Directive, OnInit, Input, HostBinding, Injector } from "@angular/core";
 import { Iwe7BaseComponent } from "iwe7-base";
 
 @Directive({
-  selector: "am-flexbox"
+  selector: "am-flexbox,[flex]"
 })
 export class AmFlexboxComponent extends Iwe7BaseComponent {
   @Input() direction: string;

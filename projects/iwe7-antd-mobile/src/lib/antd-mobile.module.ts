@@ -1,47 +1,36 @@
 import { NgModule, APP_INITIALIZER } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { ButtonComponent } from "./button/button.component";
 import { ActionSheetComponent } from "./action-sheet/action-sheet.component";
 import { ActivityIndicatorComponent } from "./activity-indicator/activity-indicator.component";
-import { GridComponent } from "./grid/grid.component";
-import { ColumnNumDirective } from "./grid/column-num.directive";
 import { WhiteSpaceDirective } from "./white-space.directive";
 import { WingBlankDirective } from "./wing-blank.directive";
 import { DrawerComponent } from "./drawer/drawer.component";
 
-import { MenuComponent } from "./menu/menu.component";
 import { NavbarComponent } from "./navbar/navbar.component";
 import { loadSprite } from "./icon.service";
 import { PopoverComponent } from "./popover/popover.component";
 import { PopoverItemComponent } from "./popover/popover-item/popover-item.component";
 import { SegmentedControlComponent } from "./segmented-control/segmented-control.component";
-import { TabBarComponent } from "./tab-bar/tab-bar.component";
 import { PullToRefreshComponent } from "./pull-to-refresh/pull-to-refresh.component";
 
 export const components = [
-  ButtonComponent,
   ActionSheetComponent,
   ActivityIndicatorComponent,
-  GridComponent,
-  ColumnNumDirective,
   WhiteSpaceDirective,
   WingBlankDirective,
   DrawerComponent,
-
-  MenuComponent,
   NavbarComponent,
   PopoverComponent,
   PopoverItemComponent,
   SegmentedControlComponent,
-  TabBarComponent,
-  TabBarItemComponent,
   CarouselComponent,
   PullToRefreshComponent
 ];
 
 import { TabsModule } from "./tabs/tabs.module";
-import { BadgeModule } from "./badge/badge.module";
-import { TabBarItemComponent } from "./tab-bar/tab-bar-item/tab-bar-item.component";
+import { AmTabBarModule } from "./tab-bar/module";
+
+import { AmBadgeModule } from "./badge/module";
 import { CarouselComponent } from "./carousel/carousel.component";
 import { RouterModule } from "@angular/router";
 import { StepsModule } from "./steps/module";
@@ -62,55 +51,43 @@ import { AmToastModule } from "./toast/module";
 import { AmIconModule } from "./icon/module";
 import { AmInnerHtmlModule } from "./inner-html/module";
 import { AmModalModule } from "./modal/module";
+import { AmGridModule } from "./grid/module";
+import { AmButtonModule } from "./button/module";
+import { AmMenuModule } from "./menu/module";
 
+export const AntdExportModule = [
+  TabsModule,
+  AmBadgeModule,
+  RouterModule,
+  StepsModule,
+  AmListModule,
+  AmStepperModule,
+  AmFlexBoxModule,
+  AmImagePickerModule,
+  AmSearchModule,
+  AmSwitchModule,
+  AmSLiderModule,
+  AmRadioModule,
+  AmCheckboxModule,
+  AmPickerModule,
+  AmPickerDateModule,
+  AmPickerPopupModule,
+  AmTextareaModule,
+  AmToastModule,
+  AmIconModule,
+  AmInnerHtmlModule,
+  AmModalModule,
+  AmGridModule,
+  AmButtonModule,
+  AmMenuModule,
+  AmTabBarModule
+];
 @NgModule({
-  imports: [
-    CommonModule,
-    TabsModule,
-    BadgeModule,
-    RouterModule,
-    StepsModule,
-    AmListModule,
-    AmStepperModule,
-    AmFlexBoxModule,
-    AmImagePickerModule,
-    AmSearchModule,
-    AmSwitchModule,
-    AmSLiderModule,
-    AmRadioModule,
-    AmCheckboxModule,
-    AmPickerModule,
-    AmPickerDateModule,
-    AmPickerPopupModule,
-    AmTextareaModule,
-    AmToastModule,
-    AmIconModule,
-    AmInnerHtmlModule,
-    AmModalModule
-  ],
+  imports: [CommonModule],
   declarations: [...components],
   exports: [
     ...components,
-    TabsModule,
-    BadgeModule,
-    StepsModule,
-    AmListModule,
-    AmStepperModule,
-    AmFlexBoxModule,
-    AmImagePickerModule,
-    AmSearchModule,
-    AmSwitchModule,
-    AmSLiderModule,
-    AmRadioModule,
-    AmCheckboxModule,
-    AmPickerModule,
-    AmPickerDateModule,
-    AmPickerPopupModule,
-    AmTextareaModule,
-    AmToastModule,
-    AmIconModule,
-    AmInnerHtmlModule,
-    AmModalModule
+    ...AntdExportModule
   ],
   providers: []
 })

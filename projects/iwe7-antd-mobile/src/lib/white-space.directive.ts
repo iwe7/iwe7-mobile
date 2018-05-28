@@ -4,7 +4,7 @@ import { Directive, HostBinding, Input } from "@angular/core";
   selector: "[whiteSpace],white-space"
 })
 export class WhiteSpaceDirective {
-  @Input() whiteSpace: string;
+  @Input() whiteSpace: string = 'md';
   @HostBinding("class.am-whitespace") _whitespace: boolean = true;
 
   @HostBinding("class.am-whitespace-xs")

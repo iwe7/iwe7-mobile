@@ -18,7 +18,7 @@ export interface TabBarInterface {
   templateUrl: "./tab-bar.component.html",
   styleUrls: ["./tab-bar.component.css"]
 })
-export class TabBarComponent implements OnInit {
+export class AmTabBarComponent implements OnInit {
   @HostBinding("class.am-tab-bar") amTabBar: boolean = true;
 
   @Input() tabs: any[] = [];

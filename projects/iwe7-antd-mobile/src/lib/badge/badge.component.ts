@@ -18,7 +18,7 @@ const prefixCls = "am-badge";
   styleUrls: ["./badge.component.less"],
   encapsulation: ViewEncapsulation.None
 })
-export class BadgeComponent implements OnInit, OnChanges {
+export class AmBadgeComponent implements OnInit, OnChanges {
   @Input() className: string;
   @Input() size: "large" | "small" = "small";
   @HostBinding("class.am-badge-corner-wrapper-large")

@@ -10,7 +10,7 @@ import {
 @Directive({
   selector: "[columnNum]"
 })
-export class ColumnNumDirective implements OnInit {
+export class AmColumnNumDirective implements OnInit {
   @Input() columnNum: number = 4;
   constructor(public render: Renderer2, public ele: ElementRef) {}
 

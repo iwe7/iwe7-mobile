@@ -11,27 +11,32 @@ import {
 import { DomSanitizer, SafeValue } from "@angular/platform-browser";
 
 @Component({
-  selector: "svg.am-icon,[amIcon]",
-  template: ``
+  selector: "Icon,svg[amIcon],[amIcon]",
+  template: ``,
+  host: {
+    [`[class.am-icon]`]: "true",
+    [`[class.am-icon-md]`]: 'size === "md"',
+    [`[class.am-icon-xxs]`]: 'size === "xxs"',
+    [`[class.am-icon-xs]`]: 'size === "xs"',
+    [`[class.am-icon-sm]`]: 'size === "sm"',
+    [`[class.am-icon-lg]`]: 'size === "lg"'
+  }
 })
 export class AmIconComponent implements OnInit {
-  @HostBinding("class.am-icon") _amIcon: boolean = true;
-
   _icon: string;
   @Input()
-  set name(val: string) {
+  set type(val: string) {
     this.amIcon = val;
   }
+
   @Input()
   set amIcon(val: string) {
-    this._icon = val;
-    if (
-      this._icon.indexOf("http://") > -1 ||
-      this._icon.indexOf("https://") > -1 ||
-      this._icon.indexOf(".svg") > -1
-    ) {
-    } else {
-      this.render.addClass(this.ele.nativeElement, `am-icon-${val}`);
+    if (val) {
+      this._icon = val;
+      if (this._icon.indexOf(".svg") > -1) {
+      } else {
+        this.render.addClass(this.ele.nativeElement, `am-icon-${val}`);
+      }
     }
   }
   get amIcon() {
@@ -40,31 +45,17 @@ export class AmIconComponent implements OnInit {
 
   @HostBinding("style.background")
   get background(): SafeValue {
-    return this.bg;
+    if (this._icon) {
+      if (this._icon.indexOf(".svg") > -1) {
+        return this.bg;
+      }
+    }
   }
-
   @Input() size: string = "md";
+  @Input() color: string;
 
-  @HostBinding("class.am-icon-md")
-  get md() {
-    return this.size === "md";
-  }
-  @HostBinding("class.am-icon-xxs")
-  get xxs() {
-    return this.size === "xxs";
-  }
-  @HostBinding("class.am-icon-xs")
-  get xs() {
-    return this.size === "xs";
-  }
-  @HostBinding("class.am-icon-sm")
-  get sm() {
-    return this.size === "sm";
-  }
-  @HostBinding("class.am-icon-lg")
-  get lg() {
-    return this.size === "lg";
-  }
+  tagName: string;
+
   constructor(
     public render: Renderer2,
     public ele: ElementRef,
@@ -73,10 +64,22 @@ export class AmIconComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.tagName = this.ele.nativeElement.tagName;
     if (this.amIcon) {
-      if (this.amIcon.indexOf(".svg") > -1) {
+      this.createSvg();
+    }
+  }
+
+  createSvg() {
+    if (this.amIcon) {
+      if (this.tagName === "svg") {
+        if (this.amIcon.indexOf(".svg") > -1) {
+        } else {
+          const html = `<use xlink:href="#${this.amIcon}"></use>`;
+          this.ele.nativeElement.innerHTML = html;
+        }
       } else {
-        const html = `<use xlink:href="#${this.amIcon}"></use>`;
+        const html = `<svg><use xlink:href="#${this.amIcon}"></use></svg>`;
         this.ele.nativeElement.innerHTML = html;
       }
     }

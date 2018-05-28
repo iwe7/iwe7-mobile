@@ -1,0 +1,12 @@
+<app-demo name="Icon">
+  <app-demo-container title="基本">
+    <am-grid [data]="data" columnNum="3"></am-grid>
+  </app-demo-container>
+  <app-demo-container title="大小">
+    <am-grid [data]="data2" columnNum="5">
+      <ng-template #icon let-item>
+        <svg [amIcon]="item.icon" [size]="item.size"></svg>
+      </ng-template>
+    </am-grid>
+  </app-demo-container>
+</app-demo>

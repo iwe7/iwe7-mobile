@@ -1,11 +1,11 @@
 import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: "menu",
+  selector: "am-menu",
   templateUrl: "./menu.component.html",
   styleUrls: ["./menu.component.css"]
 })
-export class MenuComponent implements OnInit {
+export class AmMenuComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
