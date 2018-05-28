@@ -10,6 +10,7 @@ import { ScrollingModule } from "iwe7-scrolling";
 import {
   Iwe7ButtonComponent,
 } from "./button.example";
+import { ReactiveFormsModule } from "@angular/forms";
 @NgModule({
   imports: [
     CommonModule,
@@ -19,7 +20,8 @@ import {
     Iwe7FormsModule,
     Iwe7DirectivesModule,
     DialogModule,
-    ScrollingModule
+    ScrollingModule,
+    ReactiveFormsModule
   ],
   declarations: [Iwe7ButtonComponent],
   exports: [
@@ -28,7 +30,8 @@ import {
     Iwe7DirectivesModule,
     DialogModule,
     ScrollingModule,
-    Iwe7ButtonComponent
+    Iwe7ButtonComponent,
+    ReactiveFormsModule
   ]
 })
 export class SharedModule {}

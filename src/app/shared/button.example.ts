@@ -46,6 +46,7 @@ export class ButtonRef extends ButtonAbstract
   // outputs
   clickStream: EventEmitter<MouseEvent>;
   private destroyed: Subject<any> = new Subject();
+
   constructor(
     public _default: ButtonDefaultProps,
     public ele: ElementRef,

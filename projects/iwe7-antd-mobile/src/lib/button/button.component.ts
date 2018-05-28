@@ -7,36 +7,81 @@ import {
   HostBinding,
   ViewEncapsulation,
   Directive,
-  ElementRef
+  ElementRef,
+  OnChanges
 } from "@angular/core";
 export const prefixCls: string = "am-button";
 import classnames from "classnames";
-import { fromEvent } from "rxjs";
+import { fromEvent, merge, of } from "rxjs";
+import { switchMap, takeUntil, tap } from "rxjs/operators";
+import { onTouchStart, onTouchCancel, onTouchEnd } from "iwe7-util";
 @Directive({
   selector: "[am-button]"
 })
-export class ButtonComponent implements OnInit {
-  @Input() type: "primary" | "warning" | "ghost";
+export class ButtonComponent implements OnInit, OnChanges {
+  @Input() type: "primary" | "warning" | "ghost" = "primary";
+
+  @HostBinding("class.am-button")
+  get amButton() {
+    return true;
+  }
+
+  @HostBinding("class.am-button-primary")
+  get buttonPrimary() {
+    return this.type === "primary";
+  }
+
+  @HostBinding("class.am-button-warning")
+  get buttonWarning() {
+    return this.type === "warning";
+  }
+
+  @HostBinding("class.am-button-ghost")
+  get buttonGhost() {
+    return this.type === "ghost";
+  }
+
   @Input() size: "large" | "small" = "large";
+
+  @HostBinding("class.am-button-small")
+  get buttonSmall() {
+    return this.size === "small";
+  }
+
+  @HostBinding("class.am-button-large")
+  get buttonLarge() {
+    return this.size === "large";
+  }
+
+  @HostBinding("class.am-button-disabled")
+  get buttonDisabled() {
+    return !!this.disabled;
+  }
   @Input() disabled: boolean = false;
-  @Input() loading: boolean = false;
-  @Input() inline: boolean = false;
-  @Input() style: any;
+
+  @HostBinding("class.am-button-loading")
+  @Input()
+  loading: boolean = false;
+
+  @HostBinding("class.am-button-inline")
+  @Input()
+  inline: boolean = false;
+
+  @Input() icon: string;
+  @HostBinding("class.am-button-icon")
+  get buttonIcon() {
+    return this.loading ? "loading" : this.icon;
+  }
+
   @Input() activeStyle: any = {};
   @Input() activeClassName: string = "am-button";
-  @Input() icon: string;
-  @Input() role: string;
-  @Input() className: string;
-  @Input() prefixCls: string = "am-button";
 
   @HostBinding("class.am-button-active")
   @Input()
   active: boolean = false;
 
-  @Output() onClick: EventEmitter<any> = new EventEmitter();
+  @Output() clickStream: EventEmitter<any> = new EventEmitter();
   @HostBinding("style.width.%") width: number = 100;
-  @HostBinding("class") wrapCls: any;
-  iconCls: any;
 
   get _activeClassName() {
     return (
@@ -47,55 +92,32 @@ export class ButtonComponent implements OnInit {
 
   constructor(public ele: ElementRef) {}
 
+  ngOnChanges() {}
+
   ngOnInit() {
     const ele = this.ele.nativeElement;
-    fromEvent(ele, "touchstart").subscribe(res => {
-      this.active = true;
-    });
-    fromEvent(document, "touchcancel").subscribe(res => {
-      this.active = false;
-    });
-    fromEvent(document, "touchend").subscribe(res => {
-      this.active = false;
-    });
-    this.render();
-  }
-
-  render() {
-    const {
-      className,
-      prefixCls,
-      type,
-      size,
-      inline,
-      disabled,
-      icon,
-      loading,
-      activeStyle,
-      activeClassName,
-      active
-    } = this;
-
-    const iconType: any = loading ? "loading" : icon;
-    this.wrapCls = classnames(prefixCls, className, {
-      [`${prefixCls}-primary`]: type === "primary",
-      [`${prefixCls}-ghost`]: type === "ghost",
-      [`${prefixCls}-warning`]: type === "warning",
-      [`${prefixCls}-small`]: size === "small",
-      [`${prefixCls}-inline`]: inline,
-      [`${prefixCls}-disabled`]: disabled,
-      [`${prefixCls}-loading`]: loading,
-      [`${prefixCls}-icon`]: !!iconType
-    });
+    onTouchStart(ele)
+      .pipe(
+        tap((res: any) => {
+          res.stopPropagation();
+          res.preventDefault();
+          this.active = true;
+        }),
+        switchMap(res =>
+          of(res).pipe(takeUntil(merge(onTouchEnd(ele), onTouchCancel(ele))))
+        )
+      )
+      .subscribe(res => {
+        this.doClick(res);
+      });
   }
 
   doClick(e: any) {
-    this.onClick.emit(e);
-    this.active = true;
-    this.render();
-    setTimeout(() => {
-      this.active = false;
-      this.render();
-    }, 300);
+    if (!this.disabled) {
+      this.clickStream.emit(e);
+      setTimeout(() => {
+        this.active = false;
+      }, 300);
+    }
   }
 }
