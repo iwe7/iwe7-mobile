@@ -20,8 +20,8 @@ export class TabBarUnderlineDirective implements OnChanges {
   @Input() activeTab: number = 0;
   @Input() tabBarUnderlineStyle: any = {};
   get style() {
-    let { isTabBarVertical, size, activeTab, tabBarUnderlineStyle } = this;
-    let style = {
+    const { isTabBarVertical, size, activeTab, tabBarUnderlineStyle } = this;
+    const style = {
       ...(isTabBarVertical ? { height: `${size}%` } : { width: `${size}%` }),
       ...(isTabBarVertical
         ? { top: `${size * activeTab}%` }
@@ -37,7 +37,7 @@ export class TabBarUnderlineDirective implements OnChanges {
   }
 
   setStyle() {
-    for (let key in this.style) {
+    for (const key in this.style) {
       this.render.setStyle(this.ele.nativeElement, key, this.style[key]);
     }
   }

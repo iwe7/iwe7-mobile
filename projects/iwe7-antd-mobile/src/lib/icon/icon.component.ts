@@ -38,7 +38,7 @@ export class AmIconComponent implements OnInit {
     return this._icon;
   }
 
-  // @HostBinding("style.background")
+  @HostBinding("style.background")
   get background(): SafeValue {
     return this.bg;
   }

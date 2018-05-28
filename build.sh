@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-ng build --project iwe7-scrolling
-cd dist/iwe7-scrolling
+ng build --project iwe7-base
+cd dist/iwe7-base
 npm publish
 cd ../
-rm -rf dist/iwe7-scrolling
-yarn add iwe7-scrolling
+rm -rf dist/iwe7-base
+yarn add iwe7-base

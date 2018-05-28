@@ -20,7 +20,7 @@ import { getPxStyle } from "../util";
     </div>
   `
 })
-export class TabBarComponent {
+export class TabBarComponent implements OnInit {
   // tabs-tab-bar
   @HostBinding("class.am-tabs-default-bar") amTabsDefaultBarTap: boolean = true;
 
@@ -87,7 +87,7 @@ export class TabBarComponent {
     const isVertical = this.isTabBarVertical;
     const size = this.getTabSize(page, tabs.length);
     const center = page / 2;
-    let pos = Math.min(activeTab, tabs.length - center - 0.5);
+    const pos = Math.min(activeTab, tabs.length - center - 0.5);
     const skipSize = Math.min(-(pos - center + 0.5) * size, 0);
     this.showPrev = activeTab > center - 0.5 && tabs.length > page;
     this.showNext =
