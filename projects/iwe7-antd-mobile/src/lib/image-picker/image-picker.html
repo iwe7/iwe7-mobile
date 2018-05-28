@@ -1,6 +1,6 @@
 <div am-image-picker-list *ngFor="let items of list;index as i;">
-  <am-flexbox align="center">
-    <div am-flexbox-item *ngFor="let item of items;index as j;">
+  <am-flex align="center">
+    <div am-flex-item *ngFor="let item of items;index as j;">
       <ng-container *ngIf="item.type==='image'">
         <div am-image-picker-item>
           <ng-container *ngTemplateOutlet="tpl;context:{$implicit: item.src,i: i, j: j}"></ng-container>
@@ -10,7 +10,7 @@
         <div am-image-picker-item am-image-picker-upload-btn [multi]="multi" (onload)="onLoad($event)"></div>
       </ng-container>
     </div>
-  </am-flexbox>
+  </am-flex>
 </div>
 
 <ng-template #tpl let-image let-i="i" let-j="j">

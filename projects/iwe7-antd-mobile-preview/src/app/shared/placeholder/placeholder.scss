@@ -1,0 +1,17 @@
+.placeholder {
+  background-color: #ebebef;
+  color: #bbb;
+  text-align: center;
+  height: 30px;
+  line-height: 30px;
+  width: 100%;
+  display: block;
+  &.inline {
+    width: 80px !important;
+    margin: 9px 9px 9px 0;
+  }
+  &.small {
+    height: 20px !important;
+    line-height: 20px !important;
+  }
+}

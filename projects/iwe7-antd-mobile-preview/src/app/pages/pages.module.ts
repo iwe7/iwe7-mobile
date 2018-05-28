@@ -5,6 +5,7 @@ import { SharedModule } from "../shared/shared.module";
 import { AppButtonPageComponent } from "./button/button";
 import { AppIndexPageComponent } from "./index/index";
 import { AppIconPageComponent } from "./icon/icon";
+import { AppFlexPageComponent } from "./flex/flex";
 
 export const routes: Routes = [
   {
@@ -18,12 +19,17 @@ export const routes: Routes = [
   {
     path: "button",
     component: AppButtonPageComponent
+  },
+  {
+    path: "flex",
+    component: AppFlexPageComponent
   }
 ];
 export const PagesComponents = [
   AppButtonPageComponent,
   AppIndexPageComponent,
-  AppIconPageComponent
+  AppIconPageComponent,
+  AppFlexPageComponent
 ];
 @NgModule({
   declarations: [...PagesComponents],
