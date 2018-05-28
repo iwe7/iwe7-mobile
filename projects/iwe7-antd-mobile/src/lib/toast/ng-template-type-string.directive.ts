@@ -1,4 +1,4 @@
-import { Iwe7BaseCreate } from "../../../../iwe7-base/src/public_api";
+import { Iwe7BaseCreate } from "iwe7-base";
 import { Injector, Directive, ViewContainerRef, OnInit } from "@angular/core";
 import { AmAppendComponent } from "../inner-html/append";
 import { AmIconComponent } from "../icon/icon.component";

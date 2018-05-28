@@ -55,7 +55,7 @@
     "iwe7-antd-mobile": "^0.0.1",
     "iwe7-base": "^6.2.2",
     "iwe7-decorator": "^0.0.2",
-    "iwe7-dialog": "^0.0.1",
+    "iwe7-dialog": "^0.0.3",
     "iwe7-http": "^6.0.0",
     "iwe7-icss": "^6.0.2-bate.1",
     "iwe7-reflect": "^0.0.3",

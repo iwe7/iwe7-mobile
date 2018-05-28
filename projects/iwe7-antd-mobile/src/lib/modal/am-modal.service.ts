@@ -1,9 +1,5 @@
 import { Injectable } from "@angular/core";
-import {
-  Dialog,
-  DialogRef,
-  DialogPosition
-} from "../../../../iwe7-dialog/src/public_api";
+import { Dialog, DialogRef, DialogPosition } from "iwe7-dialog";
 import { AmModalComponent } from "./am-modal.component";
 import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
@@ -15,9 +11,8 @@ export class AmModalService {
   constructor(public _dialog: Dialog) {}
 
   open(cfg?: any): Observable<DialogRef<any>> {
-    // cfg.panelClass = 'am-modal-wrap';
     return this._dialog.openFromComponent(AmModalComponent, cfg).pipe(
-      map(dialogRef => {
+      map((dialogRef: any) => {
         dialogRef.afterOpen().subscribe(res => {
           const instance = dialogRef.componentInstance;
           for (const key in cfg) {

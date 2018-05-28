@@ -4696,9 +4696,9 @@ iwe7-decorator@^0.0.2:
   dependencies:
     tslib "^1.9.0"
 
-iwe7-dialog@^0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/iwe7-dialog/-/iwe7-dialog-0.0.1.tgz#951ec54ac6321354d001eaef4e2876b8f5de40a8"
+iwe7-dialog@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/iwe7-dialog/-/iwe7-dialog-0.0.3.tgz#4c0bb7ca940a1a633c54f7378b8c5048f3af1e7b"
   dependencies:
     tslib "^1.9.0"
 
