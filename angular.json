@@ -1022,6 +1022,46 @@
           }
         }
       }
+    },
+    "iwe7-icss": {
+      "root": "projects/iwe7-icss",
+      "sourceRoot": "projects/iwe7-icss/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/iwe7-icss/tsconfig.lib.json",
+            "project": "projects/iwe7-icss/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/iwe7-icss/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/iwe7-icss/src/test.ts",
+            "tsConfig": "projects/iwe7-icss/tsconfig.spec.json",
+            "karmaConfig": "projects/iwe7-icss/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/iwe7-icss/tsconfig.lib.json",
+              "projects/iwe7-icss/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "iwe7-mobile"

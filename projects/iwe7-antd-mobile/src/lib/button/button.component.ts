@@ -20,40 +20,22 @@ import {
   selector: "a[am-button],button[am-button],[am-button]",
   host: {
     [`[class.am-button]`]: "'true'",
-    [`[class.am-button-primary]`]: "isPrimary",
-    [`[class.am-button-warning]`]: "isWarning",
-    [`[class.am-button-ghost]`]: "isGhost",
-    [`[class.am-button-small]`]: "isSmall",
-    [`[class.am-button-large]`]: "isLarge",
+    [`[class.am-button-primary]`]: 'type === "primary"',
+    [`[class.am-button-warning]`]: 'type === "warning"',
+    [`[class.am-button-ghost]`]: 'type === "ghost"',
+    [`[class.am-button-small]`]: 'size === "small"',
+    [`[class.am-button-large]`]: 'size === "large"',
     [`[class.am-button-disabled]`]: "disabled",
     [`[class.am-button-loading]`]: "loading",
     [`[class.am-button-inline]`]: "inline",
     [`[class.am-button-block]`]: "!inline",
-    [`[class.am-button-icon]`]: "buttonIcon",
+    [`[class.am-button-icon]`]: 'loading ? "loading" : this.icon',
     ["(click)"]: "handleClick($event)"
   },
   template: `<svg class="am-button-icon" amIcon="loading" *ngIf="loading"></svg><svg class="am-button-icon" [amIcon]="icon" *ngIf="!loading && icon"></svg><ng-content></ng-content>`
 })
 export class AmButtonComponent extends AmButtonRef
   implements OnInit, AmButtonInputsInterface {
-  get isPrimary() {
-    return this.type === "primary";
-  }
-  get isWarning() {
-    return this.type === "warning";
-  }
-  get isGhost() {
-    return this.type === "ghost";
-  }
-  get isSmall(): boolean {
-    return this.size === "small";
-  }
-  get isLarge(): boolean {
-    return this.size === "large";
-  }
-  get buttonIcon() {
-    return this.loading ? "loading" : this.icon;
-  }
   constructor(
     injector: Injector,
     @Optional()

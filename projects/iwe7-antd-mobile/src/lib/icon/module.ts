@@ -1,15 +1,9 @@
 import { NgModule, Injector } from "@angular/core";
 
-import { AmIconComponent } from "./icon.component";
+import { AmIconComponent, AmIconDirective } from "./icon";
 import { Iwe7BaseModule } from "iwe7-base";
 @NgModule({
-  exports: [AmIconComponent],
-  declarations: [AmIconComponent],
-  entryComponents: [AmIconComponent]
+  exports: [AmIconComponent, AmIconDirective],
+  declarations: [AmIconComponent, AmIconDirective]
 })
-export class AmIconModule extends Iwe7BaseModule {
-  constructor(injector: Injector) {
-    super(injector);
-    this.registerElement("am-icon", AmIconComponent, this.injector);
-  }
-}
+export class AmIconModule {}

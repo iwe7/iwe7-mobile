@@ -13,7 +13,7 @@ import {
 @Component({
   selector: "am-grid",
   templateUrl: "./grid.component.html",
-  styleUrls: ["./grid.component.css"]
+  styleUrls: ["./grid.component.scss"]
 })
 export class AmGridComponent implements OnInit, OnChanges {
   list: any[] = [];

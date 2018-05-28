@@ -36,7 +36,7 @@ import { RouterModule } from "@angular/router";
 import { StepsModule } from "./steps/module";
 import { AmListModule } from "./list/module";
 import { AmStepperModule } from "./stepper/module";
-import { AmFlexBoxModule } from "./flexbox/module";
+import { Iwe7FlexBoxModule } from "../../../iwe7-flex/src/public_api";
 import { AmImagePickerModule } from "./image-picker/module";
 import { AmSearchModule } from "./search/module";
 import { AmSwitchModule } from "./switch/module";
@@ -62,7 +62,7 @@ export const AntdExportModule = [
   StepsModule,
   AmListModule,
   AmStepperModule,
-  AmFlexBoxModule,
+  Iwe7FlexBoxModule,
   AmImagePickerModule,
   AmSearchModule,
   AmSwitchModule,

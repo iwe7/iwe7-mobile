@@ -17,11 +17,8 @@
       "dom"
     ],
     "paths": {
-      "iwe7-antd-mobile-preview": [
-        "dist/iwe7-antd-mobile-preview"
-      ],
-      "iwe7-flex": [
-        "dist/iwe7-flex"
+      "iwe7-icss": [
+        "dist/iwe7-icss"
       ]
     }
   }

@@ -9,26 +9,12 @@ import {
   ViewChild
 } from "@angular/core";
 import { DomSanitizer, SafeValue } from "@angular/platform-browser";
-
-@Component({
-  selector: "Icon,svg[amIcon],[amIcon]",
-  template: ``,
-  host: {
-    [`[class.am-icon]`]: "true",
-    [`[class.am-icon-md]`]: 'size === "md"',
-    [`[class.am-icon-xxs]`]: 'size === "xxs"',
-    [`[class.am-icon-xs]`]: 'size === "xs"',
-    [`[class.am-icon-sm]`]: 'size === "sm"',
-    [`[class.am-icon-lg]`]: 'size === "lg"'
-  }
-})
-export class AmIconComponent implements OnInit {
+export class AmIconRef implements OnInit {
   _icon: string;
   @Input()
   set type(val: string) {
     this.amIcon = val;
   }
-
   @Input()
   set amIcon(val: string) {
     if (val) {
@@ -53,9 +39,7 @@ export class AmIconComponent implements OnInit {
   }
   @Input() size: string = "md";
   @Input() color: string;
-
   tagName: string;
-
   constructor(
     public render: Renderer2,
     public ele: ElementRef,
@@ -90,5 +74,48 @@ export class AmIconComponent implements OnInit {
       `url(${this.amIcon || ""}) center center / 21px 21px no-repeat`
     );
     return bg;
+  }
+}
+@Component({
+  selector: "am-icon",
+  template: ``,
+  host: {
+    [`[class.am-icon]`]: "true",
+    [`[class.am-icon-md]`]: 'size === "md"',
+    [`[class.am-icon-xxs]`]: 'size === "xxs"',
+    [`[class.am-icon-xs]`]: 'size === "xs"',
+    [`[class.am-icon-sm]`]: 'size === "sm"',
+    [`[class.am-icon-lg]`]: 'size === "lg"'
+  }
+})
+export class AmIconComponent extends AmIconRef {
+  constructor(
+    render: Renderer2,
+    ele: ElementRef,
+    dm: DomSanitizer,
+    ds: DomSanitizer
+  ) {
+    super(render, ele, dm, ds);
+  }
+}
+@Directive({
+  selector: "[amIcon]",
+  host: {
+    [`[class.am-icon]`]: "true",
+    [`[class.am-icon-md]`]: 'size === "md"',
+    [`[class.am-icon-xxs]`]: 'size === "xxs"',
+    [`[class.am-icon-xs]`]: 'size === "xs"',
+    [`[class.am-icon-sm]`]: 'size === "sm"',
+    [`[class.am-icon-lg]`]: 'size === "lg"'
+  }
+})
+export class AmIconDirective extends AmIconRef {
+  constructor(
+    render: Renderer2,
+    ele: ElementRef,
+    dm: DomSanitizer,
+    ds: DomSanitizer
+  ) {
+    super(render, ele, dm, ds);
   }
 }

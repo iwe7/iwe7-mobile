@@ -1,13 +1,13 @@
-<div flex justify="center" align="stretch" *ngFor="let items of list">
-  <div flexItem class="am-grid-item" [class.am-grid-item-active]="item?.active" *ngFor="let item of items" [style.width.%]="100/columnNum">
-    <div class="am-grid-item-content">
-      <div class="am-grid-item-inner-content" [columnNum]="columnNum">
+<flex justify="center" align="stretch" *ngFor="let items of list">
+  <div flex-item amGridItem [class.am-grid-item-active]="item?.active" *ngFor="let item of items" [style.width.%]="100/columnNum">
+    <div amGridItemContent>
+      <div flex direction="column" justify="center" align="center" [columnNum]="columnNum">
         <ng-container *ngTemplateOutlet="iconTpl;context: {$implicit: item}"></ng-container>
         <div class="am-grid-text">{{item?.title}}</div>
       </div>
     </div>
   </div>
-</div>
+</flex>
 
 <ng-template #tpl let-item>
   <svg [amIcon]="item?.icon"></svg>

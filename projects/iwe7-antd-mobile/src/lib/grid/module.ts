@@ -4,9 +4,9 @@ import { CommonModule } from "@angular/common";
 import { AmGridComponent } from "./grid.component";
 import { AmIconModule } from "../icon/module";
 import { AmColumnNumDirective } from "./column-num.directive";
-import { AmFlexBoxModule } from "../flexbox/module";
+import { Iwe7FlexBoxModule } from "iwe7-flex";
 @NgModule({
-  imports: [CommonModule, AmIconModule, AmFlexBoxModule],
+  imports: [CommonModule, AmIconModule, Iwe7FlexBoxModule],
   declarations: [AmGridComponent, AmColumnNumDirective],
   exports: [AmGridComponent]
 })
