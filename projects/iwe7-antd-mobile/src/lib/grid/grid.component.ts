@@ -7,15 +7,17 @@ import {
   SimpleChanges,
   ContentChild,
   TemplateRef,
-  ViewChild
+  ViewChild,
+  Injector
 } from "@angular/core";
+import { BaseWithIcss } from "iwe7-base";
 
 @Component({
   selector: "am-grid",
   templateUrl: "./grid.component.html",
   styleUrls: ["./grid.component.scss"]
 })
-export class AmGridComponent implements OnInit, OnChanges {
+export class AmGridComponent extends BaseWithIcss implements OnInit, OnChanges {
   list: any[] = [];
 
   @Input() data: any[] = [];
@@ -48,13 +50,20 @@ export class AmGridComponent implements OnInit, OnChanges {
       this.iconTpl = val;
     }
   }
-  constructor() {}
+
+
+  constructor(injector: Injector) {
+    super(injector);
+    this.setStyleInputs([]);
+  }
 
   ngOnInit() {
     this.handelerData();
+    super.ngOnInit();
   }
 
   ngOnChanges(changes: SimpleChanges) {
+    super.ngOnChanges(changes);
     if ("data" in changes) {
       if (!changes.data.isFirstChange) {
         this.handelerData();
@@ -67,7 +76,7 @@ export class AmGridComponent implements OnInit, OnChanges {
     }
   }
 
-  handelerData() {
+  private handelerData() {
     const dataLength = this.data.length;
     const rowCount = Math.ceil(dataLength / this.columnNum);
     const rowsArr = [];

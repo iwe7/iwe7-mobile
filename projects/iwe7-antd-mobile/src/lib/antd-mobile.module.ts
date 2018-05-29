@@ -54,7 +54,7 @@ import { AmModalModule } from "./modal/module";
 import { AmGridModule } from "./grid/module";
 import { AmButtonModule } from "./button/module";
 import { AmMenuModule } from "./menu/module";
-
+import { Iwe7SquareModule } from 'iwe7-square';
 export const AntdExportModule = [
   TabsModule,
   AmBadgeModule,
@@ -80,7 +80,8 @@ export const AntdExportModule = [
   AmGridModule,
   AmButtonModule,
   AmMenuModule,
-  AmTabBarModule
+  AmTabBarModule,
+  Iwe7SquareModule
 ];
 @NgModule({
   imports: [CommonModule],

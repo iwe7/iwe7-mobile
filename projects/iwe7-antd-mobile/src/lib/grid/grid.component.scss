@@ -4,12 +4,8 @@
 }
 
 [amGridItem] {
-  position: relative;
   [amGridItemContent] {
     text-align: center;
-    width: 100%;
-    height: 100%;
-    padding: 15px 0px;
   }
   [amGridItemInnerContent] {
     display: flex;

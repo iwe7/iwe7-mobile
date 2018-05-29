@@ -4738,6 +4738,12 @@ iwe7-scrolling@^0.0.1:
   dependencies:
     tslib "^1.9.0"
 
+iwe7-square@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/iwe7-square/-/iwe7-square-0.0.1.tgz#a9ad352423ffbe1e980137362868daed3258b1f0"
+  dependencies:
+    tslib "^1.9.0"
+
 iwe7-url@^0.0.2:
   version "0.0.2"
   resolved "https://registry.yarnpkg.com/iwe7-url/-/iwe7-url-0.0.2.tgz#bd0cd21ffb8b4553612964674551ed50e74361c4"

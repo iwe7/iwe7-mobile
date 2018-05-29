@@ -19,6 +19,9 @@
     "paths": {
       "iwe7-icss": [
         "dist/iwe7-icss"
+      ],
+      "iwe7-square": [
+        "dist/iwe7-square"
       ]
     }
   }
