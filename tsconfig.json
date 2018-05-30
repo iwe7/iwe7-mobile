@@ -17,11 +17,8 @@
       "dom"
     ],
     "paths": {
-      "iwe7-icss": [
-        "dist/iwe7-icss"
-      ],
-      "iwe7-square": [
-        "dist/iwe7-square"
+      "iwe7-jd-index": [
+        "dist/iwe7-jd-index"
       ]
     }
   }

@@ -9,6 +9,7 @@ import {
   Iwe7ButtonComponent,
 } from "./button.example";
 import { ReactiveFormsModule } from "@angular/forms";
+import { Iwe7JdIndexModule } from '../../../projects/iwe7-jd-index/src/public_api';
 @NgModule({
   imports: [
     CommonModule,
@@ -17,7 +18,8 @@ import { ReactiveFormsModule } from "@angular/forms";
     HttpClientModule,
     DialogModule,
     ScrollingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    Iwe7JdIndexModule
   ],
   declarations: [Iwe7ButtonComponent],
   exports: [
@@ -26,7 +28,8 @@ import { ReactiveFormsModule } from "@angular/forms";
     DialogModule,
     ScrollingModule,
     Iwe7ButtonComponent,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    Iwe7JdIndexModule
   ]
 })
-export class SharedModule {}
+export class SharedModule { }

@@ -1,0 +1,8 @@
+<div class="jd-floor-container">
+    <jd-floor-title *ngIf="title">
+        <ng-container *ngTemplateOutlet="title"></ng-container>
+    </jd-floor-title>
+    <div class="jd-floor-content">
+        <ng-content></ng-content>
+    </div>
+</div>

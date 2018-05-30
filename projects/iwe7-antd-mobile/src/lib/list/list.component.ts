@@ -1,7 +1,7 @@
 import { Component, HostBinding } from "@angular/core";
 
 @Component({
-  selector: "[list],am-list",
+  selector: "[list],am-list,list",
   templateUrl: './list.component.html'
 })
 export class ListComponent {

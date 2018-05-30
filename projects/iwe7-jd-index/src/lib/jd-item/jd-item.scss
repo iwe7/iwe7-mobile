@@ -1,0 +1,41 @@
+:host {
+    position: relative;
+    display: block;
+    flex: 1;
+    margin: 5px 0px 5px 10px;
+    box-sizing: content-box;
+}
+
+iwe7-square {
+    display: block;
+    img {
+        width: 100%;
+    }
+}
+
+.jd-item-text {
+    width: 100%;
+    padding: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+    .jd-item-title {
+        font-size: 16px;
+        font-weight: 400;
+        color: #222;
+        display: inline-block;
+        max-width: 100%;
+        text-overflow: ellipsis;
+        box-sizing: border-box;
+        background-image: -webkit-linear-gradient(left, rgb(255, 42, 0), rgb(255, 0, 175));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+    .jd-item-desc {
+        font-size: 12px;
+        font-weight: 400;
+        color: #222222;
+        box-sizing: border-box;
+    }
+}

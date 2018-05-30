@@ -7,7 +7,7 @@ import {
 } from "@angular/core";
 
 @Component({
-  selector: "[listItem],am-list-item",
+  selector: "[listItem],am-list-item,list-item",
   templateUrl: "./list-item.component.html"
 })
 export class ListItemComponent {

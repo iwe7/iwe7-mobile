@@ -1,989 +1,1148 @@
 {
-    "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-    "version": 1,
-    "newProjectRoot": "projects",
-    "projects": {
-        "iwe7-mobile": {
-            "root": "",
-            "sourceRoot": "src",
-            "projectType": "application",
-            "prefix": "app",
-            "schematics": {},
-            "architect": {
-                "build": {
-                    "builder": "@angular-devkit/build-angular:browser",
-                    "options": {
-                        "outputPath": "dist/iwe7-mobile",
-                        "index": "src/index.html",
-                        "main": "src/main.ts",
-                        "polyfills": "src/polyfills.ts",
-                        "tsConfig": "src/tsconfig.app.json",
-                        "assets": ["src/favicon.ico", "src/assets"],
-                        "styles": ["src/styles.less"],
-                        "scripts": [{
-                            "input": "node_modules/document-register-element/build/document-register-element.js"
-                        }]
-                    },
-                    "configurations": {
-                        "production": {
-                            "fileReplacements": [{
-                                "replace": "src/environments/environment.ts",
-                                "with": "src/environments/environment.prod.ts"
-                            }],
-                            "optimization": true,
-                            "outputHashing": "all",
-                            "sourceMap": false,
-                            "extractCss": true,
-                            "namedChunks": false,
-                            "aot": true,
-                            "extractLicenses": true,
-                            "vendorChunk": false,
-                            "buildOptimizer": true
-                        }
-                    }
-                },
-                "serve": {
-                    "builder": "@angular-devkit/build-angular:dev-server",
-                    "options": {
-                        "browserTarget": "iwe7-mobile:build"
-                    },
-                    "configurations": {
-                        "production": {
-                            "browserTarget": "iwe7-mobile:build:production"
-                        }
-                    }
-                },
-                "extract-i18n": {
-                    "builder": "@angular-devkit/build-angular:extract-i18n",
-                    "options": {
-                        "browserTarget": "iwe7-mobile:build"
-                    }
-                },
-                "test": {
-                    "builder": "@angular-devkit/build-angular:karma",
-                    "options": {
-                        "main": "src/test.ts",
-                        "polyfills": "src/polyfills.ts",
-                        "tsConfig": "src/tsconfig.spec.json",
-                        "karmaConfig": "src/karma.conf.js",
-                        "styles": ["src/styles.less"],
-                        "scripts": [],
-                        "assets": ["src/favicon.ico", "src/assets"]
-                    }
-                },
-                "lint": {
-                    "builder": "@angular-devkit/build-angular:tslint",
-                    "options": {
-                        "tsConfig": ["src/tsconfig.app.json", "src/tsconfig.spec.json"],
-                        "exclude": ["**/node_modules/**"]
-                    }
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "iwe7-mobile": {
+      "root": "",
+      "sourceRoot": "src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/iwe7-mobile",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "src/tsconfig.app.json",
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "src/styles.less"
+            ],
+            "scripts": [
+              {
+                "input": "node_modules/document-register-element/build/document-register-element.js"
+              }
+            ]
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
                 }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
             }
+          }
         },
-        "iwe7-mobile-e2e": {
-            "root": "e2e/",
-            "projectType": "application",
-            "architect": {
-                "e2e": {
-                    "builder": "@angular-devkit/build-angular:protractor",
-                    "options": {
-                        "protractorConfig": "e2e/protractor.conf.js",
-                        "devServerTarget": "iwe7-mobile:serve"
-                    }
-                },
-                "lint": {
-                    "builder": "@angular-devkit/build-angular:tslint",
-                    "options": {
-                        "tsConfig": "e2e/tsconfig.e2e.json",
-                        "exclude": ["**/node_modules/**"]
-                    }
-                }
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "iwe7-mobile:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "iwe7-mobile:build:production"
             }
+          }
         },
-        "iwe7-antd-mobile": {
-            "root": "projects/iwe7-antd-mobile",
-            "sourceRoot": "projects/iwe7-antd-mobile/src",
-            "projectType": "library",
-            "prefix": "lib",
-            "architect": {
-                "build": {
-                    "builder": "@angular-devkit/build-ng-packagr:build",
-                    "options": {
-                        "tsConfig": "projects/iwe7-antd-mobile/tsconfig.lib.json",
-                        "project": "projects/iwe7-antd-mobile/ng-package.json"
-                    },
-                    "configurations": {
-                        "production": {
-                            "project": "projects/iwe7-antd-mobile/ng-package.prod.json"
-                        }
-                    }
-                },
-                "test": {
-                    "builder": "@angular-devkit/build-angular:karma",
-                    "options": {
-                        "main": "projects/iwe7-antd-mobile/src/test.ts",
-                        "tsConfig": "projects/iwe7-antd-mobile/tsconfig.spec.json",
-                        "karmaConfig": "projects/iwe7-antd-mobile/karma.conf.js"
-                    }
-                },
-                "lint": {
-                    "builder": "@angular-devkit/build-angular:tslint",
-                    "options": {
-                        "tsConfig": [
-                            "projects/iwe7-antd-mobile/tsconfig.lib.json",
-                            "projects/iwe7-antd-mobile/tsconfig.spec.json"
-                        ],
-                        "exclude": ["**/node_modules/**"]
-                    }
-                }
-            }
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "iwe7-mobile:build"
+          }
         },
-        "iwe7-web-storage": {
-            "root": "projects/iwe7-web-storage",
-            "sourceRoot": "projects/iwe7-web-storage/src",
-            "projectType": "library",
-            "prefix": "lib",
-            "architect": {
-                "build": {
-                    "builder": "@angular-devkit/build-ng-packagr:build",
-                    "options": {
-                        "tsConfig": "projects/iwe7-web-storage/tsconfig.lib.json",
-                        "project": "projects/iwe7-web-storage/ng-package.json"
-                    },
-                    "configurations": {
-                        "production": {
-                            "project": "projects/iwe7-web-storage/ng-package.prod.json"
-                        }
-                    }
-                },
-                "test": {
-                    "builder": "@angular-devkit/build-angular:karma",
-                    "options": {
-                        "main": "projects/iwe7-web-storage/src/test.ts",
-                        "tsConfig": "projects/iwe7-web-storage/tsconfig.spec.json",
-                        "karmaConfig": "projects/iwe7-web-storage/karma.conf.js"
-                    }
-                },
-                "lint": {
-                    "builder": "@angular-devkit/build-angular:tslint",
-                    "options": {
-                        "tsConfig": [
-                            "projects/iwe7-web-storage/tsconfig.lib.json",
-                            "projects/iwe7-web-storage/tsconfig.spec.json"
-                        ],
-                        "exclude": ["**/node_modules/**"]
-                    }
-                }
-            }
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "src/test.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "src/tsconfig.spec.json",
+            "karmaConfig": "src/karma.conf.js",
+            "styles": [
+              "src/styles.less"
+            ],
+            "scripts": [],
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ]
+          }
         },
-        "iwe7-lodash": {
-            "root": "projects/iwe7-lodash",
-            "sourceRoot": "projects/iwe7-lodash/src",
-            "projectType": "library",
-            "prefix": "lib",
-            "architect": {
-                "build": {
-                    "builder": "@angular-devkit/build-ng-packagr:build",
-                    "options": {
-                        "tsConfig": "projects/iwe7-lodash/tsconfig.lib.json",
-                        "project": "projects/iwe7-lodash/ng-package.json"
-                    },
-                    "configurations": {
-                        "production": {
-                            "project": "projects/iwe7-lodash/ng-package.prod.json"
-                        }
-                    }
-                },
-                "test": {
-                    "builder": "@angular-devkit/build-angular:karma",
-                    "options": {
-                        "main": "projects/iwe7-lodash/src/test.ts",
-                        "tsConfig": "projects/iwe7-lodash/tsconfig.spec.json",
-                        "karmaConfig": "projects/iwe7-lodash/karma.conf.js"
-                    }
-                },
-                "lint": {
-                    "builder": "@angular-devkit/build-angular:tslint",
-                    "options": {
-                        "tsConfig": [
-                            "projects/iwe7-lodash/tsconfig.lib.json",
-                            "projects/iwe7-lodash/tsconfig.spec.json"
-                        ],
-                        "exclude": ["**/node_modules/**"]
-                    }
-                }
-            }
-        },
-        "iwe7-decorator": {
-            "root": "projects/iwe7-decorator",
-            "sourceRoot": "projects/iwe7-decorator/src",
-            "projectType": "library",
-            "prefix": "lib",
-            "architect": {
-                "build": {
-                    "builder": "@angular-devkit/build-ng-packagr:build",
-                    "options": {
-                        "tsConfig": "projects/iwe7-decorator/tsconfig.lib.json",
-                        "project": "projects/iwe7-decorator/ng-package.json"
-                    },
-                    "configurations": {
-                        "production": {
-                            "project": "projects/iwe7-decorator/ng-package.prod.json"
-                        }
-                    }
-                },
-                "test": {
-                    "builder": "@angular-devkit/build-angular:karma",
-                    "options": {
-                        "main": "projects/iwe7-decorator/src/test.ts",
-                        "tsConfig": "projects/iwe7-decorator/tsconfig.spec.json",
-                        "karmaConfig": "projects/iwe7-decorator/karma.conf.js"
-                    }
-                },
-                "lint": {
-                    "builder": "@angular-devkit/build-angular:tslint",
-                    "options": {
-                        "tsConfig": [
-                            "projects/iwe7-decorator/tsconfig.lib.json",
-                            "projects/iwe7-decorator/tsconfig.spec.json"
-                        ],
-                        "exclude": ["**/node_modules/**"]
-                    }
-                }
-            }
-        },
-        "iwe7-http": {
-            "root": "projects/iwe7-http",
-            "sourceRoot": "projects/iwe7-http/src",
-            "projectType": "library",
-            "prefix": "lib",
-            "architect": {
-                "build": {
-                    "builder": "@angular-devkit/build-ng-packagr:build",
-                    "options": {
-                        "tsConfig": "projects/iwe7-http/tsconfig.lib.json",
-                        "project": "projects/iwe7-http/ng-package.json"
-                    },
-                    "configurations": {
-                        "production": {
-                            "project": "projects/iwe7-http/ng-package.prod.json"
-                        }
-                    }
-                },
-                "test": {
-                    "builder": "@angular-devkit/build-angular:karma",
-                    "options": {
-                        "main": "projects/iwe7-http/src/test.ts",
-                        "tsConfig": "projects/iwe7-http/tsconfig.spec.json",
-                        "karmaConfig": "projects/iwe7-http/karma.conf.js"
-                    }
-                },
-                "lint": {
-                    "builder": "@angular-devkit/build-angular:tslint",
-                    "options": {
-                        "tsConfig": ["projects/iwe7-http/tsconfig.lib.json", "projects/iwe7-http/tsconfig.spec.json"],
-                        "exclude": ["**/node_modules/**"]
-                    }
-                }
-            }
-        },
-        "iwe7-router": {
-            "root": "projects/iwe7-router",
-            "sourceRoot": "projects/iwe7-router/src",
-            "projectType": "library",
-            "prefix": "lib",
-            "architect": {
-                "build": {
-                    "builder": "@angular-devkit/build-ng-packagr:build",
-                    "options": {
-                        "tsConfig": "projects/iwe7-router/tsconfig.lib.json",
-                        "project": "projects/iwe7-router/ng-package.json"
-                    },
-                    "configurations": {
-                        "production": {
-                            "project": "projects/iwe7-router/ng-package.prod.json"
-                        }
-                    }
-                },
-                "test": {
-                    "builder": "@angular-devkit/build-angular:karma",
-                    "options": {
-                        "main": "projects/iwe7-router/src/test.ts",
-                        "tsConfig": "projects/iwe7-router/tsconfig.spec.json",
-                        "karmaConfig": "projects/iwe7-router/karma.conf.js"
-                    }
-                },
-                "lint": {
-                    "builder": "@angular-devkit/build-angular:tslint",
-                    "options": {
-                        "tsConfig": [
-                            "projects/iwe7-router/tsconfig.lib.json",
-                            "projects/iwe7-router/tsconfig.spec.json"
-                        ],
-                        "exclude": ["**/node_modules/**"]
-                    }
-                }
-            }
-        },
-        "iwe7-forms": {
-            "root": "projects/iwe7-forms",
-            "sourceRoot": "projects/iwe7-forms/src",
-            "projectType": "library",
-            "prefix": "lib",
-            "architect": {
-                "build": {
-                    "builder": "@angular-devkit/build-ng-packagr:build",
-                    "options": {
-                        "tsConfig": "projects/iwe7-forms/tsconfig.lib.json",
-                        "project": "projects/iwe7-forms/ng-package.json"
-                    },
-                    "configurations": {
-                        "production": {
-                            "project": "projects/iwe7-forms/ng-package.prod.json"
-                        }
-                    }
-                },
-                "test": {
-                    "builder": "@angular-devkit/build-angular:karma",
-                    "options": {
-                        "main": "projects/iwe7-forms/src/test.ts",
-                        "tsConfig": "projects/iwe7-forms/tsconfig.spec.json",
-                        "karmaConfig": "projects/iwe7-forms/karma.conf.js"
-                    }
-                },
-                "lint": {
-                    "builder": "@angular-devkit/build-angular:tslint",
-                    "options": {
-                        "tsConfig": [
-                            "projects/iwe7-forms/tsconfig.lib.json",
-                            "projects/iwe7-forms/tsconfig.spec.json"
-                        ],
-                        "exclude": ["**/node_modules/**"]
-                    }
-                }
-            }
-        },
-        "iwe7-directives": {
-            "root": "projects/iwe7-directives",
-            "sourceRoot": "projects/iwe7-directives/src",
-            "projectType": "library",
-            "prefix": "lib",
-            "architect": {
-                "build": {
-                    "builder": "@angular-devkit/build-ng-packagr:build",
-                    "options": {
-                        "tsConfig": "projects/iwe7-directives/tsconfig.lib.json",
-                        "project": "projects/iwe7-directives/ng-package.json"
-                    },
-                    "configurations": {
-                        "production": {
-                            "project": "projects/iwe7-directives/ng-package.prod.json"
-                        }
-                    }
-                },
-                "test": {
-                    "builder": "@angular-devkit/build-angular:karma",
-                    "options": {
-                        "main": "projects/iwe7-directives/src/test.ts",
-                        "tsConfig": "projects/iwe7-directives/tsconfig.spec.json",
-                        "karmaConfig": "projects/iwe7-directives/karma.conf.js"
-                    }
-                },
-                "lint": {
-                    "builder": "@angular-devkit/build-angular:tslint",
-                    "options": {
-                        "tsConfig": [
-                            "projects/iwe7-directives/tsconfig.lib.json",
-                            "projects/iwe7-directives/tsconfig.spec.json"
-                        ],
-                        "exclude": ["**/node_modules/**"]
-                    }
-                }
-            }
-        },
-        "iwe7-util": {
-            "root": "projects/iwe7-util",
-            "sourceRoot": "projects/iwe7-util/src",
-            "projectType": "library",
-            "prefix": "lib",
-            "architect": {
-                "build": {
-                    "builder": "@angular-devkit/build-ng-packagr:build",
-                    "options": {
-                        "tsConfig": "projects/iwe7-util/tsconfig.lib.json",
-                        "project": "projects/iwe7-util/ng-package.json"
-                    },
-                    "configurations": {
-                        "production": {
-                            "project": "projects/iwe7-util/ng-package.prod.json"
-                        }
-                    }
-                },
-                "test": {
-                    "builder": "@angular-devkit/build-angular:karma",
-                    "options": {
-                        "main": "projects/iwe7-util/src/test.ts",
-                        "tsConfig": "projects/iwe7-util/tsconfig.spec.json",
-                        "karmaConfig": "projects/iwe7-util/karma.conf.js"
-                    }
-                },
-                "lint": {
-                    "builder": "@angular-devkit/build-angular:tslint",
-                    "options": {
-                        "tsConfig": ["projects/iwe7-util/tsconfig.lib.json", "projects/iwe7-util/tsconfig.spec.json"],
-                        "exclude": ["**/node_modules/**"]
-                    }
-                }
-            }
-        },
-        "iwe7-reflect": {
-            "root": "projects/iwe7-reflect",
-            "sourceRoot": "projects/iwe7-reflect/src",
-            "projectType": "library",
-            "prefix": "lib",
-            "architect": {
-                "build": {
-                    "builder": "@angular-devkit/build-ng-packagr:build",
-                    "options": {
-                        "tsConfig": "projects/iwe7-reflect/tsconfig.lib.json",
-                        "project": "projects/iwe7-reflect/ng-package.json"
-                    },
-                    "configurations": {
-                        "production": {
-                            "project": "projects/iwe7-reflect/ng-package.prod.json"
-                        }
-                    }
-                },
-                "test": {
-                    "builder": "@angular-devkit/build-angular:karma",
-                    "options": {
-                        "main": "projects/iwe7-reflect/src/test.ts",
-                        "tsConfig": "projects/iwe7-reflect/tsconfig.spec.json",
-                        "karmaConfig": "projects/iwe7-reflect/karma.conf.js"
-                    }
-                },
-                "lint": {
-                    "builder": "@angular-devkit/build-angular:tslint",
-                    "options": {
-                        "tsConfig": [
-                            "projects/iwe7-reflect/tsconfig.lib.json",
-                            "projects/iwe7-reflect/tsconfig.spec.json"
-                        ],
-                        "exclude": ["**/node_modules/**"]
-                    }
-                }
-            }
-        },
-        "iwe7-abc": {
-            "root": "projects/iwe7-abc",
-            "sourceRoot": "projects/iwe7-abc/src",
-            "projectType": "library",
-            "prefix": "lib",
-            "architect": {
-                "build": {
-                    "builder": "@angular-devkit/build-ng-packagr:build",
-                    "options": {
-                        "tsConfig": "projects/iwe7-abc/tsconfig.lib.json",
-                        "project": "projects/iwe7-abc/ng-package.json"
-                    },
-                    "configurations": {
-                        "production": {
-                            "project": "projects/iwe7-abc/ng-package.prod.json"
-                        }
-                    }
-                },
-                "test": {
-                    "builder": "@angular-devkit/build-angular:karma",
-                    "options": {
-                        "main": "projects/iwe7-abc/src/test.ts",
-                        "tsConfig": "projects/iwe7-abc/tsconfig.spec.json",
-                        "karmaConfig": "projects/iwe7-abc/karma.conf.js"
-                    }
-                },
-                "lint": {
-                    "builder": "@angular-devkit/build-angular:tslint",
-                    "options": {
-                        "tsConfig": ["projects/iwe7-abc/tsconfig.lib.json", "projects/iwe7-abc/tsconfig.spec.json"],
-                        "exclude": ["**/node_modules/**"]
-                    }
-                }
-            }
-        },
-        "iwe7-ui": {
-            "root": "projects/iwe7-ui/",
-            "sourceRoot": "projects/iwe7-ui/src",
-            "projectType": "application",
-            "prefix": "app",
-            "schematics": {},
-            "architect": {
-                "build": {
-                    "builder": "@angular-devkit/build-angular:browser",
-                    "options": {
-                        "outputPath": "dist/iwe7-ui",
-                        "index": "projects/iwe7-ui/src/index.html",
-                        "main": "projects/iwe7-ui/src/main.ts",
-                        "polyfills": "projects/iwe7-ui/src/polyfills.ts",
-                        "tsConfig": "projects/iwe7-ui/tsconfig.app.json",
-                        "assets": ["projects/iwe7-ui/src/favicon.ico", "projects/iwe7-ui/src/assets"],
-                        "styles": ["projects/iwe7-ui/src/styles.css"],
-                        "scripts": []
-                    },
-                    "configurations": {
-                        "production": {
-                            "fileReplacements": [{
-                                "replace": "projects/iwe7-ui/src/environments/environment.ts",
-                                "with": "projects/iwe7-ui/src/environments/environment.prod.ts"
-                            }],
-                            "optimization": true,
-                            "outputHashing": "all",
-                            "sourceMap": false,
-                            "extractCss": true,
-                            "namedChunks": true,
-                            "aot": true,
-                            "extractLicenses": true,
-                            "vendorChunk": true,
-                            "buildOptimizer": true
-                        }
-                    }
-                },
-                "serve": {
-                    "builder": "@angular-devkit/build-angular:dev-server",
-                    "options": {
-                        "browserTarget": "iwe7-ui:build"
-                    },
-                    "configurations": {
-                        "production": {
-                            "browserTarget": "iwe7-ui:build:production"
-                        }
-                    }
-                },
-                "extract-i18n": {
-                    "builder": "@angular-devkit/build-angular:extract-i18n",
-                    "options": {
-                        "browserTarget": "iwe7-ui:build"
-                    }
-                },
-                "test": {
-                    "builder": "@angular-devkit/build-angular:karma",
-                    "options": {
-                        "main": "projects/iwe7-ui/src/test.ts",
-                        "polyfills": "projects/iwe7-ui/src/polyfills.ts",
-                        "tsConfig": "projects/iwe7-ui/tsconfig.spec.json",
-                        "karmaConfig": "projects/iwe7-ui/karma.conf.js",
-                        "styles": ["projects/iwe7-ui/src/styles.css"],
-                        "scripts": [],
-                        "assets": ["projects/iwe7-ui/src/favicon.ico", "projects/iwe7-ui/src/assets"]
-                    }
-                },
-                "lint": {
-                    "builder": "@angular-devkit/build-angular:tslint",
-                    "options": {
-                        "tsConfig": ["projects/iwe7-ui/tsconfig.app.json", "projects/iwe7-ui/tsconfig.spec.json"],
-                        "exclude": ["**/node_modules/**"]
-                    }
-                }
-            }
-        },
-        "iwe7-ui-e2e": {
-            "root": "projects/iwe7-ui-e2e/",
-            "projectType": "application",
-            "architect": {
-                "e2e": {
-                    "builder": "@angular-devkit/build-angular:protractor",
-                    "options": {
-                        "protractorConfig": "projects/iwe7-ui-e2e/protractor.conf.js",
-                        "devServerTarget": "iwe7-ui:serve"
-                    }
-                },
-                "lint": {
-                    "builder": "@angular-devkit/build-angular:tslint",
-                    "options": {
-                        "tsConfig": "projects/iwe7-ui-e2e/tsconfig.e2e.json",
-                        "exclude": ["**/node_modules/**"]
-                    }
-                }
-            }
-        },
-        "iwe7-seed": {
-            "root": "projects/iwe7-seed/",
-            "sourceRoot": "projects/iwe7-seed/src",
-            "projectType": "application",
-            "prefix": "app",
-            "schematics": {},
-            "architect": {
-                "build": {
-                    "builder": "@angular-devkit/build-angular:browser",
-                    "options": {
-                        "outputPath": "dist/iwe7-seed",
-                        "index": "projects/iwe7-seed/src/index.html",
-                        "main": "projects/iwe7-seed/src/main.ts",
-                        "polyfills": "projects/iwe7-seed/src/polyfills.ts",
-                        "tsConfig": "projects/iwe7-seed/tsconfig.app.json",
-                        "assets": ["projects/iwe7-seed/src/favicon.ico", "projects/iwe7-seed/src/assets"],
-                        "styles": ["projects/iwe7-seed/src/styles.css"],
-                        "scripts": []
-                    },
-                    "configurations": {
-                        "production": {
-                            "fileReplacements": [{
-                                "replace": "projects/iwe7-seed/src/environments/environment.ts",
-                                "with": "projects/iwe7-seed/src/environments/environment.prod.ts"
-                            }],
-                            "optimization": true,
-                            "outputHashing": "all",
-                            "sourceMap": false,
-                            "extractCss": true,
-                            "namedChunks": false,
-                            "aot": true,
-                            "extractLicenses": true,
-                            "vendorChunk": false,
-                            "buildOptimizer": true
-                        }
-                    }
-                },
-                "serve": {
-                    "builder": "@angular-devkit/build-angular:dev-server",
-                    "options": {
-                        "browserTarget": "iwe7-seed:build"
-                    },
-                    "configurations": {
-                        "production": {
-                            "browserTarget": "iwe7-seed:build:production"
-                        }
-                    }
-                },
-                "extract-i18n": {
-                    "builder": "@angular-devkit/build-angular:extract-i18n",
-                    "options": {
-                        "browserTarget": "iwe7-seed:build"
-                    }
-                },
-                "test": {
-                    "builder": "@angular-devkit/build-angular:karma",
-                    "options": {
-                        "main": "projects/iwe7-seed/src/test.ts",
-                        "polyfills": "projects/iwe7-seed/src/polyfills.ts",
-                        "tsConfig": "projects/iwe7-seed/tsconfig.spec.json",
-                        "karmaConfig": "projects/iwe7-seed/karma.conf.js",
-                        "styles": ["projects/iwe7-seed/src/styles.css"],
-                        "scripts": [],
-                        "assets": ["projects/iwe7-seed/src/favicon.ico", "projects/iwe7-seed/src/assets"]
-                    }
-                },
-                "lint": {
-                    "builder": "@angular-devkit/build-angular:tslint",
-                    "options": {
-                        "tsConfig": ["projects/iwe7-seed/tsconfig.app.json", "projects/iwe7-seed/tsconfig.spec.json"],
-                        "exclude": ["**/node_modules/**"]
-                    }
-                }
-            }
-        },
-        "iwe7-seed-e2e": {
-            "root": "projects/iwe7-seed-e2e/",
-            "projectType": "application",
-            "architect": {
-                "e2e": {
-                    "builder": "@angular-devkit/build-angular:protractor",
-                    "options": {
-                        "protractorConfig": "projects/iwe7-seed-e2e/protractor.conf.js",
-                        "devServerTarget": "iwe7-seed:serve"
-                    }
-                },
-                "lint": {
-                    "builder": "@angular-devkit/build-angular:tslint",
-                    "options": {
-                        "tsConfig": "projects/iwe7-seed-e2e/tsconfig.e2e.json",
-                        "exclude": ["**/node_modules/**"]
-                    }
-                }
-            }
-        },
-        "iwe7-base": {
-            "root": "projects/iwe7-base",
-            "sourceRoot": "projects/iwe7-base/src",
-            "projectType": "library",
-            "prefix": "lib",
-            "architect": {
-                "build": {
-                    "builder": "@angular-devkit/build-ng-packagr:build",
-                    "options": {
-                        "tsConfig": "projects/iwe7-base/tsconfig.lib.json",
-                        "project": "projects/iwe7-base/ng-package.json"
-                    },
-                    "configurations": {
-                        "production": {
-                            "project": "projects/iwe7-base/ng-package.prod.json"
-                        }
-                    }
-                },
-                "test": {
-                    "builder": "@angular-devkit/build-angular:karma",
-                    "options": {
-                        "main": "projects/iwe7-base/src/test.ts",
-                        "tsConfig": "projects/iwe7-base/tsconfig.spec.json",
-                        "karmaConfig": "projects/iwe7-base/karma.conf.js"
-                    }
-                },
-                "lint": {
-                    "builder": "@angular-devkit/build-angular:tslint",
-                    "options": {
-                        "tsConfig": ["projects/iwe7-base/tsconfig.lib.json", "projects/iwe7-base/tsconfig.spec.json"],
-                        "exclude": ["**/node_modules/**"]
-                    }
-                }
-            }
-        },
-        "iwe7-scrolling": {
-            "root": "projects/iwe7-scrolling",
-            "sourceRoot": "projects/iwe7-scrolling/src",
-            "projectType": "library",
-            "prefix": "lib",
-            "architect": {
-                "build": {
-                    "builder": "@angular-devkit/build-ng-packagr:build",
-                    "options": {
-                        "tsConfig": "projects/iwe7-scrolling/tsconfig.lib.json",
-                        "project": "projects/iwe7-scrolling/ng-package.json"
-                    },
-                    "configurations": {
-                        "production": {
-                            "project": "projects/iwe7-scrolling/ng-package.prod.json"
-                        }
-                    }
-                },
-                "test": {
-                    "builder": "@angular-devkit/build-angular:karma",
-                    "options": {
-                        "main": "projects/iwe7-scrolling/src/test.ts",
-                        "tsConfig": "projects/iwe7-scrolling/tsconfig.spec.json",
-                        "karmaConfig": "projects/iwe7-scrolling/karma.conf.js"
-                    }
-                },
-                "lint": {
-                    "builder": "@angular-devkit/build-angular:tslint",
-                    "options": {
-                        "tsConfig": [
-                            "projects/iwe7-scrolling/tsconfig.lib.json",
-                            "projects/iwe7-scrolling/tsconfig.spec.json"
-                        ],
-                        "exclude": ["**/node_modules/**"]
-                    }
-                }
-            }
-        },
-        "iwe7-antd-mobile-preview": {
-            "root": "projects/iwe7-antd-mobile-preview/",
-            "sourceRoot": "projects/iwe7-antd-mobile-preview/src",
-            "projectType": "application",
-            "prefix": "app",
-            "schematics": {},
-            "architect": {
-                "build": {
-                    "builder": "@angular-devkit/build-angular:browser",
-                    "options": {
-                        "outputPath": "dist/iwe7-antd-mobile-preview",
-                        "index": "projects/iwe7-antd-mobile-preview/src/index.html",
-                        "main": "projects/iwe7-antd-mobile-preview/src/main.ts",
-                        "polyfills": "projects/iwe7-antd-mobile-preview/src/polyfills.ts",
-                        "tsConfig": "projects/iwe7-antd-mobile-preview/tsconfig.app.json",
-                        "assets": [
-                            "projects/iwe7-antd-mobile-preview/src/favicon.ico",
-                            "projects/iwe7-antd-mobile-preview/src/assets"
-                        ],
-                        "styles": ["projects/iwe7-antd-mobile-preview/src/styles.less"],
-                        "scripts": []
-                    },
-                    "configurations": {
-                        "production": {
-                            "fileReplacements": [{
-                                "replace": "projects/iwe7-antd-mobile-preview/src/environments/environment.ts",
-                                "with": "projects/iwe7-antd-mobile-preview/src/environments/environment.prod.ts"
-                            }],
-                            "optimization": true,
-                            "outputHashing": "all",
-                            "sourceMap": false,
-                            "extractCss": true,
-                            "namedChunks": false,
-                            "aot": true,
-                            "extractLicenses": true,
-                            "vendorChunk": false,
-                            "buildOptimizer": true
-                        }
-                    }
-                },
-                "serve": {
-                    "builder": "@angular-devkit/build-angular:dev-server",
-                    "options": {
-                        "browserTarget": "iwe7-antd-mobile-preview:build"
-                    },
-                    "configurations": {
-                        "production": {
-                            "browserTarget": "iwe7-antd-mobile-preview:build:production"
-                        }
-                    }
-                },
-                "extract-i18n": {
-                    "builder": "@angular-devkit/build-angular:extract-i18n",
-                    "options": {
-                        "browserTarget": "iwe7-antd-mobile-preview:build"
-                    }
-                },
-                "test": {
-                    "builder": "@angular-devkit/build-angular:karma",
-                    "options": {
-                        "main": "projects/iwe7-antd-mobile-preview/src/test.ts",
-                        "polyfills": "projects/iwe7-antd-mobile-preview/src/polyfills.ts",
-                        "tsConfig": "projects/iwe7-antd-mobile-preview/tsconfig.spec.json",
-                        "karmaConfig": "projects/iwe7-antd-mobile-preview/karma.conf.js",
-                        "styles": ["projects/iwe7-antd-mobile-preview/src/styles.less"],
-                        "scripts": [],
-                        "assets": [
-                            "projects/iwe7-antd-mobile-preview/src/favicon.ico",
-                            "projects/iwe7-antd-mobile-preview/src/assets"
-                        ]
-                    }
-                },
-                "lint": {
-                    "builder": "@angular-devkit/build-angular:tslint",
-                    "options": {
-                        "tsConfig": [
-                            "projects/iwe7-antd-mobile-preview/tsconfig.app.json",
-                            "projects/iwe7-antd-mobile-preview/tsconfig.spec.json"
-                        ],
-                        "exclude": ["**/node_modules/**"]
-                    }
-                }
-            }
-        },
-        "iwe7-antd-mobile-preview-e2e": {
-            "root": "projects/iwe7-antd-mobile-preview-e2e/",
-            "projectType": "application",
-            "architect": {
-                "e2e": {
-                    "builder": "@angular-devkit/build-angular:protractor",
-                    "options": {
-                        "protractorConfig": "projects/iwe7-antd-mobile-preview-e2e/protractor.conf.js",
-                        "devServerTarget": "iwe7-antd-mobile-preview:serve"
-                    }
-                },
-                "lint": {
-                    "builder": "@angular-devkit/build-angular:tslint",
-                    "options": {
-                        "tsConfig": "projects/iwe7-antd-mobile-preview-e2e/tsconfig.e2e.json",
-                        "exclude": ["**/node_modules/**"]
-                    }
-                }
-            }
-        },
-        "iwe7-flex": {
-            "root": "projects/iwe7-flex",
-            "sourceRoot": "projects/iwe7-flex/src",
-            "projectType": "library",
-            "prefix": "lib",
-            "architect": {
-                "build": {
-                    "builder": "@angular-devkit/build-ng-packagr:build",
-                    "options": {
-                        "tsConfig": "projects/iwe7-flex/tsconfig.lib.json",
-                        "project": "projects/iwe7-flex/ng-package.json"
-                    },
-                    "configurations": {
-                        "production": {
-                            "project": "projects/iwe7-flex/ng-package.prod.json"
-                        }
-                    }
-                },
-                "test": {
-                    "builder": "@angular-devkit/build-angular:karma",
-                    "options": {
-                        "main": "projects/iwe7-flex/src/test.ts",
-                        "tsConfig": "projects/iwe7-flex/tsconfig.spec.json",
-                        "karmaConfig": "projects/iwe7-flex/karma.conf.js"
-                    }
-                },
-                "lint": {
-                    "builder": "@angular-devkit/build-angular:tslint",
-                    "options": {
-                        "tsConfig": ["projects/iwe7-flex/tsconfig.lib.json", "projects/iwe7-flex/tsconfig.spec.json"],
-                        "exclude": ["**/node_modules/**"]
-                    }
-                }
-            }
-        },
-        "iwe7-icss": {
-            "root": "projects/iwe7-icss",
-            "sourceRoot": "projects/iwe7-icss/src",
-            "projectType": "library",
-            "prefix": "lib",
-            "architect": {
-                "build": {
-                    "builder": "@angular-devkit/build-ng-packagr:build",
-                    "options": {
-                        "tsConfig": "projects/iwe7-icss/tsconfig.lib.json",
-                        "project": "projects/iwe7-icss/ng-package.json"
-                    },
-                    "configurations": {
-                        "production": {
-                            "project": "projects/iwe7-icss/ng-package.prod.json"
-                        }
-                    }
-                },
-                "test": {
-                    "builder": "@angular-devkit/build-angular:karma",
-                    "options": {
-                        "main": "projects/iwe7-icss/src/test.ts",
-                        "tsConfig": "projects/iwe7-icss/tsconfig.spec.json",
-                        "karmaConfig": "projects/iwe7-icss/karma.conf.js"
-                    }
-                },
-                "lint": {
-                    "builder": "@angular-devkit/build-angular:tslint",
-                    "options": {
-                        "tsConfig": ["projects/iwe7-icss/tsconfig.lib.json", "projects/iwe7-icss/tsconfig.spec.json"],
-                        "exclude": ["**/node_modules/**"]
-                    }
-                }
-            }
-        },
-        "iwe7-square": {
-            "root": "projects/iwe7-square",
-            "sourceRoot": "projects/iwe7-square/src",
-            "projectType": "library",
-            "prefix": "lib",
-            "architect": {
-                "build": {
-                    "builder": "@angular-devkit/build-ng-packagr:build",
-                    "options": {
-                        "tsConfig": "projects/iwe7-square/tsconfig.lib.json",
-                        "project": "projects/iwe7-square/ng-package.json"
-                    },
-                    "configurations": {
-                        "production": {
-                            "project": "projects/iwe7-square/ng-package.prod.json"
-                        }
-                    }
-                },
-                "test": {
-                    "builder": "@angular-devkit/build-angular:karma",
-                    "options": {
-                        "main": "projects/iwe7-square/src/test.ts",
-                        "tsConfig": "projects/iwe7-square/tsconfig.spec.json",
-                        "karmaConfig": "projects/iwe7-square/karma.conf.js"
-                    }
-                },
-                "lint": {
-                    "builder": "@angular-devkit/build-angular:tslint",
-                    "options": {
-                        "tsConfig": [
-                            "projects/iwe7-square/tsconfig.lib.json",
-                            "projects/iwe7-square/tsconfig.spec.json"
-                        ],
-                        "exclude": ["**/node_modules/**"]
-                    }
-                }
-            }
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "src/tsconfig.app.json",
+              "src/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
         }
+      }
     },
-    "defaultProject": "iwe7-mobile"
+    "iwe7-mobile-e2e": {
+      "root": "e2e/",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "e2e/protractor.conf.js",
+            "devServerTarget": "iwe7-mobile:serve"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "iwe7-antd-mobile": {
+      "root": "projects/iwe7-antd-mobile",
+      "sourceRoot": "projects/iwe7-antd-mobile/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/iwe7-antd-mobile/tsconfig.lib.json",
+            "project": "projects/iwe7-antd-mobile/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/iwe7-antd-mobile/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/iwe7-antd-mobile/src/test.ts",
+            "tsConfig": "projects/iwe7-antd-mobile/tsconfig.spec.json",
+            "karmaConfig": "projects/iwe7-antd-mobile/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/iwe7-antd-mobile/tsconfig.lib.json",
+              "projects/iwe7-antd-mobile/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "iwe7-web-storage": {
+      "root": "projects/iwe7-web-storage",
+      "sourceRoot": "projects/iwe7-web-storage/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/iwe7-web-storage/tsconfig.lib.json",
+            "project": "projects/iwe7-web-storage/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/iwe7-web-storage/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/iwe7-web-storage/src/test.ts",
+            "tsConfig": "projects/iwe7-web-storage/tsconfig.spec.json",
+            "karmaConfig": "projects/iwe7-web-storage/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/iwe7-web-storage/tsconfig.lib.json",
+              "projects/iwe7-web-storage/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "iwe7-lodash": {
+      "root": "projects/iwe7-lodash",
+      "sourceRoot": "projects/iwe7-lodash/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/iwe7-lodash/tsconfig.lib.json",
+            "project": "projects/iwe7-lodash/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/iwe7-lodash/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/iwe7-lodash/src/test.ts",
+            "tsConfig": "projects/iwe7-lodash/tsconfig.spec.json",
+            "karmaConfig": "projects/iwe7-lodash/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/iwe7-lodash/tsconfig.lib.json",
+              "projects/iwe7-lodash/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "iwe7-decorator": {
+      "root": "projects/iwe7-decorator",
+      "sourceRoot": "projects/iwe7-decorator/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/iwe7-decorator/tsconfig.lib.json",
+            "project": "projects/iwe7-decorator/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/iwe7-decorator/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/iwe7-decorator/src/test.ts",
+            "tsConfig": "projects/iwe7-decorator/tsconfig.spec.json",
+            "karmaConfig": "projects/iwe7-decorator/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/iwe7-decorator/tsconfig.lib.json",
+              "projects/iwe7-decorator/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "iwe7-http": {
+      "root": "projects/iwe7-http",
+      "sourceRoot": "projects/iwe7-http/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/iwe7-http/tsconfig.lib.json",
+            "project": "projects/iwe7-http/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/iwe7-http/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/iwe7-http/src/test.ts",
+            "tsConfig": "projects/iwe7-http/tsconfig.spec.json",
+            "karmaConfig": "projects/iwe7-http/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/iwe7-http/tsconfig.lib.json",
+              "projects/iwe7-http/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "iwe7-router": {
+      "root": "projects/iwe7-router",
+      "sourceRoot": "projects/iwe7-router/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/iwe7-router/tsconfig.lib.json",
+            "project": "projects/iwe7-router/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/iwe7-router/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/iwe7-router/src/test.ts",
+            "tsConfig": "projects/iwe7-router/tsconfig.spec.json",
+            "karmaConfig": "projects/iwe7-router/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/iwe7-router/tsconfig.lib.json",
+              "projects/iwe7-router/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "iwe7-forms": {
+      "root": "projects/iwe7-forms",
+      "sourceRoot": "projects/iwe7-forms/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/iwe7-forms/tsconfig.lib.json",
+            "project": "projects/iwe7-forms/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/iwe7-forms/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/iwe7-forms/src/test.ts",
+            "tsConfig": "projects/iwe7-forms/tsconfig.spec.json",
+            "karmaConfig": "projects/iwe7-forms/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/iwe7-forms/tsconfig.lib.json",
+              "projects/iwe7-forms/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "iwe7-directives": {
+      "root": "projects/iwe7-directives",
+      "sourceRoot": "projects/iwe7-directives/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/iwe7-directives/tsconfig.lib.json",
+            "project": "projects/iwe7-directives/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/iwe7-directives/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/iwe7-directives/src/test.ts",
+            "tsConfig": "projects/iwe7-directives/tsconfig.spec.json",
+            "karmaConfig": "projects/iwe7-directives/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/iwe7-directives/tsconfig.lib.json",
+              "projects/iwe7-directives/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "iwe7-util": {
+      "root": "projects/iwe7-util",
+      "sourceRoot": "projects/iwe7-util/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/iwe7-util/tsconfig.lib.json",
+            "project": "projects/iwe7-util/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/iwe7-util/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/iwe7-util/src/test.ts",
+            "tsConfig": "projects/iwe7-util/tsconfig.spec.json",
+            "karmaConfig": "projects/iwe7-util/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/iwe7-util/tsconfig.lib.json",
+              "projects/iwe7-util/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "iwe7-reflect": {
+      "root": "projects/iwe7-reflect",
+      "sourceRoot": "projects/iwe7-reflect/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/iwe7-reflect/tsconfig.lib.json",
+            "project": "projects/iwe7-reflect/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/iwe7-reflect/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/iwe7-reflect/src/test.ts",
+            "tsConfig": "projects/iwe7-reflect/tsconfig.spec.json",
+            "karmaConfig": "projects/iwe7-reflect/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/iwe7-reflect/tsconfig.lib.json",
+              "projects/iwe7-reflect/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "iwe7-abc": {
+      "root": "projects/iwe7-abc",
+      "sourceRoot": "projects/iwe7-abc/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/iwe7-abc/tsconfig.lib.json",
+            "project": "projects/iwe7-abc/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/iwe7-abc/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/iwe7-abc/src/test.ts",
+            "tsConfig": "projects/iwe7-abc/tsconfig.spec.json",
+            "karmaConfig": "projects/iwe7-abc/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/iwe7-abc/tsconfig.lib.json",
+              "projects/iwe7-abc/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "iwe7-ui": {
+      "root": "projects/iwe7-ui/",
+      "sourceRoot": "projects/iwe7-ui/src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/iwe7-ui",
+            "index": "projects/iwe7-ui/src/index.html",
+            "main": "projects/iwe7-ui/src/main.ts",
+            "polyfills": "projects/iwe7-ui/src/polyfills.ts",
+            "tsConfig": "projects/iwe7-ui/tsconfig.app.json",
+            "assets": [
+              "projects/iwe7-ui/src/favicon.ico",
+              "projects/iwe7-ui/src/assets"
+            ],
+            "styles": [
+              "projects/iwe7-ui/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/iwe7-ui/src/environments/environment.ts",
+                  "with": "projects/iwe7-ui/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": true,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": true,
+              "buildOptimizer": true
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "iwe7-ui:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "iwe7-ui:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "iwe7-ui:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/iwe7-ui/src/test.ts",
+            "polyfills": "projects/iwe7-ui/src/polyfills.ts",
+            "tsConfig": "projects/iwe7-ui/tsconfig.spec.json",
+            "karmaConfig": "projects/iwe7-ui/karma.conf.js",
+            "styles": [
+              "projects/iwe7-ui/src/styles.css"
+            ],
+            "scripts": [],
+            "assets": [
+              "projects/iwe7-ui/src/favicon.ico",
+              "projects/iwe7-ui/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/iwe7-ui/tsconfig.app.json",
+              "projects/iwe7-ui/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "iwe7-ui-e2e": {
+      "root": "projects/iwe7-ui-e2e/",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/iwe7-ui-e2e/protractor.conf.js",
+            "devServerTarget": "iwe7-ui:serve"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "projects/iwe7-ui-e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "iwe7-seed": {
+      "root": "projects/iwe7-seed/",
+      "sourceRoot": "projects/iwe7-seed/src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/iwe7-seed",
+            "index": "projects/iwe7-seed/src/index.html",
+            "main": "projects/iwe7-seed/src/main.ts",
+            "polyfills": "projects/iwe7-seed/src/polyfills.ts",
+            "tsConfig": "projects/iwe7-seed/tsconfig.app.json",
+            "assets": [
+              "projects/iwe7-seed/src/favicon.ico",
+              "projects/iwe7-seed/src/assets"
+            ],
+            "styles": [
+              "projects/iwe7-seed/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/iwe7-seed/src/environments/environment.ts",
+                  "with": "projects/iwe7-seed/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "iwe7-seed:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "iwe7-seed:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "iwe7-seed:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/iwe7-seed/src/test.ts",
+            "polyfills": "projects/iwe7-seed/src/polyfills.ts",
+            "tsConfig": "projects/iwe7-seed/tsconfig.spec.json",
+            "karmaConfig": "projects/iwe7-seed/karma.conf.js",
+            "styles": [
+              "projects/iwe7-seed/src/styles.css"
+            ],
+            "scripts": [],
+            "assets": [
+              "projects/iwe7-seed/src/favicon.ico",
+              "projects/iwe7-seed/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/iwe7-seed/tsconfig.app.json",
+              "projects/iwe7-seed/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "iwe7-seed-e2e": {
+      "root": "projects/iwe7-seed-e2e/",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/iwe7-seed-e2e/protractor.conf.js",
+            "devServerTarget": "iwe7-seed:serve"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "projects/iwe7-seed-e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "iwe7-base": {
+      "root": "projects/iwe7-base",
+      "sourceRoot": "projects/iwe7-base/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/iwe7-base/tsconfig.lib.json",
+            "project": "projects/iwe7-base/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/iwe7-base/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/iwe7-base/src/test.ts",
+            "tsConfig": "projects/iwe7-base/tsconfig.spec.json",
+            "karmaConfig": "projects/iwe7-base/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/iwe7-base/tsconfig.lib.json",
+              "projects/iwe7-base/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "iwe7-scrolling": {
+      "root": "projects/iwe7-scrolling",
+      "sourceRoot": "projects/iwe7-scrolling/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/iwe7-scrolling/tsconfig.lib.json",
+            "project": "projects/iwe7-scrolling/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/iwe7-scrolling/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/iwe7-scrolling/src/test.ts",
+            "tsConfig": "projects/iwe7-scrolling/tsconfig.spec.json",
+            "karmaConfig": "projects/iwe7-scrolling/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/iwe7-scrolling/tsconfig.lib.json",
+              "projects/iwe7-scrolling/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "iwe7-antd-mobile-preview": {
+      "root": "projects/iwe7-antd-mobile-preview/",
+      "sourceRoot": "projects/iwe7-antd-mobile-preview/src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/iwe7-antd-mobile-preview",
+            "index": "projects/iwe7-antd-mobile-preview/src/index.html",
+            "main": "projects/iwe7-antd-mobile-preview/src/main.ts",
+            "polyfills": "projects/iwe7-antd-mobile-preview/src/polyfills.ts",
+            "tsConfig": "projects/iwe7-antd-mobile-preview/tsconfig.app.json",
+            "assets": [
+              "projects/iwe7-antd-mobile-preview/src/favicon.ico",
+              "projects/iwe7-antd-mobile-preview/src/assets"
+            ],
+            "styles": [
+              "projects/iwe7-antd-mobile-preview/src/styles.less"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/iwe7-antd-mobile-preview/src/environments/environment.ts",
+                  "with": "projects/iwe7-antd-mobile-preview/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "iwe7-antd-mobile-preview:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "iwe7-antd-mobile-preview:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "iwe7-antd-mobile-preview:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/iwe7-antd-mobile-preview/src/test.ts",
+            "polyfills": "projects/iwe7-antd-mobile-preview/src/polyfills.ts",
+            "tsConfig": "projects/iwe7-antd-mobile-preview/tsconfig.spec.json",
+            "karmaConfig": "projects/iwe7-antd-mobile-preview/karma.conf.js",
+            "styles": [
+              "projects/iwe7-antd-mobile-preview/src/styles.less"
+            ],
+            "scripts": [],
+            "assets": [
+              "projects/iwe7-antd-mobile-preview/src/favicon.ico",
+              "projects/iwe7-antd-mobile-preview/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/iwe7-antd-mobile-preview/tsconfig.app.json",
+              "projects/iwe7-antd-mobile-preview/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "iwe7-antd-mobile-preview-e2e": {
+      "root": "projects/iwe7-antd-mobile-preview-e2e/",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/iwe7-antd-mobile-preview-e2e/protractor.conf.js",
+            "devServerTarget": "iwe7-antd-mobile-preview:serve"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "projects/iwe7-antd-mobile-preview-e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "iwe7-flex": {
+      "root": "projects/iwe7-flex",
+      "sourceRoot": "projects/iwe7-flex/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/iwe7-flex/tsconfig.lib.json",
+            "project": "projects/iwe7-flex/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/iwe7-flex/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/iwe7-flex/src/test.ts",
+            "tsConfig": "projects/iwe7-flex/tsconfig.spec.json",
+            "karmaConfig": "projects/iwe7-flex/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/iwe7-flex/tsconfig.lib.json",
+              "projects/iwe7-flex/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "iwe7-icss": {
+      "root": "projects/iwe7-icss",
+      "sourceRoot": "projects/iwe7-icss/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/iwe7-icss/tsconfig.lib.json",
+            "project": "projects/iwe7-icss/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/iwe7-icss/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/iwe7-icss/src/test.ts",
+            "tsConfig": "projects/iwe7-icss/tsconfig.spec.json",
+            "karmaConfig": "projects/iwe7-icss/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/iwe7-icss/tsconfig.lib.json",
+              "projects/iwe7-icss/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "iwe7-square": {
+      "root": "projects/iwe7-square",
+      "sourceRoot": "projects/iwe7-square/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/iwe7-square/tsconfig.lib.json",
+            "project": "projects/iwe7-square/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/iwe7-square/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/iwe7-square/src/test.ts",
+            "tsConfig": "projects/iwe7-square/tsconfig.spec.json",
+            "karmaConfig": "projects/iwe7-square/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/iwe7-square/tsconfig.lib.json",
+              "projects/iwe7-square/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "iwe7-jd-index": {
+      "root": "projects/iwe7-jd-index",
+      "sourceRoot": "projects/iwe7-jd-index/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/iwe7-jd-index/tsconfig.lib.json",
+            "project": "projects/iwe7-jd-index/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/iwe7-jd-index/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/iwe7-jd-index/src/test.ts",
+            "tsConfig": "projects/iwe7-jd-index/tsconfig.spec.json",
+            "karmaConfig": "projects/iwe7-jd-index/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/iwe7-jd-index/tsconfig.lib.json",
+              "projects/iwe7-jd-index/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "iwe7-mobile"
 }
