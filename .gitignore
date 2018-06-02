@@ -37,3 +37,9 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+projects/iwe7-map/
+projects/iwe7-base/
+projects/iwe7-better-scroll/
+projects/iwe7-core/
+projects/iwe7-flex/
+projects/iwe7-square/
