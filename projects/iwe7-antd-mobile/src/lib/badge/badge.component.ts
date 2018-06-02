@@ -14,9 +14,7 @@ import classnames from "classnames";
 const prefixCls = "am-badge";
 @Component({
   selector: "[badge]",
-  templateUrl: "./badge.component.html",
-  styleUrls: ["./badge.component.less"],
-  encapsulation: ViewEncapsulation.None
+  templateUrl: "./badge.component.html"
 })
 export class AmBadgeComponent implements OnInit, OnChanges {
   @Input() className: string;
@@ -64,7 +62,7 @@ export class AmBadgeComponent implements OnInit, OnChanges {
   }
 
   scrollNumberCls: any;
-  constructor() {}
+  constructor() { }
 
   ngOnInit() {
     this.render();
@@ -78,6 +76,9 @@ export class AmBadgeComponent implements OnInit, OnChanges {
     let {
       overflowCount,
       text,
+
+    } = this;
+    const {
       dot,
       size,
       corner,
@@ -93,7 +94,6 @@ export class AmBadgeComponent implements OnInit, OnChanges {
     if (dot) {
       text = "";
     }
-
     this.scrollNumberCls = classnames({
       [`${prefixCls}-dot`]: dot || hot,
       [`${prefixCls}-dot-large`]: dot && size === "large",

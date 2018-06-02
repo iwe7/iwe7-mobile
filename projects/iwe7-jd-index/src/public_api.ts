@@ -1,7 +1,15 @@
-/*
- * Public API Surface of iwe7-jd-index
- */
-
-export * from './lib/iwe7-jd-index.service';
-export * from './lib/iwe7-jd-index.component';
 export * from './lib/iwe7-jd-index.module';
+export * from './lib/jd-box/jd-box.module';
+export * from './lib/jd-floor/jd-floor.module';
+export * from './lib/jd-floor-item/jd-floor-item.module';
+export * from './lib/jd-floor-title/jd-floor-title.module';
+export * from './lib/jd-footer/jd-footer.module';
+export * from './lib/jd-grid/jd-grid.module';
+export * from './lib/jd-header/jd-header.module';
+export * from './lib/jd-hots/jd-hots.module';
+export * from './lib/jd-item/jd-item.module';
+export * from './lib/jd-news/jd-news.module';
+export * from './lib/jd-search/jd-search.module';
+export * from './lib/jd-swiper/jd-swiper.module';
+export * from './lib/jd-tip/jd-tip.module';
+export * from './lib/jd-to-top/jd-to-top.module';

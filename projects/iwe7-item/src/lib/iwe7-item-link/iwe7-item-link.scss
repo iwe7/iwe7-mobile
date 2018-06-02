@@ -1,0 +1,36 @@
+:host{
+    display: block;
+    position: relative;
+    height: 44px;
+    line-height: 44px;
+    padding-left: 10px;
+    padding-right: 40px;
+    font-size: 14px;
+    color: #999;
+    background: #fff;
+    &:before {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        pointer-events: none;
+        background-color: #e5e5e5;
+        height: 1px;
+        left: 0;
+        right: 0;
+        top: 0;
+    }
+    &:after {
+        content: "";
+        display: block;
+        width: 10px;
+        height: 10px;
+        border-top: 1px solid #666;
+        border-left: 1px solid #666;
+        transform-origin: 50%;
+        transform: rotate(135deg);
+        position: absolute;
+        top: 50%;
+        margin-top: -6px;
+        right: 20px;
+    }
+}

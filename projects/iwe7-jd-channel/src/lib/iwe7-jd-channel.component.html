@@ -1,0 +1,13 @@
+<div class="jd-category-tab" (betterScroll)="createScroll($event)">
+  <ul>
+    <li (click)="onItem($event,item,i)" [class.active]="currentIndex === i" *ngFor="let item of list;index as i;">
+      {{item.title}}{{i}}
+    </li>
+  </ul>
+</div>
+
+<div class="jd-category-content">
+  <div>
+    <ng-container *ngTemplateOutlet="tpl;context:{$implicit: activeTab,index: currentIndex,scroll: contentScroll}"></ng-container>
+  </div>
+</div>

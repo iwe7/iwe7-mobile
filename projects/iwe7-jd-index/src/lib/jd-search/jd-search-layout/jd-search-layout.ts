@@ -3,6 +3,9 @@ import { Injector, ViewChild } from '@angular/core';
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { BaseWithOnDestroy } from 'iwe7-base';
 import { onTap } from 'iwe7-util';
+import { switchMap, map, filter } from 'rxjs/operators';
+import { of } from 'rxjs';
+
 @Component({
   selector: 'jd-search-layout',
   templateUrl: 'jd-search-layout.html',
@@ -18,6 +21,8 @@ export class JdSearchLayoutComponent extends BaseWithOnDestroy implements OnInit
   @Output() leftStream: EventEmitter<any> = new EventEmitter();
   @Output() rightStream: EventEmitter<any> = new EventEmitter();
 
+  opacity: number = 0;
+
   constructor(injector: Injector) {
     super(injector);
   }
@@ -31,5 +36,16 @@ export class JdSearchLayoutComponent extends BaseWithOnDestroy implements OnInit
     onTap(this.right.nativeElement).subscribe(res => {
       this.rightStream.emit(res);
     });
+    setTimeout(() => {
+      this.listen(document, 'scroll').pipe(
+        switchMap(res => {
+          const top = document.documentElement.scrollTop;
+          return of(top);
+        }),
+        filter(top => top < 280),
+      ).subscribe((top: number) => {
+        this.opacity = Math.min(top / 200, 1);
+      });
+    }, 0);
   }
 }

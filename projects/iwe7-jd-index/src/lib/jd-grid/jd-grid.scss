@@ -1,0 +1,11 @@
+:host {
+    display: block;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    jd-box {
+        flex: 1;
+    }
+}

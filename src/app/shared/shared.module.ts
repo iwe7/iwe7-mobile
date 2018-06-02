@@ -1,6 +1,5 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { AntdMobileModule } from "../../../projects/iwe7-antd-mobile/src/public_api";
 import { ComponentsModule } from "../components/components.module";
 import { HttpClientModule } from "@angular/common/http";
 import { DialogModule } from "iwe7-dialog";
@@ -9,7 +8,16 @@ import {
   Iwe7ButtonComponent,
 } from "./button.example";
 import { ReactiveFormsModule } from "@angular/forms";
+
+import { Iwe7AdvsModule } from './../../../projects/iwe7-advs/src/lib/iwe7-advs.module';
+import { Iwe7ItemModule } from './../../../projects/iwe7-item/src/lib/iwe7-item.module';
+import { Iwe7BetterScrollModule } from './../../../projects/iwe7-better-scroll/src/lib/iwe7-better-scroll.module';
+import { AntdMobileModule } from "../../../projects/iwe7-antd-mobile/src/public_api";
 import { Iwe7JdIndexModule } from '../../../projects/iwe7-jd-index/src/public_api';
+import { Iwe7JdChannelModule } from "../../../projects/iwe7-jd-channel/src/public_api";
+import { Iwe7MapModule } from '../../../projects/iwe7-map/src/public_api';
+import { Iwe7BadgeModule } from '../../../projects/iwe7-badge/src/public_api';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -19,7 +27,13 @@ import { Iwe7JdIndexModule } from '../../../projects/iwe7-jd-index/src/public_ap
     DialogModule,
     ScrollingModule,
     ReactiveFormsModule,
-    Iwe7JdIndexModule
+    Iwe7JdIndexModule,
+    Iwe7JdChannelModule,
+    Iwe7BetterScrollModule,
+    Iwe7ItemModule,
+    Iwe7AdvsModule,
+    Iwe7MapModule,
+    Iwe7BadgeModule
   ],
   declarations: [Iwe7ButtonComponent],
   exports: [
@@ -29,7 +43,13 @@ import { Iwe7JdIndexModule } from '../../../projects/iwe7-jd-index/src/public_ap
     ScrollingModule,
     Iwe7ButtonComponent,
     ReactiveFormsModule,
-    Iwe7JdIndexModule
+    Iwe7JdIndexModule,
+    Iwe7JdChannelModule,
+    Iwe7BetterScrollModule,
+    Iwe7ItemModule,
+    Iwe7AdvsModule,
+    Iwe7MapModule,
+    Iwe7BadgeModule
   ]
 })
 export class SharedModule { }

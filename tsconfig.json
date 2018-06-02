@@ -17,8 +17,11 @@
       "dom"
     ],
     "paths": {
-      "iwe7-jd-index": [
-        "dist/iwe7-jd-index"
+      "iwe7-badge": [
+        "dist/iwe7-badge"
+      ],
+      "iwe7-badge/*": [
+        "dist/iwe7-badge/*"
       ]
     }
   }

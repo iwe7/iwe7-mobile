@@ -1,10 +1,45 @@
-<div class="fixed-top" [formGroup]="searchForm">
+<jd-tip></jd-tip>
+<div class="fixed-top" [style.top]="top" [formGroup]="searchForm">
     <jd-search [height]="header.height" [heightView]="header.heightView" (leftStream)="leftStream($event)" (rightStream)="rightStream($event)" formControlName="key" jdSearchTheme="red"></jd-search>
 </div>
-<div class="header-placeholder" [style.height]="header.height"></div>
+
+<jd-swiper></jd-swiper>
+
 <jd-floor>
     <jd-floor-item>
-        <jd-item></jd-item>
+        <div class="adv-item">
+            <img src="https://m.360buyimg.com/mobilecms/jfs/t21172/269/268255997/294253/78d10767/5b07d048Nc5a330cb.gif" alt="">
+        </div>
+    </jd-floor-item>
+</jd-floor>
+
+<jd-grid></jd-grid>
+<jd-news></jd-news>
+
+<jd-floor>
+    <jd-floor-item>
+        <jd-item [square]="false" image="https://m.360buyimg.com/mobilecms/s800x244_jfs/t20020/345/885752145/69657/d4e30a59/5b0cd575N7cbd3e36.jpg!q70.jpg.dpg.webp"></jd-item>
+    </jd-floor-item>
+</jd-floor>
+
+<jd-floor>
+    <jd-floor-item>
+        <jd-item [square]="false" image="https://m.360buyimg.com/mobilecms/s200x248_jfs/t20239/41/142314999/75364/10226d45/5afe9ca7N61d94b6f.png!q70.jpg.dpg.webp"></jd-item>
+        <jd-item [square]="false" image="https://m.360buyimg.com/mobilecms/s200x248_jfs/t20239/41/142314999/75364/10226d45/5afe9ca7N61d94b6f.png!q70.jpg.dpg.webp"></jd-item>
+        <jd-item [square]="false" image="https://m.360buyimg.com/mobilecms/s200x248_jfs/t20239/41/142314999/75364/10226d45/5afe9ca7N61d94b6f.png!q70.jpg.dpg.webp"></jd-item>
+        <jd-item [square]="false" image="https://m.360buyimg.com/mobilecms/s200x248_jfs/t20239/41/142314999/75364/10226d45/5afe9ca7N61d94b6f.png!q70.jpg.dpg.webp"></jd-item>
+    </jd-floor-item>
+    <jd-floor-item>
+        <jd-item [square]="false" image="https://m.360buyimg.com/mobilecms/s200x248_jfs/t20239/41/142314999/75364/10226d45/5afe9ca7N61d94b6f.png!q70.jpg.dpg.webp"></jd-item>
+        <jd-item [square]="false" image="https://m.360buyimg.com/mobilecms/s200x248_jfs/t20239/41/142314999/75364/10226d45/5afe9ca7N61d94b6f.png!q70.jpg.dpg.webp"></jd-item>
+        <jd-item [square]="false" image="https://m.360buyimg.com/mobilecms/s200x248_jfs/t20239/41/142314999/75364/10226d45/5afe9ca7N61d94b6f.png!q70.jpg.dpg.webp"></jd-item>
+        <jd-item [square]="false" image="https://m.360buyimg.com/mobilecms/s200x248_jfs/t20239/41/142314999/75364/10226d45/5afe9ca7N61d94b6f.png!q70.jpg.dpg.webp"></jd-item>
+    </jd-floor-item>
+</jd-floor>
+
+<jd-floor>
+    <jd-floor-item>
+        <jd-item title="title" desc="desc"></jd-item>
         <jd-item></jd-item>
         <jd-item></jd-item>
         <jd-item></jd-item>
@@ -16,6 +51,7 @@
         <jd-item></jd-item>
     </jd-floor-item>
 </jd-floor>
+
 <jd-floor>
     <ng-template #title>
         <img src="https://m.360buyimg.com/mobilecms/jfs/t15526/56/2344102455/23273/d8e15d5a/5aa0dbc1Nefd2bd2a.png!q70.jpg">
@@ -60,3 +96,9 @@
         <jd-item></jd-item>
     </jd-floor-item>
 </jd-floor>
+
+<jd-hots></jd-hots>
+
+<jd-footer></jd-footer>
+
+<jd-to-top></jd-to-top>

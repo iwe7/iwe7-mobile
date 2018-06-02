@@ -1,28 +1,40 @@
-import { JdSearchComponent } from './jd-search/jd-search';
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-
+import { JdSearchModule } from './jd-search/jd-search.module';
+import { JdToTopModule } from './jd-to-top/jd-to-top.module';
+import { JdTipModule } from './jd-tip/jd-tip.module';
+import { JdSwiperModule } from './jd-swiper/jd-swiper.module';
+import { JdNewsModule } from './jd-news/jd-news.module';
+import { JdItemModule } from './jd-item/jd-item.module';
+import { JdHotsModule } from './jd-hots/jd-hots.module';
+import { JdHeaderModule } from './jd-header/jd-header.module';
+import { JdGridModule } from './jd-grid/jd-grid.module';
+import { JdFooterModule } from './jd-footer/jd-footer.module';
+import { JdFloorItemModule } from './jd-floor-item/jd-floor-item.module';
+import { JdFloorTitleModule } from './jd-floor-title/jd-floor-title.module';
+import { JdFloorModule } from './jd-floor/jd-floor.module';
+import { JdBoxModule } from './jd-box/jd-box.module';
 import { Iwe7JdIndexComponent } from './iwe7-jd-index.component';
-import { JdSearchContainerComponent, JdSearchLayoutComponent, JdSearchViewComponent, JdSearchThemeDirective } from './jd-search/index';
+
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { JdFloorComponent } from './jd-floor/jd-floor';
-import { JdFloorItemComponent } from './jd-floor-item/jd-floor-item';
-import { JdFloorTitleComponent } from './jd-floor-title/jd-floor-title';
-import { JdItemComponent } from './jd-item/jd-item';
-
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { Iwe7SquareModule } from 'iwe7-square';
-export const JdComponents = [
-  Iwe7JdIndexComponent,
-  JdSearchContainerComponent,
-  JdSearchLayoutComponent,
-  JdSearchViewComponent,
-  JdSearchComponent,
-  JdSearchThemeDirective,
-  JdFloorComponent,
-  JdFloorItemComponent,
-  JdFloorTitleComponent,
-  JdItemComponent
+
+export const Iwe7JdModules = [
+  JdBoxModule,
+  JdFloorModule,
+  JdFloorTitleModule,
+  JdFloorItemModule,
+  JdFooterModule,
+  JdGridModule,
+  JdHeaderModule,
+  JdHotsModule,
+  JdItemModule,
+  JdNewsModule,
+  JdSwiperModule,
+  JdTipModule,
+  JdToTopModule,
+  JdSearchModule
 ];
 
 @NgModule({
@@ -30,9 +42,10 @@ export const JdComponents = [
     ReactiveFormsModule,
     RouterModule,
     CommonModule,
-    Iwe7SquareModule
+    Iwe7SquareModule,
+    ...Iwe7JdModules
   ],
-  declarations: [...JdComponents],
-  exports: [Iwe7JdIndexComponent, JdSearchComponent]
+  declarations: [Iwe7JdIndexComponent],
+  exports: [Iwe7JdIndexComponent, ...Iwe7JdModules]
 })
 export class Iwe7JdIndexModule { }

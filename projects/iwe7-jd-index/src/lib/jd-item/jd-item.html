@@ -1,12 +1,15 @@
-<div class="jd-item-text">
-    <strong class="jd-item-title">
-    拍拍二手
+<div class="jd-item-text" *ngIf="title || desc">
+  <strong class="jd-item-title">
+    {{title}}
   </strong>
-    <p class="jd-item-desc">
-        iPhone 5折起
-    </p>
+  <p class="jd-item-desc">
+    {{desc}}
+  </p>
 </div>
-<iwe7-square [width]="width" class="jd-item-image">
-    <img src="https://m.360buyimg.com/mobilecms/s134x134_jfs/t14887/186/1739278855/40381/7f1e3979/5a56fd1cN1888c3b0.jpg!q70.jpg.dpg.webp" alt="">
+<iwe7-square *ngIf="square" [width]="width" class="jd-item-image">
+  <img [src]="image" alt="">
 </iwe7-square>
+<div class="no-square" *ngIf="!square">
+  <img [src]="image" alt="">
+</div>
 <ng-content></ng-content>

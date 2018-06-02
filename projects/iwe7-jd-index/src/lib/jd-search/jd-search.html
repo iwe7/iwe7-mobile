@@ -1,5 +1,5 @@
 <jd-search-layout (leftStream)="_leftStream($event)" (rightStream)="_rightStream($event)">
   <jd-search-container>
-    <jd-search-view (changeStream)="_change($event)" [placeholder]="placeholder"></jd-search-view>
+    <input type="search" (change)="_change($event)" [placeholder]="placeholder">
   </jd-search-container>
 </jd-search-layout>

@@ -1,15 +1,18 @@
+import { Injector } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { BaseWithIcss } from 'iwe7-base';
+import { Subject, of, fromEvent } from 'rxjs';
+import { switchMap, map, filter } from 'rxjs/operators';
 
-import { Subject } from 'rxjs';
 @Component({
   selector: 'iwe7-jd-index',
   templateUrl: './iwe7-jd-index.component.html',
   styleUrls: ['./iwe7-jd-index.component.scss']
 })
-export class Iwe7JdIndexComponent implements OnInit {
+export class Iwe7JdIndexComponent extends BaseWithIcss implements OnInit {
   searchForm: FormGroup;
 
   @Input() header: any = {
@@ -20,8 +23,10 @@ export class Iwe7JdIndexComponent implements OnInit {
   @Input() searchUrl: string;
   @Input() leftUrl: string;
   @Input() rightUrl: string;
+  top: string;
 
-  constructor(public fb: FormBuilder, public http: HttpClient, public router: Router) {
+  constructor(public fb: FormBuilder, public http: HttpClient, public router: Router, injector: Injector) {
+    super(injector);
     this.searchForm = this.fb.group({
       key: ['']
     });
@@ -31,6 +36,18 @@ export class Iwe7JdIndexComponent implements OnInit {
   }
 
   ngOnInit() {
+    fromEvent(document, 'scroll').pipe(
+      switchMap(res => {
+        const top = document.documentElement.scrollTop;
+        return of(top);
+      }),
+    ).subscribe((top: number) => {
+      if (top < 45) {
+        this.top = Math.abs((45 - top)) + 'px';
+      } else {
+        this.top = '0px';
+      }
+    });
   }
 
   onSearch() {
@@ -51,5 +68,4 @@ export class Iwe7JdIndexComponent implements OnInit {
       this.router.navigateByUrl(this.rightUrl);
     }
   }
-
 }

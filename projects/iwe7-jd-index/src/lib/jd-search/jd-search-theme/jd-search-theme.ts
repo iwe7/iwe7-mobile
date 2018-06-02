@@ -4,7 +4,6 @@ import { Directive, Input, ElementRef, Renderer2 } from '@angular/core';
 export class JdSearchThemeDirective {
   @Input()
   set jdSearchTheme(val: string) {
-    console.log(val);
     this.render.addClass(this.ele.nativeElement, `theme-${val}`);
   }
   constructor(public ele: ElementRef, public render: Renderer2) { }

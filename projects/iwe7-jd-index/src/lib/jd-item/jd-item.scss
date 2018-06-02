@@ -10,6 +10,7 @@ iwe7-square {
     display: block;
     img {
         width: 100%;
+        height: 100%;
     }
 }
 
@@ -37,5 +38,11 @@ iwe7-square {
         font-weight: 400;
         color: #222222;
         box-sizing: border-box;
+    }
+}
+
+.no-square {
+    img {
+        width: 100%;
     }
 }
