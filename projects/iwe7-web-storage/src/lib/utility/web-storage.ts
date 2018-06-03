@@ -1,4 +1,4 @@
-const KEY_PREFIX = "angular2ws";
+const KEY_PREFIX = "iwe7WebStorage";
 
 export class WebStorageUtility {
   static generateStorageKey(key: string): string {

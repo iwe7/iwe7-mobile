@@ -1,9 +1,23 @@
-Iwe7ScriptService
 
-| 方法   | 简介                                           |
-|------|----------------------------------------------|
-| load | ```load(path: string[]): Observable<any>;``` |
 
+
+LocalStorageService
+
+| 名称     | 说明                                   |
+|--------|--------------------------------------|
+| get    | `get(key: string): any`              |
+| set    | `set(key: string, value: any): void` |
+| remove | `remove(key: string): void`          |
+| clear  | `clear(): void`                      |
+
+SessionStorageService
+
+| 名称     | 说明                                   |
+|--------|--------------------------------------|
+| get    | `get(key: string): any`              |
+| set    | `set(key: string, value: any): void` |
+| remove | `remove(key: string): void`          |
+| clear  | `clear(): void`                      |
 
 
 组件库
@@ -16,7 +30,7 @@ Iwe7ScriptService
 | iwe7-icss          | rxjs操作css | https://github.com/iwe7/iwe7-icss          |
 | iwe7-core          | 核心库       | https://github.com/iwe7/iwe7-core          |
 | iwe7-script        | 加载css和js  | https://github.com/iwe7/iwe7-script        |
-| iwe7-util          | script    | https://github.com/iwe7/iwe7-util          |
+| iwe7-util          | 工具        | https://github.com/iwe7/iwe7-util          |
 | iwe7-square        | 正方形组件     | https://github.com/iwe7/iwe7-square        |
 | iwe7-better-scroll | 滑动组件      | https://github.com/iwe7/iwe7-better-scroll |
 | iwe7-web-storage   | 缓存相关      | https://github.com/iwe7/iwe7-web-storage   |
