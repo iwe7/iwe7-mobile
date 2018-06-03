@@ -1,4 +1,4 @@
-import { TemplateRef, Injector, ElementRef } from '@angular/core';
+import { TemplateRef, Injector, ElementRef, ViewEncapsulation } from '@angular/core';
 import { Component, OnInit, ContentChild } from '@angular/core';
 import { CoreDomPortalHost } from 'iwe7-core';
 
@@ -7,7 +7,11 @@ import { CoreDomPortalHost } from 'iwe7-core';
     template: `
     <ng-container *ngTemplateOutlet="tpl"></ng-container>
     `,
-    styleUrls: ['./badge-outlet.scss']
+    styleUrls: ['./badge-outlet.scss'],
+    host: {
+        [`[class.am-badge]`]: 'true'
+    },
+    encapsulation: ViewEncapsulation.None
 })
 export class BadgeOutletComponent extends CoreDomPortalHost {
     @ContentChild(TemplateRef) tpl: TemplateRef<any>;
@@ -16,6 +20,10 @@ export class BadgeOutletComponent extends CoreDomPortalHost {
         ele: ElementRef
     ) {
         super(injector, ele.nativeElement);
+    }
+
+    overflow(value: string) {
+        this.render.setStyle(this.elementRef.nativeElement, 'overflow', value);
     }
 }
 

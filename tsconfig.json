@@ -17,11 +17,29 @@
       "dom"
     ],
     "paths": {
-      "iwe7-badge": [
-        "dist/iwe7-badge"
+      "iwe7-tabbar": [
+        "dist/iwe7-tabbar"
       ],
-      "iwe7-badge/*": [
-        "dist/iwe7-badge/*"
+      "iwe7-tabbar/*": [
+        "dist/iwe7-tabbar/*"
+      ],
+      "iwe7-charts": [
+        "dist/iwe7-charts"
+      ],
+      "iwe7-charts/*": [
+        "dist/iwe7-charts/*"
+      ],
+      "iwe7-im": [
+        "dist/iwe7-im"
+      ],
+      "iwe7-im/*": [
+        "dist/iwe7-im/*"
+      ],
+      "iwe7-sort": [
+        "dist/iwe7-sort"
+      ],
+      "iwe7-sort/*": [
+        "dist/iwe7-sort/*"
       ]
     }
   }

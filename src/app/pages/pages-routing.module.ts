@@ -1,12 +1,12 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
-import { TabsComponent } from "./tabs/tabs.component";
+import { AppTabsComponent } from "./tabs/tabs.component";
 import { HeaderComponent } from "./header/header.component";
 
 const routes: Routes = [
   {
     path: "tabs",
-    component: TabsComponent,
+    component: AppTabsComponent,
     children: [
       {
         path: "message",

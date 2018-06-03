@@ -1,4 +1,15 @@
-:host {
+badge-outlet {
   display: block;
-  position: relative;
+  [badgeText],
+  [badgeDot] {
+    transform: translateX(45%) translateY(-45%);
+  }
+  [badgecorner] {
+    transform: rotate(45deg);
+    top: 2px;
+    right: -32px;
+    min-width: 80px;
+    width: auto;
+    padding: 0px;
+  }
 }

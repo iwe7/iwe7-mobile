@@ -8,7 +8,7 @@ import { BaseWithTitle } from "iwe7-base";
   templateUrl: "./tabs.component.html",
   styleUrls: ["./tabs.component.css"]
 })
-export class TabsComponent extends BaseWithTitle {
+export class AppTabsComponent extends BaseWithTitle {
   tabBars: any[] = [
     {
       text: "订单",

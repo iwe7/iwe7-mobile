@@ -14,13 +14,9 @@ declare const BMap: any;
 })
 export class AppComponent implements OnInit, AfterViewInit {
 
-  list: any[] = [{
-    image: 'https://ustbhuangyi.github.io/better-scroll/static/img/winter.74aecef.jpeg'
-  }, {
-    image: 'https://ustbhuangyi.github.io/better-scroll/static/img/fall.0e0be3c.jpeg'
-  }];
-  iwe7AdvsService: Iwe7DomService;
+  list: any[] = [];
 
+  iwe7AdvsService: Iwe7DomService;
   zoom: number = 10;
   lat: number = 110.604;
   lng: number = 39.915;
@@ -31,6 +27,8 @@ export class AppComponent implements OnInit, AfterViewInit {
     lat: 110.604,
     lng: 39.915
   };
+
+  index: number = 0;
   constructor(public injector: Injector, public view: ViewContainerRef, public cd: ChangeDetectorRef, public ele: ElementRef) {
     this.iwe7AdvsService = this.injector.get(Iwe7DomService);
   }
@@ -41,6 +39,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   ngAfterViewInit() {
     setInterval(() => {
       // this.zoom++;
+      this.index++;
     }, 1000);
   }
   center: any;

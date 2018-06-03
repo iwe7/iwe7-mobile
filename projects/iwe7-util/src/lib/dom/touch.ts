@@ -14,7 +14,7 @@ export function onTouchMove(ele: DomElement): Observable<TouchEvent> {
   return fromEvent(ele, "touchmove") as Observable<TouchEvent>;
 }
 
-export function onTap(ele: DomElement, fn?: Function) {
+export function onTap(ele: DomElement, fn?: Function): Observable<TouchEvent> {
   const end$ = merge(onTouchCancel(ele), onTouchEnd(ele)).pipe(takeLast(1));
   return onTouchStart(ele).pipe(
     switchMap((res: TouchEvent) => {
@@ -32,5 +32,3 @@ export function onTap(ele: DomElement, fn?: Function) {
     })
   );
 }
-
-export function onTapLeave() {}

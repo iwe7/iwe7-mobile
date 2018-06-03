@@ -1,13 +1,11 @@
+import { Directive } from '@angular/core';
 import { BadgeOutletComponent } from './../badge-outlet/badge-outlet';
 import { Component, OnInit, Optional, SkipSelf, ElementRef } from '@angular/core';
 import { ElementRefPortal } from 'iwe7-core';
-@Component({
-    selector: 'badge-container',
-    template: ``,
-    styleUrls: ['./badge-container.scss']
+@Directive({
+    selector: '[badgeContainer]'
 })
-
-export class BadgeContainerComponent implements OnInit {
+export class BadgeContainerDirective implements OnInit {
     constructor(
         @Optional()
         @SkipSelf()
@@ -16,7 +14,6 @@ export class BadgeContainerComponent implements OnInit {
     ) { }
 
     ngOnInit() {
-        console.log(this.outlet);
         if (this.outlet) {
             this.outlet.attach(new ElementRefPortal(this.ele.nativeElement));
         }

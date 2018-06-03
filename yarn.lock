@@ -4946,15 +4946,15 @@ iwe7-base@^6.2.5:
   dependencies:
     tslib "^1.9.0"
 
-iwe7-better-scroll@^0.0.3:
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/iwe7-better-scroll/-/iwe7-better-scroll-0.0.3.tgz#4756ee50537d4b30cfc68d74aee872e4605d790e"
+iwe7-better-scroll@^0.0.7:
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/iwe7-better-scroll/-/iwe7-better-scroll-0.0.7.tgz#9aca6f7257052cbabf70f93750ae54b0ce105048"
   dependencies:
     tslib "^1.9.0"
 
-iwe7-core@^6.0.7:
-  version "6.0.7"
-  resolved "https://registry.yarnpkg.com/iwe7-core/-/iwe7-core-6.0.7.tgz#263e2a73b8cd407ac58325c4cc864709f6443f34"
+iwe7-core@^6.2.2:
+  version "6.2.2"
+  resolved "https://registry.yarnpkg.com/iwe7-core/-/iwe7-core-6.2.2.tgz#448866c880aec1383473c94b770ae0c0ab49ad6d"
   dependencies:
     tslib "^1.9.0"
 
@@ -5000,6 +5000,12 @@ iwe7-jd-index@^0.0.2:
   dependencies:
     tslib "^1.9.0"
 
+iwe7-navbar@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/iwe7-navbar/-/iwe7-navbar-0.0.1.tgz#3cd219ed68c5b10bedfdbed3ae02e329a4c94eb1"
+  dependencies:
+    tslib "^1.9.0"
+
 iwe7-reflect@^0.0.3:
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/iwe7-reflect/-/iwe7-reflect-0.0.3.tgz#b30d3c06674f257f81596f18ad1ce885047044fc"
@@ -5027,6 +5033,12 @@ iwe7-scrolling@^0.0.1:
 iwe7-square@^0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/iwe7-square/-/iwe7-square-0.0.1.tgz#a9ad352423ffbe1e980137362868daed3258b1f0"
+  dependencies:
+    tslib "^1.9.0"
+
+iwe7-tabbar@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/iwe7-tabbar/-/iwe7-tabbar-0.0.1.tgz#610f2989f61f534245c2a1f4c48f06185bef5865"
   dependencies:
     tslib "^1.9.0"
 

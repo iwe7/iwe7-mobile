@@ -2,7 +2,7 @@
 
 <map-outlet [height]="height">
   <map-container></map-container>
-  <div currentCity="北京" [zoom]="zoom" [lat]="lat" [lng]="lng"></div>
+  <div mapOptions currentCity="北京" [zoom]="zoom" [lat]="lat" [lng]="lng"></div>
   <div (mapMoveend)="mapMoveend($event)"></div>
   <div mapPane="floatPane">
     <map-overlay [lat]="lat" [lng]="lng">
@@ -11,10 +11,16 @@
   </div>
   <div mapPane="labelPane">
     <map-overlay [lat]="lat-0.1" [lng]="lng">
-      <img style="width: 40px;" src="./assets/icons/map/start.png">
+      <badge-outlet>
+        <img badgeContainer style="width: 40px;" src="./assets/icons/map/start.png">
+        <div badgeDot [top]="7" right="10"></div>
+      </badge-outlet>
     </map-overlay>
     <map-overlay [lat]="lat" [lng]="lng-0.1">
-      <img style="width: 40px;" src="./assets/icons/map/end.png">
+      <badge-outlet>
+        <img badgeContainer style="width: 40px;" src="./assets/icons/map/end.png">
+        <div badgeText [top]="5" right="5">热</div>
+      </badge-outlet>
     </map-overlay>
   </div>
   <span (geolocationControl)="geolocationControl($event)"></span>
@@ -23,30 +29,17 @@
   <span trafficControl></span>
 
   <div customControl>
-    <ul>
-      <li>步行</li>
-      <li>公交</li>
-      <li>驾车</li>
-    </ul>
 
   </div>
 
-  <!-- <div transitRoute start="天安门" end="百度大厦"></div> -->
-  <!-- <div drivingRoute start="天安门" end="百度大厦"></div> -->
-  <!-- <div walkingRoute start="天安门" end="百度大厦"></div> -->
-
-  <ng-template>
-    <!-- <span>{{'天都城'|getPoint:'杭州'|async|json}}</span>
-    <span>{{ point | getLocation|async|json}}</span>
-    <input type="text" mapAutoComplete> -->
-    <!-- <div localSearch="测试">
-      <ng-template let-item>
-        {{item?.title}}
-      </ng-template>
-    </div> -->
-  </ng-template>
+  <div transitRoute start="天安门" end="百度大厦"></div>
+  <div drivingRoute start="天安门" end="百度大厦"></div>
+  <div walkingRoute start="天安门" end="百度大厦"></div>
 </map-outlet>
 
-<badge-outlet>
-  <badge-container>30</badge-container>
-</badge-outlet>
+<!-- 
+<im-outlet title [imContentOf]="list">
+  <im-form imFooter>
+    <button imSend>发送</button>
+  </im-form>
+</im-outlet> -->

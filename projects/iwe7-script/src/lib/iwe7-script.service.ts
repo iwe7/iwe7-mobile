@@ -13,7 +13,7 @@ export class Iwe7ScriptService {
 
   constructor(@Inject(DOCUMENT) public doc: any) { }
 
-  load(path: string[]) {
+  load(path: string[]): Observable<any> {
     // 加载jquery
     // 加载bootstrap
     // 加载插件
@@ -28,7 +28,7 @@ export class Iwe7ScriptService {
     return forkJoin(...obs);
   }
 
-  loadScript(path: string): Observable<any> {
+  private loadScript(path: string): Observable<any> {
     return Observable.create(observer => {
       if (this.list.get(path) === true) {
         observer.next(<any>{
@@ -80,7 +80,7 @@ export class Iwe7ScriptService {
     });
   }
 
-  loadCss(path: string): Observable<any> {
+  private loadCss(path: string): Observable<any> {
     return Observable.create(observer => {
       if (this.list.get(path) === true) {
         observer.next(<any>{
