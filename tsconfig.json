@@ -40,6 +40,12 @@
       ],
       "iwe7-sort/*": [
         "dist/iwe7-sort/*"
+      ],
+      "iwe7-url": [
+        "dist/iwe7-url"
+      ],
+      "iwe7-url/*": [
+        "dist/iwe7-url/*"
       ]
     }
   }
