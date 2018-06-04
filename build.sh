@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-ng build --project iwe7-core
-cd dist/iwe7-core
+ng build --project iwe7-util
+cd dist/iwe7-util
 npm publish
 cd ../
-rm -rf dist/iwe7-core
-yarn add iwe7-core
+rm -rf dist/iwe7-util
+yarn add iwe7-util

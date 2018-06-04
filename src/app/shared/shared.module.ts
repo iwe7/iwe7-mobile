@@ -21,7 +21,7 @@ import { Iwe7MapModule } from '../../../projects/iwe7-map/src/public_api';
 import { Iwe7BadgeModule } from '../../../projects/iwe7-badge/src/public_api';
 import { Iwe7TabsModule } from './../../../projects/iwe7-tabs/src/lib/iwe7-tabs.module';
 import { Iwe7NavbarModule } from "../../../projects/iwe7-navbar/src/public_api";
-
+import { MatMenuModule, MatIconModule, MatButtonModule, MatDialogModule } from '@angular/material';
 @NgModule({
   imports: [
     CommonModule,
@@ -41,7 +41,11 @@ import { Iwe7NavbarModule } from "../../../projects/iwe7-navbar/src/public_api";
     Iwe7TabsModule,
     Iwe7NavbarModule,
     Iwe7TabbarModule,
-    Iwe7ImModule
+    Iwe7ImModule,
+    MatMenuModule,
+    MatIconModule,
+    MatButtonModule,
+    MatDialogModule
   ],
   declarations: [Iwe7ButtonComponent],
   exports: [
@@ -61,7 +65,11 @@ import { Iwe7NavbarModule } from "../../../projects/iwe7-navbar/src/public_api";
     Iwe7TabsModule,
     Iwe7NavbarModule,
     Iwe7TabbarModule,
-    Iwe7ImModule
+    Iwe7ImModule,
+    MatMenuModule,
+    MatIconModule,
+    MatButtonModule,
+    MatDialogModule
   ]
 })
 export class SharedModule { }

@@ -6,41 +6,51 @@ import {
   ViewContainerRef, TemplateRef, ViewChild,
   ChangeDetectorRef, ElementRef
 } from "@angular/core";
+import { Iwe7CoreComponent } from 'iwe7-core';
 declare const BMap: any;
+import { Dialog } from 'iwe7-dialog';
+
+import { MatDialog } from '@angular/material';
 @Component({
   selector: "app-root",
   templateUrl: "./app.component.html",
   styleUrls: ["./app.component.scss"]
 })
-export class AppComponent implements OnInit, AfterViewInit {
+export class AppComponent extends Iwe7CoreComponent {
 
   list: any[] = [];
 
-  iwe7AdvsService: Iwe7DomService;
-  zoom: number = 10;
-  lat: number = 110.604;
-  lng: number = 39.915;
+  dialog: MatDialog;
+  zoom: number = 17;
+  lat: number = 39.915;
+  lng: number = 110.604;
 
   showOverlay: boolean = true;
   height: number = 0;
+
   point = {
     lat: 110.604,
     lng: 39.915
   };
 
   index: number = 0;
-  constructor(public injector: Injector, public view: ViewContainerRef, public cd: ChangeDetectorRef, public ele: ElementRef) {
-    this.iwe7AdvsService = this.injector.get(Iwe7DomService);
+
+  @ViewChild('tpl', { read: TemplateRef }) tpl: TemplateRef<any>;
+  constructor(public injector: Injector,
+    public view: ViewContainerRef,
+    public cd: ChangeDetectorRef,
+    public ele: ElementRef
+  ) {
+    super(injector);
+    this.dialog = this.injector.get(MatDialog);
+    // this.getCyc('ngAfterViewInit').subscribe(res => {
+    //   const dialogRef = this.dialog.open(this.tpl);
+    // });
   }
   ngOnInit() {
+    super.ngOnInit();
     this.height = this.ele.nativeElement.clientHeight;
     document.body.addEventListener("touchstart", function () { });
-  }
-  ngAfterViewInit() {
-    setInterval(() => {
-      // this.zoom++;
-      this.index++;
-    }, 1000);
   }
   center: any;
   mapMoveend(e: any) {
@@ -51,6 +61,10 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   geolocationControl(e: any) {
+    console.log(e);
+  }
+
+  geolocation(e: any) {
     console.log(e);
   }
 }

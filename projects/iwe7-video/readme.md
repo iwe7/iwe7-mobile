@@ -1,8 +1,6 @@
-Iwe7IcssService
-
-| 方法   | 简介                                                                                       |
-|------|------------------------------------------------------------------------------------------|
-| init | ```init(ob: Observable<{ [key: string]: string }>, ele?: ElementRef): Observable<any>``` |
+| 名称       | 说明 |
+|----------|----|
+| video-js | 视频 |
 
 
 

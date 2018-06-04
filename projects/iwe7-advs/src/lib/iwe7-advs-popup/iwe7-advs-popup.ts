@@ -10,7 +10,6 @@ import { Component, OnInit, ViewEncapsulation, AfterViewInit } from '@angular/co
 export class Iwe7AdvsPopupComponent implements AfterViewInit {
     constructor(injector: Injector) {
     }
-
     ngAfterViewInit() {
         console.log(this);
     }

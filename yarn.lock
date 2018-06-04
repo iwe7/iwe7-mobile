@@ -4940,9 +4940,9 @@ iwe7-antd-mobile@^0.0.1:
   dependencies:
     tslib "^1.9.0"
 
-iwe7-base@^6.2.5:
-  version "6.2.7"
-  resolved "https://registry.yarnpkg.com/iwe7-base/-/iwe7-base-6.2.7.tgz#67c6fa7e831df8d7c069c9d57b41a3c2cd2538dc"
+iwe7-base@^6.2.9:
+  version "6.2.9"
+  resolved "https://registry.yarnpkg.com/iwe7-base/-/iwe7-base-6.2.9.tgz#bfaf9c69e54ddb8d2af7ed858acdd742c81572ac"
   dependencies:
     tslib "^1.9.0"
 
@@ -4952,9 +4952,9 @@ iwe7-better-scroll@^0.0.7:
   dependencies:
     tslib "^1.9.0"
 
-iwe7-core@^6.2.2:
-  version "6.2.2"
-  resolved "https://registry.yarnpkg.com/iwe7-core/-/iwe7-core-6.2.2.tgz#448866c880aec1383473c94b770ae0c0ab49ad6d"
+iwe7-core@^6.3.2:
+  version "6.3.2"
+  resolved "https://registry.yarnpkg.com/iwe7-core/-/iwe7-core-6.3.2.tgz#f55401c230ef80ea4a83d7739f6bb8c952a500f8"
   dependencies:
     tslib "^1.9.0"
 
@@ -5048,7 +5048,7 @@ iwe7-url@^0.0.2:
   dependencies:
     tslib "^1.9.0"
 
-iwe7-util@^0.1.2:
+iwe7-util@^0.1.3:
   version "0.1.3"
   resolved "https://registry.yarnpkg.com/iwe7-util/-/iwe7-util-0.1.3.tgz#3c5196a73a8163f58f2fddd484044a4b53ddcbc8"
   dependencies:

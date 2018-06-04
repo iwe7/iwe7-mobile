@@ -24,6 +24,7 @@ export class Iwe7AdvsService {
     ) {
         this.element = document.createElement('div');
         document.body.appendChild(this.element);
+        console.log(this.outlet);
         this.outlet = new DomPortalHost(this.element, this.componentFactoryResolver, this.appRef, this.injector);
     }
 
