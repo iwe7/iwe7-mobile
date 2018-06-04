@@ -46,3 +46,6 @@ projects/iwe7-im/
 projects/iwe7-navbar/
 projects/iwe7-tabbar/
 projects/iwe7-url/
+projects/iwe7-better-scroll/
+projects/iwe7-dialog/
+projects/iwe7-util/src/lib/ng-private.ts
