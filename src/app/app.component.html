@@ -1,4 +1,4 @@
-<router-outlet></router-outlet>
+<!-- <router-outlet></router-outlet> -->
 <!-- <map-outlet [height]="height">
   <map-container></map-container>
   <div mapOptions currentCity="北京" [zoom]="zoom" [lat]="lat" [lng]="lng"></div>
@@ -22,3 +22,66 @@
     </iwe7-flex>
   </div>
 </map-outlet> -->
+
+<iwe7-square width="100px"></iwe7-square>
+
+<iwe7-box-x width="100%" params="0.6">
+  <swiper-outlet height="100%" [list]="list"></swiper-outlet>
+</iwe7-box-x>
+
+<div>
+  <iwe7-box-y style="height: 30px;" color="red">
+  </iwe7-box-y>
+  <iwe7-box-y style="height: 30px;" color="green">
+  </iwe7-box-y>
+  <iwe7-box-y style="height: 30px;" color="black">
+  </iwe7-box-y>
+</div>
+
+<div>
+  <iwe7-box-y reversal style="height: 30px;" color="red">
+  </iwe7-box-y>
+  <iwe7-box-y reversal style="height: 30px;" color="green">
+  </iwe7-box-y>
+  <iwe7-box-y reversal style="height: 30px;" color="black">
+  </iwe7-box-y>
+</div>
+
+<iwe7-box-x reversal style="width: 100%;" color='gray'>
+  <swiper-outlet height="100%" [list]="list"></swiper-outlet>
+</iwe7-box-x>
+
+<div>
+  <iwe7-box-x style="width: 33.33%;" color="red">
+  </iwe7-box-x>
+  <iwe7-box-x style="width: 33.33%;" color="green">
+  </iwe7-box-x>
+  <iwe7-box-x style="width: 33.33%;" color="black">
+  </iwe7-box-x>
+</div>
+
+<div>
+  <iwe7-box-x reversal style="width: 33.33%;" color="black">
+  </iwe7-box-x>
+  <iwe7-box-x reversal style="width: 33.33%;" color="red">
+  </iwe7-box-x>
+  <iwe7-box-x reversal style="width: 33.33%;" color="green">
+  </iwe7-box-x>
+</div>
+
+<button mat-flat-button (click)="showDialogX()">showDialogX</button>
+<button mat-flat-button (click)="showDialogY()">showDialogY</button>
+
+
+
+<ng-template #tplX>
+  <iwe7-box-x width="100%">
+    <swiper-outlet height="120px" [list]="list"></swiper-outlet>
+  </iwe7-box-x>
+</ng-template>
+
+<ng-template #tplY>
+  <iwe7-box-x width="100%">
+    <swiper-outlet height="120px" scrollY [list]="list"></swiper-outlet>
+  </iwe7-box-x>
+</ng-template>

@@ -26,7 +26,6 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
         useHash: true
       }
     ),
-    PagesModule,
     SharedModule
   ],
   providers: [

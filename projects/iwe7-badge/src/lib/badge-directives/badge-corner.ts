@@ -6,7 +6,8 @@ import {
 } from '@angular/core';
 
 @Directive({
-    selector: '[badgeCorner]', host: {
+    selector: '[badgeCorner]', 
+    host: {
         [`[class.am-badge-corner]`]: 'true',
         ['[style.right.px]']: 'right',
         ['[style.top.px]']: 'top'

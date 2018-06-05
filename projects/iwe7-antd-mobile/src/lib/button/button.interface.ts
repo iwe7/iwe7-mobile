@@ -6,7 +6,8 @@ import {
   Injector,
   ElementRef,
   TemplateRef,
-  ɵComponentType as ComponentType
+  ɵComponentType as ComponentType,
+  Renderer2
 } from "@angular/core";
 import { coerceBooleanProperty } from "@angular/cdk/coercion";
 import { onTouchStart, onTouchCancel, onTouchEnd } from "iwe7-util";
@@ -18,8 +19,8 @@ export type AmButtonType = "primary" | "warning" | "ghost" | undefined;
 export type AmButtonSize = "large" | "small";
 export type AmButtonIcon = string | TemplateRef<any> | ComponentType<any>;
 
-import { KeyValueInterface, BaseWithOnDestroy } from "iwe7-base";
-
+import { KeyValueInterface } from "iwe7-base";
+import { Iwe7CoreComponent } from 'iwe7-core';
 export interface AmButtonInputsInterface {
   // 按钮类型，可选值为primary/ghost/warning或者不设
   type?: AmButtonType;
@@ -72,7 +73,7 @@ export abstract class AmButtonAbstrace {
   abstract handleClick(e: Event): void;
 }
 
-export abstract class AmButtonRef extends BaseWithOnDestroy
+export abstract class AmButtonRef extends Iwe7CoreComponent
   implements AmButtonAbstrace {
   // 按钮类型，可选值为primary/ghost/warning或者不设
   @Input() type?: AmButtonType;
@@ -132,8 +133,10 @@ export abstract class AmButtonRef extends BaseWithOnDestroy
   public ele: ElementRef;
   private _default: AmButtonInputsDefault;
   public active: boolean;
+  render: Renderer2;
   constructor(public injector: Injector, private parent: any) {
     super(injector);
+    this.render = this.injector.get(Renderer2);
     this._default = this.injector.get(AmButtonInputsDefault);
     this.ele = this.injector.get(ElementRef);
     Object.assign(this, this._default);
@@ -165,7 +168,7 @@ export abstract class AmButtonRef extends BaseWithOnDestroy
         }
       }),
       takeWhile(res => !this.disabled),
-      takeUntil(this.destroyed$),
+      takeUntil(this.getCyc('ngOnDestroy', true)),
       tap(res => {
         this.onPressIn.emit(res);
       }),
@@ -185,7 +188,7 @@ export abstract class AmButtonRef extends BaseWithOnDestroy
         }
       }),
       takeWhile(res => !this.disabled),
-      takeUntil(this.destroyed$),
+      takeUntil(this.getCyc('ngOnDestroy', true)),
       tap(res => {
         this.onPressOut.emit(res);
       }),
@@ -216,11 +219,11 @@ export abstract class AmButtonRef extends BaseWithOnDestroy
 
   private setActive(ele: any) {
     this.active = true;
-    this.addClass(ele, this.getActiveClassName());
+    this.render.addClass(ele, this.getActiveClassName());
   }
 
   private setUnActive(ele: any) {
     this.active = false;
-    this.removeClass(ele, this.getActiveClassName());
+    this.render.removeClass(ele, this.getActiveClassName());
   }
 }

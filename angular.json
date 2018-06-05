@@ -1982,6 +1982,86 @@
           }
         }
       }
+    },
+    "iwe7-swiper": {
+      "root": "projects/iwe7-swiper",
+      "sourceRoot": "projects/iwe7-swiper/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/iwe7-swiper/tsconfig.lib.json",
+            "project": "projects/iwe7-swiper/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/iwe7-swiper/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/iwe7-swiper/src/test.ts",
+            "tsConfig": "projects/iwe7-swiper/tsconfig.spec.json",
+            "karmaConfig": "projects/iwe7-swiper/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/iwe7-swiper/tsconfig.lib.json",
+              "projects/iwe7-swiper/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "iwe7-box": {
+      "root": "projects/iwe7-box",
+      "sourceRoot": "projects/iwe7-box/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/iwe7-box/tsconfig.lib.json",
+            "project": "projects/iwe7-box/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/iwe7-box/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/iwe7-box/src/test.ts",
+            "tsConfig": "projects/iwe7-box/tsconfig.spec.json",
+            "karmaConfig": "projects/iwe7-box/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/iwe7-box/tsconfig.lib.json",
+              "projects/iwe7-box/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "iwe7-mobile"

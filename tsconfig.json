@@ -17,7 +17,12 @@
       "dom"
     ],
     "paths": {
-      
+      "iwe7-box": [
+        "dist/iwe7-box"
+      ],
+      "iwe7-box/*": [
+        "dist/iwe7-box/*"
+      ]
     }
   }
 }

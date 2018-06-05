@@ -11,3 +11,14 @@ ul {
 .h10 {
   height: 10px;
 }
+
+.advs {
+  height: 120px;
+  overflow: hidden;
+  position: relative;
+  .close {
+    position: absolute;
+    bottom: 0px;
+  }
+}
+

@@ -84,7 +84,7 @@
       "check-type"
     ],
     "no-output-on-prefix": false,
-    "use-input-property-decorator": true,
+    "use-input-property-decorator": false,
     "use-output-property-decorator": true,
     "use-host-property-decorator": false,
     "no-input-rename": false,
