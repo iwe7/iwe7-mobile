@@ -22,6 +22,18 @@
       ],
       "iwe7-box/*": [
         "dist/iwe7-box/*"
+      ],
+      "iwe7-ui": [
+        "dist/iwe7-ui"
+      ],
+      "iwe7-ui/*": [
+        "dist/iwe7-ui/*"
+      ],
+      "iwe7-repair": [
+        "dist/iwe7-repair"
+      ],
+      "iwe7-repair/*": [
+        "dist/iwe7-repair/*"
       ]
     }
   }

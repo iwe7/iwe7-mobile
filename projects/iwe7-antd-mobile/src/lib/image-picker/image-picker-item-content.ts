@@ -48,7 +48,7 @@ export class AmImagePickerItemContentDirective extends Iwe7BaseDirective
     input.accept = "image/*";
     this.render.appendChild(this.ele.nativeElement, input);
     onChange(input)
-      .pipe(takeUntil(this.destroyed$))
+      .pipe(takeUntil(this.getCyc('ngOnDestroy')))
       .subscribe((res: any) => {
         const file = res.target.files[0];
         const reader = new FileReader();

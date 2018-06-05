@@ -1,0 +1,9 @@
+:host {
+  display: inline-block;
+  height: 1px;
+  color: var(--color);
+  background-color: var(--color);
+  transform: scaleY(0.5);
+  margin: 0 auto;
+  width: var(--width);
+}

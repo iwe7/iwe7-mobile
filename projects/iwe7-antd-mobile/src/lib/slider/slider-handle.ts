@@ -59,7 +59,7 @@ export class AmSliderHandleDirective extends Iwe7BaseDirective
     this.updateStyle();
     onTouchStart(ele)
       .pipe(
-        takeUntil(this.destroyed$),
+        takeUntil(this.getCyc('ngOnDestroy')),
         map((res: TouchEvent) => {
           now = this.valuenow;
           return {

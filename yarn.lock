@@ -4934,6 +4934,12 @@ isurl@^1.0.0-alpha5:
     has-to-string-tag-x "^1.2.0"
     is-object "^1.0.1"
 
+iwe7-abc@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/iwe7-abc/-/iwe7-abc-0.0.1.tgz#18f812d803c88f6d3ddd3d48fd358db70708b256"
+  dependencies:
+    tslib "^1.9.0"
+
 iwe7-antd-mobile@^0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/iwe7-antd-mobile/-/iwe7-antd-mobile-0.0.1.tgz#5e88bd10d3be81f92af83414f01395b688c3e62b"
@@ -4949,6 +4955,12 @@ iwe7-base@^6.3.1:
 iwe7-better-scroll@^0.0.7:
   version "0.0.7"
   resolved "https://registry.yarnpkg.com/iwe7-better-scroll/-/iwe7-better-scroll-0.0.7.tgz#9aca6f7257052cbabf70f93750ae54b0ce105048"
+  dependencies:
+    tslib "^1.9.0"
+
+iwe7-box@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/iwe7-box/-/iwe7-box-0.0.1.tgz#46772a96edcfb4da8983470790bc4f9afc28ef4f"
   dependencies:
     tslib "^1.9.0"
 
@@ -5030,9 +5042,15 @@ iwe7-scrolling@^0.0.1:
   dependencies:
     tslib "^1.9.0"
 
-iwe7-square@^0.0.3:
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/iwe7-square/-/iwe7-square-0.0.3.tgz#7aed4afc1016099213f19d8f7cbac6c067816fb8"
+iwe7-square@^0.0.6:
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/iwe7-square/-/iwe7-square-0.0.6.tgz#cdc7074ab46cf472ff577413b6b49d35551f1957"
+  dependencies:
+    tslib "^1.9.0"
+
+iwe7-swiper@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/iwe7-swiper/-/iwe7-swiper-0.0.1.tgz#a9ca9533ab5e4105ef2ee3d0de63a9c9c4467ce6"
   dependencies:
     tslib "^1.9.0"
 

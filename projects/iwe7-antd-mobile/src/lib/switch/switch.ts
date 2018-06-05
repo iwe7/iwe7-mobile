@@ -38,7 +38,7 @@ export class AmSwitchComponent extends Iwe7BaseComponent
   ngOnInit() {
     this.updateStyle();
     onChange(this.checkbox.nativeElement)
-      .pipe(takeUntil(this.destroyed$))
+      .pipe(takeUntil(this.getCyc('ngOnDestroy')))
       .subscribe(res => {
         const ele: HTMLInputElement = res.target as HTMLInputElement;
         this.value = ele.checked;

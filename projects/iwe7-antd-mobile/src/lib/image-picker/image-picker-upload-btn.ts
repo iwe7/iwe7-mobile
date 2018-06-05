@@ -5,7 +5,8 @@ import {
   OnInit,
   Output,
   EventEmitter,
-  Input
+  Input,
+  OnDestroy
 } from "@angular/core";
 import { Iwe7BaseDirective } from "iwe7-base";
 import { onChange } from "iwe7-util";
@@ -41,7 +42,7 @@ export class AmImagePickerUploadBtnDirective extends Iwe7BaseDirective
     this.render.setStyle(input, "width", "100%");
     this.render.appendChild(this.ele.nativeElement, input);
     onChange(input)
-      .pipe(takeUntil(this.destroyed$))
+      .pipe(takeUntil(this.getCyc('ngOnDestroy')))
       .subscribe((res: any) => {
         const files = res.target.files;
         from(files)

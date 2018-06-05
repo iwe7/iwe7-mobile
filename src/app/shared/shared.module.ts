@@ -1,31 +1,16 @@
-import { Iwe7BoxModule } from './../../../projects/iwe7-box/src/lib/iwe7-box.module';
-import { Iwe7SquareModule } from 'iwe7-square';
-import { Iwe7SwiperModule } from './../../../projects/iwe7-swiper/src/lib/iwe7-swiper.module';
+import { Iwe7RepairModule } from './../../../projects/iwe7-repair/src/lib/iwe7-repair.module';
+import { Iwe7UiModule } from './../../../projects/iwe7-ui/src/lib/iwe7-ui.module';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { Iwe7BetterScrollModule } from '../../../projects/iwe7-better-scroll/src/public_api';
-import { MatDialogModule, MatIconModule, MatButtonModule } from '@angular/material';
 @NgModule({
   imports: [
     CommonModule,
-    Iwe7BetterScrollModule,
-    Iwe7SwiperModule,
-    MatDialogModule,
-    MatIconModule,
-    MatButtonModule,
-    Iwe7SquareModule,
-    Iwe7BoxModule
   ],
   declarations: [],
   exports: [
     CommonModule,
-    Iwe7BetterScrollModule,
-    Iwe7SwiperModule,
-    MatDialogModule,
-    MatIconModule,
-    MatButtonModule,
-    Iwe7SquareModule,
-    Iwe7BoxModule
+    Iwe7UiModule,
+    Iwe7RepairModule,
   ]
 })
 export class SharedModule { }

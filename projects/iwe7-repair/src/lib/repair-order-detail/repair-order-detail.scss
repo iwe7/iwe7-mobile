@@ -1,0 +1,20 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+}
+
+.detail-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 0px;
+  .logo {
+    width: 10vw;
+    height: 10vw;
+  }
+  .name {
+    height: 2em;
+    line-height: 2em;
+  }
+}
