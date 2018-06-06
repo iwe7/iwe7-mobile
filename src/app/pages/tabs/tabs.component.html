@@ -1,3 +1,9 @@
-<tab-bar [tabs]="tabBars">
-  <router-outlet></router-outlet>
-</tab-bar>
+<tabbar-outlet>
+  <ng-template tabbarContent>
+    <nav mat-tab-nav-bar>
+      <a mat-tab-link *ngFor="let link of tabBars" [routerLink]="link.pagePath" routerLinkActive #rla="routerLinkActive" [active]="rla.isActive">
+        {{link.label}}
+      </a>
+    </nav>
+  </ng-template>
+</tabbar-outlet>

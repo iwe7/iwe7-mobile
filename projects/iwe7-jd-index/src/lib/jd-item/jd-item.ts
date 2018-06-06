@@ -1,3 +1,5 @@
+import { Injector } from '@angular/core';
+import { Iwe7BaseComponent } from 'iwe7-base';
 import { HostBinding } from '@angular/core';
 import { Iwe7IcssService } from 'iwe7-icss';
 import { Component, OnInit, ElementRef, Input, AfterViewInit } from '@angular/core';
@@ -8,7 +10,7 @@ import { Component, OnInit, ElementRef, Input, AfterViewInit } from '@angular/co
   providers: [Iwe7IcssService]
 })
 
-export class JdItemComponent implements OnInit, AfterViewInit {
+export class JdItemComponent extends Iwe7BaseComponent {
   width: string;
   @HostBinding('style.margin')
   get margin() {
@@ -19,15 +21,14 @@ export class JdItemComponent implements OnInit, AfterViewInit {
   @Input() desc: string;
   @Input() image: string = 'https://m.360buyimg.com/n1/s134x134_jfs/t2080/152/1606361808/82278/215658f9/5670cc76Ne7794e6f.jpg!q70.jpg.dpg.webp';
   constructor(
-    public ele: ElementRef
-  ) { }
-
-  ngOnInit() {
-  }
-
-  ngAfterViewInit() {
-    setTimeout(() => {
-      this.width = this.ele.nativeElement.clientWidth + 'px';
-    }, 0);
+    public ele: ElementRef,
+    injector: Injector
+  ) {
+    super(injector, 'jd-item');
+    this.getCyc('ngAfterViewInit').subscribe(res => {
+      const ele: HTMLElement = this.ele.nativeElement;
+      const react = ele.getBoundingClientRect();
+      this.width = Math.min(react.width, react.height) + 'px';
+    });
   }
 }

@@ -4946,9 +4946,9 @@ iwe7-antd-mobile@^0.0.1:
   dependencies:
     tslib "^1.9.0"
 
-iwe7-base@^6.3.1:
-  version "6.3.1"
-  resolved "https://registry.yarnpkg.com/iwe7-base/-/iwe7-base-6.3.1.tgz#d30262eeb755e60232b636f3c29f896f7ce52df9"
+iwe7-base@^6.3.2:
+  version "6.3.2"
+  resolved "https://registry.yarnpkg.com/iwe7-base/-/iwe7-base-6.3.2.tgz#a97ee2df075aa78b60fa1f39a966a3a4452ec778"
   dependencies:
     tslib "^1.9.0"
 
@@ -4964,9 +4964,9 @@ iwe7-box@^0.0.1:
   dependencies:
     tslib "^1.9.0"
 
-iwe7-core@^6.3.6:
-  version "6.3.6"
-  resolved "https://registry.yarnpkg.com/iwe7-core/-/iwe7-core-6.3.6.tgz#92c53046be7b9a622a6949e1fa7f5a33ac244aba"
+iwe7-core@^6.4.0:
+  version "6.4.0"
+  resolved "https://registry.yarnpkg.com/iwe7-core/-/iwe7-core-6.4.0.tgz#a925ba451f506779caea0bd036238f175544d766"
   dependencies:
     tslib "^1.9.0"
 
@@ -5012,6 +5012,12 @@ iwe7-jd-index@^0.0.2:
   dependencies:
     tslib "^1.9.0"
 
+iwe7-jd@^0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/iwe7-jd/-/iwe7-jd-0.0.4.tgz#5fea0f7fc5bc68fd6c4871ed4f9f8a158a66277e"
+  dependencies:
+    tslib "^1.9.0"
+
 iwe7-navbar@^0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/iwe7-navbar/-/iwe7-navbar-0.0.1.tgz#3cd219ed68c5b10bedfdbed3ae02e329a4c94eb1"
@@ -5054,15 +5060,15 @@ iwe7-swiper@^0.0.1:
   dependencies:
     tslib "^1.9.0"
 
-iwe7-tabbar@^0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/iwe7-tabbar/-/iwe7-tabbar-0.0.1.tgz#610f2989f61f534245c2a1f4c48f06185bef5865"
+iwe7-tabbar@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/iwe7-tabbar/-/iwe7-tabbar-0.0.2.tgz#7586ff1c19866b31ed69780e27da3659ba5421f0"
   dependencies:
     tslib "^1.9.0"
 
-iwe7-ui@^0.0.3:
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/iwe7-ui/-/iwe7-ui-0.0.3.tgz#73494ccf0eae612b8baccb9433f23caa49121255"
+iwe7-ui@^0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/iwe7-ui/-/iwe7-ui-0.0.4.tgz#834c80826207fcfec112c088bbc1ab07f22dc45f"
   dependencies:
     tslib "^1.9.0"
 
@@ -5072,9 +5078,9 @@ iwe7-url@^0.0.2:
   dependencies:
     tslib "^1.9.0"
 
-iwe7-util@^0.1.3:
-  version "0.1.3"
-  resolved "https://registry.yarnpkg.com/iwe7-util/-/iwe7-util-0.1.3.tgz#3c5196a73a8163f58f2fddd484044a4b53ddcbc8"
+iwe7-util@^0.1.9:
+  version "0.1.9"
+  resolved "https://registry.yarnpkg.com/iwe7-util/-/iwe7-util-0.1.9.tgz#6038c39059dc672e2f22f2276f85f9a986e7468f"
   dependencies:
     tslib "^1.9.0"
 

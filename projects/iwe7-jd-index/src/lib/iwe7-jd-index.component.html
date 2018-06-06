@@ -1,103 +1,31 @@
 <jd-tip></jd-tip>
-<div class="fixed-top" [style.top]="top" [formGroup]="searchForm">
-    <jd-search [height]="header.height" [heightView]="header.heightView" (leftStream)="leftStream($event)" (rightStream)="rightStream($event)" formControlName="key" jdSearchTheme="red"></jd-search>
-</div>
-
+<jd-search [height]="header.height" [heightView]="header.heightView" (leftStream)="leftStream($event)" (rightStream)="rightStream($event)"
+  [(ngModel)]="key" (focusStream)="focusSearch($event)"></jd-search>
 <jd-swiper></jd-swiper>
-
-<jd-floor>
-    <jd-floor-item>
-        <div class="adv-item">
-            <img src="https://m.360buyimg.com/mobilecms/jfs/t21172/269/268255997/294253/78d10767/5b07d048Nc5a330cb.gif" alt="">
-        </div>
-    </jd-floor-item>
-</jd-floor>
-
-<jd-grid></jd-grid>
+<jd-grid>
+  <ng-template let-col="col" let-row="row">
+    <jd-box [title]="col+'-'+row"></jd-box>
+  </ng-template>
+</jd-grid>
 <jd-news></jd-news>
 
 <jd-floor>
-    <jd-floor-item>
-        <jd-item [square]="false" image="https://m.360buyimg.com/mobilecms/s800x244_jfs/t20020/345/885752145/69657/d4e30a59/5b0cd575N7cbd3e36.jpg!q70.jpg.dpg.webp"></jd-item>
-    </jd-floor-item>
+  <ng-template #title>
+    <img src="https://m.360buyimg.com/mobilecms/jfs/t18535/84/701712774/27096/4495e446/5aa0def4N4412e53b.png!q70.jpg">
+  </ng-template>
+  <ng-template #content let-item>
+    <img src="https://m.360buyimg.com/mobilecms/jfs/t22090/138/737565925/182989/5c2f9d34/5b174dc3Ndac4e0d8.gif" alt="">
+  </ng-template>
 </jd-floor>
 
-<jd-floor>
-    <jd-floor-item>
-        <jd-item [square]="false" image="https://m.360buyimg.com/mobilecms/s200x248_jfs/t20239/41/142314999/75364/10226d45/5afe9ca7N61d94b6f.png!q70.jpg.dpg.webp"></jd-item>
-        <jd-item [square]="false" image="https://m.360buyimg.com/mobilecms/s200x248_jfs/t20239/41/142314999/75364/10226d45/5afe9ca7N61d94b6f.png!q70.jpg.dpg.webp"></jd-item>
-        <jd-item [square]="false" image="https://m.360buyimg.com/mobilecms/s200x248_jfs/t20239/41/142314999/75364/10226d45/5afe9ca7N61d94b6f.png!q70.jpg.dpg.webp"></jd-item>
-        <jd-item [square]="false" image="https://m.360buyimg.com/mobilecms/s200x248_jfs/t20239/41/142314999/75364/10226d45/5afe9ca7N61d94b6f.png!q70.jpg.dpg.webp"></jd-item>
-    </jd-floor-item>
-    <jd-floor-item>
-        <jd-item [square]="false" image="https://m.360buyimg.com/mobilecms/s200x248_jfs/t20239/41/142314999/75364/10226d45/5afe9ca7N61d94b6f.png!q70.jpg.dpg.webp"></jd-item>
-        <jd-item [square]="false" image="https://m.360buyimg.com/mobilecms/s200x248_jfs/t20239/41/142314999/75364/10226d45/5afe9ca7N61d94b6f.png!q70.jpg.dpg.webp"></jd-item>
-        <jd-item [square]="false" image="https://m.360buyimg.com/mobilecms/s200x248_jfs/t20239/41/142314999/75364/10226d45/5afe9ca7N61d94b6f.png!q70.jpg.dpg.webp"></jd-item>
-        <jd-item [square]="false" image="https://m.360buyimg.com/mobilecms/s200x248_jfs/t20239/41/142314999/75364/10226d45/5afe9ca7N61d94b6f.png!q70.jpg.dpg.webp"></jd-item>
-    </jd-floor-item>
-</jd-floor>
-
-<jd-floor>
-    <jd-floor-item>
-        <jd-item title="title" desc="desc"></jd-item>
-        <jd-item></jd-item>
-        <jd-item></jd-item>
-        <jd-item></jd-item>
-    </jd-floor-item>
-    <jd-floor-item>
-        <jd-item></jd-item>
-        <jd-item></jd-item>
-        <jd-item></jd-item>
-        <jd-item></jd-item>
-    </jd-floor-item>
-</jd-floor>
-
-<jd-floor>
-    <ng-template #title>
-        <img src="https://m.360buyimg.com/mobilecms/jfs/t15526/56/2344102455/23273/d8e15d5a/5aa0dbc1Nefd2bd2a.png!q70.jpg">
-    </ng-template>
-    <jd-floor-item>
-        <jd-item></jd-item>
-    </jd-floor-item>
-    <jd-floor-item>
-        <jd-item></jd-item>
-        <jd-item></jd-item>
-    </jd-floor-item>
-</jd-floor>
-
-<jd-floor>
-    <ng-template #title>
-        <img src="https://m.360buyimg.com/mobilecms/jfs/t16513/302/2326287697/26686/e58b7ef4/5aa241ebN16cfe40f.png!q70.jpg">
-    </ng-template>
-    <jd-floor-item>
-        <jd-item></jd-item>
-        <jd-item></jd-item>
-        <jd-item></jd-item>
-    </jd-floor-item>
-    <jd-floor-item>
-        <jd-item></jd-item>
-        <jd-item></jd-item>
-        <jd-item></jd-item>
-        <jd-item></jd-item>
-    </jd-floor-item>
-</jd-floor>
-
-<jd-floor>
-    <ng-template #title>
-        <img src="https://m.360buyimg.com/mobilecms/jfs/t18535/84/701712774/27096/4495e446/5aa0def4N4412e53b.png!q70.jpg">
-    </ng-template>
-    <jd-floor-item>
-        <jd-item></jd-item>
-        <jd-item></jd-item>
-    </jd-floor-item>
-    <jd-floor-item>
-        <jd-item></jd-item>
-        <jd-item></jd-item>
-        <jd-item></jd-item>
-    </jd-floor-item>
-</jd-floor>
-
-<jd-hots></jd-hots>
+<iwe7-flex style="background-color:#f0f2f5;" wrap="wrap" justify="center">
+  <jd-goods-item title="商品" price="100"></jd-goods-item>
+  <jd-goods-item title="商品" price="200"></jd-goods-item>
+  <jd-goods-item title="商品" price="300"></jd-goods-item>
+  <jd-goods-item title="商品" price="400"></jd-goods-item>
+  <jd-goods-item title="商品" price="500"></jd-goods-item>
+  <jd-goods-item title="商品" price="600"></jd-goods-item>
+</iwe7-flex>
 
 <jd-footer></jd-footer>
 

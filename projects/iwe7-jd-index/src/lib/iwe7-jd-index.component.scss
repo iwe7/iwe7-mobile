@@ -1,16 +1,27 @@
 .fixed-top {
-    position: fixed;
-    top: 45px;
-    left: 0px;
-    right: 0px;
-    z-index: 9;
+  position: fixed;
+  top: 45px;
+  left: 0px;
+  right: 0px;
+  z-index: 9;
 }
 
 .adv-item {
-    background: transparent;
-    img {
-        width: 100%;
-        overflow: hidden;
-        -webkit-transition: opacity .3s ease-in;
-    }
+  background: transparent;
+  img {
+    width: 100%;
+    overflow: hidden;
+    -webkit-transition: opacity .3s ease-in;
+  }
+}
+
+.jd-hots {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+  jd-hots-item {
+    margin: 3px;
+  }
 }

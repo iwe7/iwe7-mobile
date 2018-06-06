@@ -14,9 +14,9 @@ import { switchMap, map, filter } from 'rxjs/operators';
 })
 export class Iwe7JdIndexComponent extends BaseWithIcss implements OnInit {
   searchForm: FormGroup;
-
+  key: string;
   @Input() header: any = {
-    height: '52px',
+    height: '45px',
     heightView: '30px'
   };
 
@@ -59,13 +59,19 @@ export class Iwe7JdIndexComponent extends BaseWithIcss implements OnInit {
   }
 
   leftStream(e: any) {
+    console.log(e);
     if (this.leftUrl) {
       this.router.navigateByUrl(this.leftUrl);
     }
   }
   rightStream(e: any) {
+    console.log(e);
     if (this.rightUrl) {
       this.router.navigateByUrl(this.rightUrl);
     }
+  }
+
+  focusSearch(e: any) {
+    console.log(e);
   }
 }

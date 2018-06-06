@@ -1,27 +1,3 @@
-<navbar [title]="title.title" (onLeftClick)="qrCode()" [rightContent]="right" [leftContent]="left"></navbar>
 <div class="content">
   <router-outlet></router-outlet>
 </div>
-<ng-template #right>
-  <a (click)="addOrder()">开单</a>
-</ng-template>
-<ng-template #left>
-  <a>扫车牌</a>
-</ng-template>
-
-<tabs (onTabClick)="_tabClick($event)" [tabs]="tabs">
-  <ng-template let-tab>
-    <ul *ngFor="let item of list">
-      <li></li>
-    </ul>
-  </ng-template>
-</tabs>
-
-
-<cdk-virtual-scroll-viewport autosize>
-  <div *cdkVirtualFor="let item of list">{{item}}</div>
-</cdk-virtual-scroll-viewport>
-
-<cdk-virtual-scroll-viewport autosize>
-    <div *cdkVirtualFor="let item of list">{{item}}</div>
-  </cdk-virtual-scroll-viewport>

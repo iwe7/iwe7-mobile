@@ -63,6 +63,7 @@ export class IndexComponent extends Iwe7PageList implements OnInit {
 
   ngOnInit() {
     this._tabClick(this.tabs[0]);
+    super.ngOnInit();
   }
 
   _tabClick(e: any) {

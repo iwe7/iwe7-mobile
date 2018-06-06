@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { OrderRoutingModule } from './order-routing.module';
@@ -14,6 +14,7 @@ import { ScanComponent } from './scan/scan.component';
     OrderRoutingModule,
     SharedModule
   ],
-  declarations: [IndexComponent, DetailComponent, AddComponent, ScanComponent]
+  declarations: [IndexComponent, DetailComponent, AddComponent, ScanComponent],
+  schemas: [NO_ERRORS_SCHEMA]
 })
 export class OrderModule { }

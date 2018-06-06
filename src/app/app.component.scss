@@ -1,16 +1,3 @@
-.button {
-  background: #000000a8;
-}
-
-ul {
-  list-style: none;
-  margin: 0px;
-  padding: 0px;
-}
-
-.h10 {
-  height: 10px;
-}
 
 .advs {
   height: 120px;
@@ -22,3 +9,11 @@ ul {
   }
 }
 
+.example-spacer {
+  flex: 1 1 auto;
+  text-align: center;
+}
+
+mat-drawer-container {
+  height: 100%;
+}

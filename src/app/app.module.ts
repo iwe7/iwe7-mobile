@@ -1,3 +1,4 @@
+import { Page404Component } from './404/page-404';
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule, NO_ERRORS_SCHEMA, APP_INITIALIZER } from "@angular/core";
 
@@ -8,16 +9,21 @@ import { SharedModule } from "./shared/shared.module";
 import { APP_BASE_HREF } from "@angular/common";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, Page404Component],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    PagesModule,
     RouterModule.forRoot(
       [
         {
           path: "",
           pathMatch: "full",
           redirectTo: "tabs/order/index"
+        },
+        {
+          path: "**",
+          component: Page404Component
         }
       ],
       {
@@ -33,6 +39,6 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
     }
   ],
   bootstrap: [AppComponent],
-  // schemas: [NO_ERRORS_SCHEMA]
+  schemas: [NO_ERRORS_SCHEMA]
 })
 export class AppModule {}

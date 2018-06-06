@@ -1,0 +1,24 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+html,
+body,
+app-root {
+  display: block;
+  height: 100%;
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  padding: 0px;
+}
+
+.am-button-block {
+  width: 100%;
+}
+
+wing-blank {
+  display: block;
+}
+
+.mat-dialog-container {
+  padding: 0px !important;
+}

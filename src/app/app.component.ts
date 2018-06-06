@@ -39,7 +39,41 @@ export class AppComponent extends Iwe7CoreComponent {
 
   @ViewChild('tplX', { read: TemplateRef }) tplX: TemplateRef<any>;
   @ViewChild('tplY', { read: TemplateRef }) tplY: TemplateRef<any>;
-  
+
+  navLinks: any[] = [{
+    label: 'label1',
+    path: '/page1',
+    isActive: true
+  }, {
+    label: 'label2',
+    path: '/page2',
+    isActive: true
+  }, {
+    label: 'label3',
+    path: '/page3',
+    isActive: true
+  }, {
+    label: 'label4',
+    path: '/page4',
+    isActive: true
+  }, {
+    label: 'label5',
+    path: '/page5',
+    isActive: true
+  }, {
+    label: 'label6',
+    path: '/page6',
+    isActive: true
+  }, {
+    label: 'label7',
+    path: '/page7',
+    isActive: true
+  }, {
+    label: 'label8',
+    path: '/page8',
+    isActive: true
+  }];
+
   constructor(public injector: Injector,
     public view: ViewContainerRef,
     public cd: ChangeDetectorRef,
