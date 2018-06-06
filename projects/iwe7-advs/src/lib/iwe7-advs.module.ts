@@ -6,7 +6,6 @@ import { PortalModule } from '@angular/cdk/portal';
     PortalModule
   ],
   declarations: [Iwe7AdvsPopupComponent],
-  exports: [Iwe7AdvsPopupComponent],
-  entryComponents: [Iwe7AdvsPopupComponent]
+  exports: [Iwe7AdvsPopupComponent]
 })
 export class Iwe7AdvsModule { }

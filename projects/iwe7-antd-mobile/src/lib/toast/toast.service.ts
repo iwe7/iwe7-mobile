@@ -26,7 +26,7 @@ export interface AmToastInterface {
   providedIn: "root"
 })
 export class AmToastService {
-  constructor(public dialog: Dialog){}
+  constructor(public dialog: Dialog) { }
   success(cfg: AmToastInterface): Observable<AmToastService> {
     cfg["icon"] = {
       type: "icon",

@@ -34,7 +34,7 @@ export class AmToastComponent implements OnInit, OnChanges {
   }
 
   @HostBinding("class.am-toast") _toast: boolean = true;
-  constructor() {}
+  constructor() { }
 
   ngOnInit() {
     if (this.duration > 0) {
@@ -44,5 +44,5 @@ export class AmToastComponent implements OnInit, OnChanges {
     }
   }
 
-  ngOnChanges(changes: SimpleChanges) {}
+  ngOnChanges(changes: SimpleChanges) { }
 }

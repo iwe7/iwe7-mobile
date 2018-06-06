@@ -4,6 +4,11 @@
   background: #fff;
 }
 
+:host {
+  display: block;
+  background-color: #fff;
+}
+
 .detail-header {
   display: flex;
   flex-direction: column;
@@ -16,5 +21,61 @@
   .name {
     height: 2em;
     line-height: 2em;
+  }
+  .title {
+    font-size: 1.2em;
+  }
+}
+
+.detail-list {
+  iwe7-flex {
+    line-height: 30px;
+    color: gray;
+    &:hover {
+      opacity: .7;
+    }
+    .desc {
+      color: #000;
+      text-align: right;
+    }
+  }
+}
+
+.detail-actions {
+  text-align: center;
+  margin: 5px 0px;
+  button {
+    margin-left: 5px;
+  }
+}
+
+.stepper {
+  iwe7-flex {
+    line-height: 30px;
+    .desc {
+      text-align: right;
+    }
+  }
+}
+
+.detail-goods {
+  iwe7-flex {
+    line-height: 30px;
+    color: gray;
+    &.title {
+      font-size: 1.2em;
+      color: #000;
+    }
+  }
+}
+
+.detail-state {
+  iwe7-flex {
+    line-height: 30px;
+    color: gray;
+    .desc {
+      color: #000;
+      text-align: right;
+    }
   }
 }

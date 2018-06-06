@@ -1,6 +1,4 @@
 import { Component, OnInit, AfterViewInit, ElementRef } from "@angular/core";
-import { AmToastService } from "projects/iwe7-antd-mobile/src/lib/toast/toast.service";
-import { AmModalService } from "projects/iwe7-antd-mobile/src/lib/modal/am-modal.service";
 import { Dialog } from "iwe7-dialog";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 @Component({
@@ -14,8 +12,6 @@ export class AddComponent implements OnInit, AfterViewInit {
   step2: FormGroup;
   step3: FormGroup;
   constructor(
-    public toast: AmToastService,
-    public modal: AmModalService,
     public ele: ElementRef,
     public fb: FormBuilder
   ) {

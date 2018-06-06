@@ -1,6 +1,3 @@
-import { Iwe7DomService } from './../../projects/iwe7-core/src/lib/iwe7-dom.service';
-import { Iwe7AdvsPopupComponent } from './../../projects/iwe7-advs/src/lib/iwe7-advs-popup/iwe7-advs-popup';
-import { Iwe7AdvsService } from './../../projects/iwe7-advs/src/lib/iwe7-advs.service';
 import {
   Component, OnInit, Injector, AfterViewInit,
   ViewContainerRef, TemplateRef, ViewChild,

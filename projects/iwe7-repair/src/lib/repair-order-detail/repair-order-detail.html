@@ -1,30 +1,100 @@
 <div class="detail-header">
-    <div class="logo">
-        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1528197977093&di=fad489cc14e35463125284d07cf7653c&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimgad%2Fpic%2Fitem%2Fa9d3fd1f4134970ab66401079ecad1c8a7865d86.jpg" alt="">
-    </div>
-    <div class="name">
-        杭州米波网络科技有限公司
-    </div>
+  <div class="logo">
+    <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1528197977093&di=fad489cc14e35463125284d07cf7653c&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimgad%2Fpic%2Fitem%2Fa9d3fd1f4134970ab66401079ecad1c8a7865d86.jpg"
+      alt="">
+  </div>
+  <abc-space></abc-space>
+  <div class="name">
+    杭州米波网络科技有限公司
+  </div>
+  <abc-space></abc-space>
+  <div class="title">
+    施工单
+  </div>
 </div>
-
-<div class="detail-stepper">
-
-</div>
-
-<div class="detail-actions">
-
-</div>
-
+<abc-line color="#d4d2d2"></abc-line>
 <div class="detail-body">
   <div class="detail-list">
-
+    <mat-list>
+      <mat-list-item> Pepper </mat-list-item>
+      <mat-list-item> Salt </mat-list-item>
+      <mat-list-item> Paprika </mat-list-item>
+    </mat-list>
+    <abc-blank>
+      <iwe7-flex>
+        <div>工单号</div>
+        <div flexItem class="desc">2017083332321</div>
+      </iwe7-flex>
+      <iwe7-flex>
+        <div>开单时间</div>
+        <div flexItem flexItem class="desc">2018-3-20 3:20</div>
+      </iwe7-flex>
+      <iwe7-flex>
+        <div>车牌号</div>
+        <div flexItem flexItem class="desc">2018-3-20 3:20</div>
+      </iwe7-flex>
+      <iwe7-flex>
+        <div>VIN</div>
+        <div flexItem class="desc">2018-3-20 3:20</div>
+      </iwe7-flex>
+    </abc-blank>
   </div>
-
+  <abc-line color="#d4d2d2"></abc-line>
   <div class="detail-goods">
-
+    <abc-blank>
+      <iwe7-flex class="title">
+        <div flexItem grow="3">项目/商品</div>
+        <div flexItem>数量</div>
+        <div flexItem>施工人</div>
+      </iwe7-flex>
+      <iwe7-flex>
+        <div flexItem grow="3">机油保养</div>
+        <div flexItem>1</div>
+        <div flexItem>杨明明</div>
+      </iwe7-flex>
+      <iwe7-flex>
+        <div flexItem grow="3">汽车美容</div>
+        <div flexItem>2</div>
+        <div flexItem>杨明明</div>
+      </iwe7-flex>
+    </abc-blank>
   </div>
-
+  <abc-line color="#d4d2d2"></abc-line>
   <div class="detail-state">
-
+    <abc-blank>
+      <iwe7-flex>
+        <div flexItem>预计交车时间</div>
+        <div flexItem class="desc" grow="2">30分钟后</div>
+      </iwe7-flex>
+      <iwe7-flex>
+        <div flexItem>接待客服</div>
+        <div flexItem class="desc" grow="2">杨明明</div>
+      </iwe7-flex>
+      <abc-line color="#d4d2d2"></abc-line>
+      <iwe7-flex>
+        <div flexItem>客服电话</div>
+        <div flexItem class="desc" grow="2">13140415408</div>
+      </iwe7-flex>
+      <abc-line color="#d4d2d2"></abc-line>
+      <iwe7-flex>
+        <div flexItem>门店电话</div>
+        <div flexItem class="desc">13140415408</div>
+      </iwe7-flex>
+    </abc-blank>
   </div>
+  <abc-space height="10px"></abc-space>
+</div>
+<abc-line color="#d4d2d2"></abc-line>
+<div class="detail-stepper">
+  <mat-horizontal-stepper>
+    <mat-step label="派单施工">
+      下单
+    </mat-step>
+    <mat-step label="施工进度">
+      施工
+    </mat-step>
+    <mat-step label="支付提车">
+      完成
+    </mat-step>
+  </mat-horizontal-stepper>
 </div>

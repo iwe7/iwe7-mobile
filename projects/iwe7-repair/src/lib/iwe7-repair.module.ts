@@ -1,6 +1,8 @@
 import { RepairOrderDetailComponent } from './repair-order-detail/repair-order-detail';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Iwe7UiModule } from 'iwe7-ui';
+import { MatStepperModule } from '@angular/material';
 
 export const RepairComponents = [
     RepairOrderDetailComponent
@@ -8,7 +10,9 @@ export const RepairComponents = [
 
 @NgModule({
     imports: [
-        CommonModule
+        CommonModule,
+        Iwe7UiModule,
+        MatStepperModule
     ],
     exports: [
         RepairComponents

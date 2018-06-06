@@ -4964,9 +4964,9 @@ iwe7-box@^0.0.1:
   dependencies:
     tslib "^1.9.0"
 
-iwe7-core@^6.3.5:
-  version "6.3.5"
-  resolved "https://registry.yarnpkg.com/iwe7-core/-/iwe7-core-6.3.5.tgz#31db8f9a3991267637c269f6a3cc92a5f6d22d9b"
+iwe7-core@^6.3.6:
+  version "6.3.6"
+  resolved "https://registry.yarnpkg.com/iwe7-core/-/iwe7-core-6.3.6.tgz#92c53046be7b9a622a6949e1fa7f5a33ac244aba"
   dependencies:
     tslib "^1.9.0"
 
@@ -5057,6 +5057,12 @@ iwe7-swiper@^0.0.1:
 iwe7-tabbar@^0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/iwe7-tabbar/-/iwe7-tabbar-0.0.1.tgz#610f2989f61f534245c2a1f4c48f06185bef5865"
+  dependencies:
+    tslib "^1.9.0"
+
+iwe7-ui@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/iwe7-ui/-/iwe7-ui-0.0.3.tgz#73494ccf0eae612b8baccb9433f23caa49121255"
   dependencies:
     tslib "^1.9.0"
 
