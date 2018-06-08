@@ -1,5 +1,11 @@
 <layout-outlet>
-  <div style="height:200px;overflow: hidden;margin-top: 10px;" >
+  <jd-swiper>
+    <div *ngFor="let item of [1,2,3]" class="slide-item">
+      1111
+    </div>
+  </jd-swiper>
+
+  <div style="height:200px;overflow: hidden;margin-top: 10px;">
     <div (scroll)="scroll($event)">
       <div style="height:50px;background:green;"></div>
       <div style="height:50px;background:red;"></div>

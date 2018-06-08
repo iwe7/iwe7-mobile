@@ -5288,9 +5288,9 @@ iwe7-base@^6.3.2:
   dependencies:
     tslib "^1.9.0"
 
-iwe7-better-scroll@^0.1.7:
-  version "0.1.7"
-  resolved "https://registry.yarnpkg.com/iwe7-better-scroll/-/iwe7-better-scroll-0.1.7.tgz#d31352cafe7b29d87c35c9c19686b743ac2ffac2"
+iwe7-better-scroll@^0.4.3:
+  version "0.4.3"
+  resolved "https://registry.yarnpkg.com/iwe7-better-scroll/-/iwe7-better-scroll-0.4.3.tgz#e23288d493584efe717c26d3286c409139735f2b"
   dependencies:
     tslib "^1.9.0"
 
@@ -5408,9 +5408,9 @@ iwe7-square@^0.0.6:
   dependencies:
     tslib "^1.9.0"
 
-iwe7-swiper@^0.1.1:
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/iwe7-swiper/-/iwe7-swiper-0.1.1.tgz#2d7df7a352ea43fa9f6c6ac6ec2c99cd034f7ba4"
+iwe7-swiper@^0.1.4:
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/iwe7-swiper/-/iwe7-swiper-0.1.4.tgz#955f42957227e2061d13b34f7b4c3ae6b036d99d"
   dependencies:
     tslib "^1.9.0"
 

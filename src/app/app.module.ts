@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 import { AppComponent } from "./app.component";
 import { Page404Component } from './404/page-404';
+import { Iwe7JdModule } from '../../projects/iwe7-jd/src/public_api';
 
 @NgModule({
   declarations: [AppComponent, Page404Component],
@@ -14,6 +15,7 @@ import { Page404Component } from './404/page-404';
     BrowserModule,
     BrowserAnimationsModule,
     Iwe7UiModule,
+    Iwe7JdModule,
     RouterModule.forRoot(
       [
         {
