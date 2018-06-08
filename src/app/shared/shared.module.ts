@@ -12,7 +12,7 @@ import { NgModule } from '@angular/core';
     CommonModule,
     Iwe7UiModule,
     Iwe7RepairModule,
-    Iwe7JdIndexModule
+    Iwe7JdIndexModule,
   ]
 })
 export class SharedModule { }

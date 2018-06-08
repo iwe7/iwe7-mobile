@@ -17,12 +17,6 @@
       "dom"
     ],
     "paths": {
-      "iwe7-jd": [
-        "dist/iwe7-jd"
-      ],
-      "iwe7-jd/*": [
-        "dist/iwe7-jd/*"
-      ]
     }
   }
 }

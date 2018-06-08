@@ -1,6 +1,6 @@
 ### 仿京东首页
-
 > 用angular仿京东首页
+[预览](https://iwe7.github.io/iwe7-jd-index/dist/index.html?t=4)
 
 ```html
 <!-- 提示 -->

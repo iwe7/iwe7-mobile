@@ -1,25 +1,35 @@
-<!-- <mat-drawer-container>
-  <mat-drawer #drawer>I'm a drawer</mat-drawer>
-  <mat-drawer-content>
-    <mat-toolbar color="primary">
-      <mat-toolbar-row>
-        <mat-icon (click)="drawer.toggle()" class="example-icon">menu</mat-icon>
-        <span class="example-spacer">Custom Toolbar</span>
-        <mat-icon class="example-icon">favorite</mat-icon>
-      </mat-toolbar-row>
-    </mat-toolbar>
-    <mat-tab-group class="demo-tab-group">
-      <mat-tab [label]="link.label" [routerLink]="link.path" routerLinkActive #rla="routerLinkActive" *ngFor="let link of navLinks"></mat-tab>
-    </mat-tab-group>
-    <router-outlet></router-outlet>
+<layout-outlet>
+  <div style="height:200px;overflow: hidden;margin-top: 10px;" >
+    <div (scroll)="scroll($event)">
+      <div style="height:50px;background:green;"></div>
+      <div style="height:50px;background:red;"></div>
+      <div style="height:50px;background:darkblue;"></div>
+      <div style="height:50px;background:green;"></div>
+      <div style="height:50px;background:red;"></div>
+      <div style="height:50px;background:darkblue;"></div>
+      <div style="height:50px;background:green;"></div>
+      <div style="height:50px;background:red;"></div>
+      <div style="height:50px;background:darkblue;"></div>
+      <div style="height:50px;background:green;"></div>
+      <div style="height:50px;background:red;"></div>
+      <div style="height:50px;background:darkblue;"></div>
+    </div>
+  </div>
 
-
-    <mat-form-field>
-      <input matInput [matDatepicker]="picker" placeholder="Choose a date">
-      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-      <mat-datepicker #picker></mat-datepicker>
-    </mat-form-field>
-  </mat-drawer-content>
-</mat-drawer-container> -->
-
-<iwe7-jd-index></iwe7-jd-index>
+  <div style="width: 100%;overflow: hidden;margin-top: 10px;">
+    <div class="scrollX" (scrollX)="scroll($event)">
+      <div style="min-width: 100px;background: red;height: 80px;"></div>
+      <div style="min-width: 100px;background: green;height: 80px;"></div>
+      <div style="min-width: 100px;background: darkblue;height: 80px;"></div>
+      <div style="min-width: 100px;background: red;height: 80px;"></div>
+      <div style="min-width: 100px;background: green;height: 80px;"></div>
+      <div style="min-width: 100px;background: darkblue;height: 80px;"></div>
+      <div style="min-width: 100px;background: red;height: 80px;"></div>
+      <div style="min-width: 100px;background: green;height: 80px;"></div>
+      <div style="min-width: 100px;background: darkblue;height: 80px;"></div>
+      <div style="min-width: 100px;background: red;height: 80px;"></div>
+      <div style="min-width: 100px;background: green;height: 80px;"></div>
+      <div style="min-width: 100px;background: darkblue;height: 80px;"></div>
+    </div>
+  </div>
+</layout-outlet>

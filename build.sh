@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
-ng build --project iwe7-jd
-cd dist/iwe7-jd
+ng build --project iwe7-better-scroll
+cd dist/iwe7-better-scroll
 npm publish
 cd ../
-rm -rf dist/iwe7-jd
-yarn add iwe7-jd
+rm -rf dist/iwe7-better-scroll
+yarn add iwe7-better-scroll
+

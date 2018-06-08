@@ -1,19 +1,19 @@
-import { Page404Component } from './404/page-404';
+import { Iwe7UiModule } from '../../projects/iwe7-ui/src/public_api';
 import { BrowserModule } from "@angular/platform-browser";
-import { NgModule, NO_ERRORS_SCHEMA, APP_INITIALIZER } from "@angular/core";
-
-import { AppComponent } from "./app.component";
+import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
 import { RouterModule } from "@angular/router";
-import { PagesModule } from "./pages/pages.module";
-import { SharedModule } from "./shared/shared.module";
 import { APP_BASE_HREF } from "@angular/common";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+
+import { AppComponent } from "./app.component";
+import { Page404Component } from './404/page-404';
+
 @NgModule({
   declarations: [AppComponent, Page404Component],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    PagesModule,
+    Iwe7UiModule,
     RouterModule.forRoot(
       [
         {
@@ -30,7 +30,6 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
         useHash: true
       }
     ),
-    SharedModule
   ],
   providers: [
     {
@@ -41,4 +40,4 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
   bootstrap: [AppComponent],
   schemas: [NO_ERRORS_SCHEMA]
 })
-export class AppModule {}
+export class AppModule { }
