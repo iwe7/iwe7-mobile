@@ -23,7 +23,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.less"
+              "src/styles.scss"
             ],
             "scripts": [
               {
@@ -40,7 +40,7 @@
                 }
               ],
               "optimization": true,
-              "outputHashing": "all",
+              "outputHashing": "none",
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
@@ -581,7 +581,7 @@
               "projects/iwe7-antd-mobile-preview/src/assets"
             ],
             "styles": [
-              "projects/iwe7-antd-mobile-preview/src/styles.less"
+              "projects/iwe7-antd-mobile-preview/src/styles.scss"
             ],
             "scripts": []
           },
@@ -630,7 +630,7 @@
             "tsConfig": "projects/iwe7-antd-mobile-preview/tsconfig.spec.json",
             "karmaConfig": "projects/iwe7-antd-mobile-preview/karma.conf.js",
             "styles": [
-              "projects/iwe7-antd-mobile-preview/src/styles.less"
+              "projects/iwe7-antd-mobile-preview/src/styles.scss"
             ],
             "scripts": [],
             "assets": [
@@ -2146,6 +2146,326 @@
             "tsConfig": [
               "projects/iwe7-view/tsconfig.lib.json",
               "projects/iwe7-view/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "iwe7-voice-entry": {
+      "root": "projects/iwe7-voice-entry",
+      "sourceRoot": "projects/iwe7-voice-entry/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/iwe7-voice-entry/tsconfig.lib.json",
+            "project": "projects/iwe7-voice-entry/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/iwe7-voice-entry/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/iwe7-voice-entry/src/test.ts",
+            "tsConfig": "projects/iwe7-voice-entry/tsconfig.spec.json",
+            "karmaConfig": "projects/iwe7-voice-entry/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/iwe7-voice-entry/tsconfig.lib.json",
+              "projects/iwe7-voice-entry/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "iwe7-on-press": {
+      "root": "projects/iwe7-on-press",
+      "sourceRoot": "projects/iwe7-on-press/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/iwe7-on-press/tsconfig.lib.json",
+            "project": "projects/iwe7-on-press/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/iwe7-on-press/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/iwe7-on-press/src/test.ts",
+            "tsConfig": "projects/iwe7-on-press/tsconfig.spec.json",
+            "karmaConfig": "projects/iwe7-on-press/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/iwe7-on-press/tsconfig.lib.json",
+              "projects/iwe7-on-press/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "iwe7-jssdk": {
+      "root": "projects/iwe7-jssdk",
+      "sourceRoot": "projects/iwe7-jssdk/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/iwe7-jssdk/tsconfig.lib.json",
+            "project": "projects/iwe7-jssdk/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/iwe7-jssdk/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/iwe7-jssdk/src/test.ts",
+            "tsConfig": "projects/iwe7-jssdk/tsconfig.spec.json",
+            "karmaConfig": "projects/iwe7-jssdk/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/iwe7-jssdk/tsconfig.lib.json",
+              "projects/iwe7-jssdk/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "iwe7-account": {
+      "root": "projects/iwe7-account",
+      "sourceRoot": "projects/iwe7-account/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/iwe7-account/tsconfig.lib.json",
+            "project": "projects/iwe7-account/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/iwe7-account/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/iwe7-account/src/test.ts",
+            "tsConfig": "projects/iwe7-account/tsconfig.spec.json",
+            "karmaConfig": "projects/iwe7-account/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/iwe7-account/tsconfig.lib.json",
+              "projects/iwe7-account/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "iwe7-car-brand": {
+      "root": "projects/iwe7-car-brand",
+      "sourceRoot": "projects/iwe7-car-brand/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/iwe7-car-brand/tsconfig.lib.json",
+            "project": "projects/iwe7-car-brand/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/iwe7-car-brand/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/iwe7-car-brand/src/test.ts",
+            "tsConfig": "projects/iwe7-car-brand/tsconfig.spec.json",
+            "karmaConfig": "projects/iwe7-car-brand/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/iwe7-car-brand/tsconfig.lib.json",
+              "projects/iwe7-car-brand/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "iwe7-car-plate": {
+      "root": "projects/iwe7-car-plate",
+      "sourceRoot": "projects/iwe7-car-plate/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/iwe7-car-plate/tsconfig.lib.json",
+            "project": "projects/iwe7-car-plate/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/iwe7-car-plate/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/iwe7-car-plate/src/test.ts",
+            "tsConfig": "projects/iwe7-car-plate/tsconfig.spec.json",
+            "karmaConfig": "projects/iwe7-car-plate/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/iwe7-car-plate/tsconfig.lib.json",
+              "projects/iwe7-car-plate/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "iwe7-keyboard": {
+      "root": "projects/iwe7-keyboard",
+      "sourceRoot": "projects/iwe7-keyboard/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/iwe7-keyboard/tsconfig.lib.json",
+            "project": "projects/iwe7-keyboard/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/iwe7-keyboard/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/iwe7-keyboard/src/test.ts",
+            "tsConfig": "projects/iwe7-keyboard/tsconfig.spec.json",
+            "karmaConfig": "projects/iwe7-keyboard/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/iwe7-keyboard/tsconfig.lib.json",
+              "projects/iwe7-keyboard/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "iwe7-on-hover": {
+      "root": "projects/iwe7-on-hover",
+      "sourceRoot": "projects/iwe7-on-hover/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/iwe7-on-hover/tsconfig.lib.json",
+            "project": "projects/iwe7-on-hover/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/iwe7-on-hover/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/iwe7-on-hover/src/test.ts",
+            "tsConfig": "projects/iwe7-on-hover/tsconfig.spec.json",
+            "karmaConfig": "projects/iwe7-on-hover/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/iwe7-on-hover/tsconfig.lib.json",
+              "projects/iwe7-on-hover/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"

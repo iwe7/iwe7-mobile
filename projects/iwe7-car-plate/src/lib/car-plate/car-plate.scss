@@ -1,0 +1,50 @@
+.car-plate-keyboard {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background: #efefef;
+  span {
+    font-size: 18px;
+    padding: 0 10px;
+    height: 30px;
+    line-height: 30px;
+    background: #fff;
+    border: 1px solid #efefef;
+    border-radius: 5px;
+    margin: 5px;
+    &.active {
+      background: #ff4081;
+      color: #fff;
+    }
+  }
+}
+
+.car-plate-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 0px;
+}
+
+.car-plate-input {
+  display: flex;
+  flex-direction: row;
+  .car-plate-input-item {
+    font-size: 18px;
+    line-height: 30px;
+    background: #fff;
+    border: 1px solid #efefef;
+    border-radius: 5px;
+    flex: 1;
+    position: relative;
+    input {
+      width: 28px;
+      height: 28px;
+      line-height: 28px;
+      outline: none;
+      border: none;
+      text-align: center;
+    }
+  }
+}

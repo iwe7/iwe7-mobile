@@ -1,41 +1,13 @@
-<layout-outlet>
-  <jd-swiper>
-    <div *ngFor="let item of [1,2,3]" class="slide-item">
-      1111
-    </div>
-  </jd-swiper>
-
-  <div style="height:200px;overflow: hidden;margin-top: 10px;">
-    <div (scroll)="scroll($event)">
-      <div style="height:50px;background:green;"></div>
-      <div style="height:50px;background:red;"></div>
-      <div style="height:50px;background:darkblue;"></div>
-      <div style="height:50px;background:green;"></div>
-      <div style="height:50px;background:red;"></div>
-      <div style="height:50px;background:darkblue;"></div>
-      <div style="height:50px;background:green;"></div>
-      <div style="height:50px;background:red;"></div>
-      <div style="height:50px;background:darkblue;"></div>
-      <div style="height:50px;background:green;"></div>
-      <div style="height:50px;background:red;"></div>
-      <div style="height:50px;background:darkblue;"></div>
-    </div>
+<layout-outlet #outlet="layoutOutlet">
+  <div class="layout-content" betterScroll click>
+    <voice-entry placeholder="姓名"></voice-entry>
+    <car-brand></car-brand>
+    <car-plate></car-plate>
+    <!-- <keyboard-emoji></keyboard-emoji> -->
+    <!-- <keyboard-number></keyboard-number> -->
+    <keyboard-string></keyboard-string>
+    <keyboard-province></keyboard-province>
   </div>
 
-  <div style="width: 100%;overflow: hidden;margin-top: 10px;">
-    <div class="scrollX" (scrollX)="scroll($event)">
-      <div style="min-width: 100px;background: red;height: 80px;"></div>
-      <div style="min-width: 100px;background: green;height: 80px;"></div>
-      <div style="min-width: 100px;background: darkblue;height: 80px;"></div>
-      <div style="min-width: 100px;background: red;height: 80px;"></div>
-      <div style="min-width: 100px;background: green;height: 80px;"></div>
-      <div style="min-width: 100px;background: darkblue;height: 80px;"></div>
-      <div style="min-width: 100px;background: red;height: 80px;"></div>
-      <div style="min-width: 100px;background: green;height: 80px;"></div>
-      <div style="min-width: 100px;background: darkblue;height: 80px;"></div>
-      <div style="min-width: 100px;background: red;height: 80px;"></div>
-      <div style="min-width: 100px;background: green;height: 80px;"></div>
-      <div style="min-width: 100px;background: darkblue;height: 80px;"></div>
-    </div>
-  </div>
+  <div footer>footer</div>
 </layout-outlet>

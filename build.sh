@@ -1,16 +1,10 @@
 #!/usr/bin/env bash
-ng build --project iwe7-better-scroll
-cd dist/iwe7-better-scroll
+rm -rf dist/iwe7-keyboard
+ng build --project iwe7-keyboard
+mkdir -p ./dist/iwe7-keyboard/themes
+cp -fr ./projects/iwe7-keyboard/themes/* ./dist/iwe7-keyboard/themes/
+cd dist/iwe7-keyboard
 npm publish
 cd ../
-rm -rf dist/iwe7-better-scroll
-yarn add iwe7-better-scroll
-
-
-# ng build --project iwe7-swiper
-# cd dist/iwe7-swiper
-# npm publish
-# cd ../
-# rm -rf dist/iwe7-swiper
-# yarn add iwe7-swiper
-
+rm -rf dist/iwe7-keyboard
+yarn add iwe7-keyboard

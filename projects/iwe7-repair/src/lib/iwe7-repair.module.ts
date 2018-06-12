@@ -1,8 +1,10 @@
+import { RepairCarEntryModule } from './reapir-car-entry/repair-car-entry.module';
 import { RepairOrderDetailComponent } from './repair-order-detail/repair-order-detail';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Iwe7UiModule } from 'iwe7-ui';
 import { MatStepperModule } from '@angular/material';
+import { Iwe7AbcModule } from 'iwe7-abc';
+import { Iwe7FlexBoxModule } from 'iwe7-flex';
 
 export const RepairComponents = [
     RepairOrderDetailComponent
@@ -11,11 +13,14 @@ export const RepairComponents = [
 @NgModule({
     imports: [
         CommonModule,
-        Iwe7UiModule,
-        MatStepperModule
+        MatStepperModule,
+        Iwe7AbcModule,
+        Iwe7FlexBoxModule,
+        RepairCarEntryModule
     ],
     exports: [
-        RepairComponents
+        RepairComponents,
+        RepairCarEntryModule
     ],
     declarations: [
         RepairComponents

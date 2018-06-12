@@ -1,0 +1,8 @@
+<div class="keyboard-number-col" *ngFor="let item of list">
+  <div class="keyboard-number-row" *ngFor="let it of item" (ngHover)="_ngOnHover($event)" [ngHoverData]="it">
+    <span *ngIf="it !== 'delete'">{{it}}</span>
+    <span *ngIf="it === 'delete'">
+      <i class="iconfont icon-delete"></i>
+    </span>
+  </div>
+</div>
