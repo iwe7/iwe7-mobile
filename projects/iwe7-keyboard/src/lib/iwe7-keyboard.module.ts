@@ -1,7 +1,6 @@
 import { Iwe7OnHoverModule } from 'iwe7-on-hover';
 import { KeyboardProvinceComponent } from './keyboard-province/keyboard-province';
 import { KeyboardStringComponent } from './keyboard-string/keyboard-string';
-import { Iwe7SquareModule } from 'iwe7-square';
 import { KeyboardNumberComponent } from './keyboard-number/keyboard-number';
 import { BetterCoreModule } from 'iwe7-better-scroll';
 import { KeyboardEmojiComponent } from './keyboard-emoji/keyboard-emoji';
@@ -14,7 +13,6 @@ import { NgModule } from '@angular/core';
     Iwe7IndexListModule,
     CommonModule,
     BetterCoreModule,
-    Iwe7SquareModule,
     Iwe7OnHoverModule
   ],
   declarations: [
