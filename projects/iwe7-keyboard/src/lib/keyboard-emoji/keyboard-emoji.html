@@ -1,5 +1,14 @@
-<div class="container" #container (betterScroll)="_betterScroll($event)" click scrollX scrollY="false">
-  <div class="row" *ngFor="let item of list">
-    <div class="col" (ngHover)="_ngOnHover($event)" *ngFor="let col of item">{{col}}</div>
+<layout-outlet #layout>
+  <div header>
+    <navbar-outlet>
+      <div navbarLeft (click)="cancel()">取消</div>
+      <div navbarTitle>选择表情</div>
+      <div navbarRight (click)="sure()">确定</div>
+    </navbar-outlet>
   </div>
-</div>
+  <div class="container" #container (betterScroll)="_betterScroll($event)" click scrollX scrollY="false">
+    <div class="row" *ngFor="let item of list">
+      <div class="col" (ngHover)="_ngOnHover($event)" [ngHoverData]="col" *ngFor="let col of item">{{col}}</div>
+    </div>
+  </div>
+</layout-outlet>

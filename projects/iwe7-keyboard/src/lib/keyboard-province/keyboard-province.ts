@@ -1,3 +1,4 @@
+import { Injector } from '@angular/core';
 import { ElementRef, Renderer2 } from '@angular/core';
 import { KeyboardStringComponent } from './../keyboard-string/keyboard-string';
 import { Component } from '@angular/core';
@@ -15,8 +16,16 @@ export class KeyboardProvinceComponent extends KeyboardStringComponent {
     ];
     constructor(
         ele: ElementRef,
-        render: Renderer2
+        render: Renderer2,
+        injector: Injector
     ) {
-        super(ele, render);
+        super(ele, render, injector);
+    }
+
+    _ngOnHover(e: any) {
+        super._ngOnHover(e);
+        setTimeout(() => {
+            this.sure();
+        }, 300);
     }
 }

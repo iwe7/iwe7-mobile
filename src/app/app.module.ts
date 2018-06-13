@@ -1,4 +1,7 @@
-import { Iwe7KeyboardModule } from './../../projects/iwe7-keyboard/src/lib/iwe7-keyboard.module';
+import { KeyboardProvinceModule } from './../../projects/iwe7-keyboard/src/lib/keyboard-province/module';
+import { KeyboardStringModule } from './../../projects/iwe7-keyboard/src/lib/keyboard-string/module';
+import { KeyboardNumberModule } from './../../projects/iwe7-keyboard/src/lib/keyboard-number/module';
+import { KeyboardEmojiModule } from './../../projects/iwe7-keyboard/src/lib/keyboard-emoji/module';
 import { Iwe7CarPlateModule } from './../../projects/iwe7-car-plate/src/lib/iwe7-car-plate.module';
 import { Iwe7CarBrandModule } from './../../projects/iwe7-car-brand/src/lib/iwe7-car-brand.module';
 import { Iwe7VoiceEntryModule } from './../../projects/iwe7-voice-entry/src/lib/iwe7-voice-entry.module';
@@ -25,7 +28,10 @@ import {
     HttpClientJsonpModule,
     Iwe7CarBrandModule,
     Iwe7CarPlateModule,
-    Iwe7KeyboardModule,
+    KeyboardEmojiModule,
+    KeyboardNumberModule,
+    KeyboardStringModule,
+    KeyboardProvinceModule,
     RouterModule.forRoot(
       [
         {

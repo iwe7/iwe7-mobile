@@ -56,6 +56,15 @@ export class AppComponent extends Iwe7CoreComponent {
   onClick(e: any) {
     console.log(e);
   }
+  title: string = '';
+  openKeyboardEmoji(e: string) {
+    this.title += e;
+  }
+
+  openKeyboardNumber(e: string) {
+    console.log(e);
+    this.title += '' + e;
+  }
 
   ngAfterViewInit() {
     const url = this.url.getOpenUrl('getWxConfig');

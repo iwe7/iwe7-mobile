@@ -3,10 +3,12 @@
   position: relative;
   width: 100%;
   background: #fff;
+  height: 100%;
   .keyboard-number-col {
     display: flex;
     flex-direction: row;
     height: var(--height);
+    width: 100%;
     .keyboard-number-row {
       flex: 1;
       font-size: 25px;
@@ -16,8 +18,7 @@
       text-align: center;
       line-height: var(--height);
       &.active {
-        background: #ff4081;
-        color: #fff;
+        background: #efefef;
         font-size: 35px;
       }
       .icon-delete {

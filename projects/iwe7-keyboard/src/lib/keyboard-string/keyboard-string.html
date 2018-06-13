@@ -1,3 +1,19 @@
-<div class="col" *ngFor="let item of list">
-  <div class="row" (ngHover)="_ngOnHover($event)" [ngHoverData]="it" *ngFor="let it of item">{{it}}</div>
-</div>
+<layout-outlet #layout>
+  <div header>
+    <navbar-outlet>
+      <div navbarLeft (click)="cancel()">取消</div>
+      <div navbarTitle>请输入</div>
+      <div navbarRight (click)="sure()">确定</div>
+    </navbar-outlet>
+  </div>
+  <div class="keyboard-container" #container>
+    <div class="col" *ngFor="let item of list">
+      <div class="row" (ngHover)="_ngOnHover($event)" [ngHoverData]="it" *ngFor="let it of item">
+        <span *ngIf="it !== 'delete'">{{it}}</span>
+        <span *ngIf="it === 'delete'">
+          <i class="iconfont icon-delete"></i>
+        </span>
+      </div>
+    </div>
+  </div>
+</layout-outlet>
