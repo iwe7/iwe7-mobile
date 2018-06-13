@@ -1,5 +1,5 @@
-import { Iwe7CarPlateModule } from './../../projects/iwe7-car-plate/src/lib/iwe7-car-plate.module';
-import { Iwe7CarBrandModule } from './../../projects/iwe7-car-brand/src/lib/iwe7-car-brand.module';
+import { Iwe7CarPlateModule } from 'iwe7-car-plate';
+import { Iwe7CarBrandModule } from 'iwe7-car-brand';
 import { Iwe7VoiceEntryModule } from './../../projects/iwe7-voice-entry/src/lib/iwe7-voice-entry.module';
 import { SharedModule } from './shared/shared.module';
 import { BrowserModule } from "@angular/platform-browser";

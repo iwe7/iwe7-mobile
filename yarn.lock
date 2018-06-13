@@ -5437,6 +5437,12 @@ iwe7-box@^0.0.1:
   dependencies:
     tslib "^1.9.0"
 
+iwe7-car-brand@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/iwe7-car-brand/-/iwe7-car-brand-0.0.1.tgz#fdd4d6eaae209e2fee7f3daa4d2a95e59234d598"
+  dependencies:
+    tslib "^1.9.0"
+
 iwe7-car-plate@^0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/iwe7-car-plate/-/iwe7-car-plate-0.0.1.tgz#46242b7c45f7199a5a9ca4606bac22c3a1716e9e"
