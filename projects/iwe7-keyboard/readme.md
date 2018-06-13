@@ -1,6 +1,6 @@
 ```html
-<keyboard-emoji></keyboard-emoji>
-<keyboard-number></keyboard-number>
-<keyboard-string></keyboard-string>
-<keyboard-province></keyboard-province>
+<div openKeyboardEmoji></div>
+<div openKeyboardNumber></div>
+<div OpenKeyboardString></div>
+<div openKeyboardProvince></div>
 ```
