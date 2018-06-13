@@ -1,6 +1,7 @@
 import { Iwe7CarPlateModule } from 'iwe7-car-plate';
 import { Iwe7CarBrandModule } from 'iwe7-car-brand';
-import { Iwe7VoiceEntryModule } from './../../projects/iwe7-voice-entry/src/lib/iwe7-voice-entry.module';
+import { Iwe7VoiceEntryModule } from 'iwe7-voice-entry';
+
 import { SharedModule } from './shared/shared.module';
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";

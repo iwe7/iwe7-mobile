@@ -5443,9 +5443,9 @@ iwe7-car-brand@^0.0.1:
   dependencies:
     tslib "^1.9.0"
 
-iwe7-car-plate@^0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/iwe7-car-plate/-/iwe7-car-plate-0.0.1.tgz#46242b7c45f7199a5a9ca4606bac22c3a1716e9e"
+iwe7-car-plate@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/iwe7-car-plate/-/iwe7-car-plate-0.0.2.tgz#b58d328b89ea312d5f289e36d7d1b2ab18f65a32"
   dependencies:
     tslib "^1.9.0"
 
@@ -5638,6 +5638,12 @@ iwe7-url@^0.0.9:
 iwe7-util@^0.2.1:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/iwe7-util/-/iwe7-util-0.2.1.tgz#2fa6b5478a285fb09457327c8f5fefc6a4201dfd"
+  dependencies:
+    tslib "^1.9.0"
+
+iwe7-voice-entry@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/iwe7-voice-entry/-/iwe7-voice-entry-0.0.3.tgz#7b98a7ac37bc3aaff3ab795703c68bbfba796e8f"
   dependencies:
     tslib "^1.9.0"
 
