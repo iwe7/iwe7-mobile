@@ -15,6 +15,10 @@ export class OpenKeyboardStringDirective {
         public menu: Iwe7MenuService
     ) { }
 
+    hide() {
+        this.menu.hide();
+    }
+
     open() {
         const control = (data: string) => {
             this.openKeyboardString.emit(data);
@@ -25,8 +29,8 @@ export class OpenKeyboardStringDirective {
         const factory = this.resolver.resolveComponentFactory(KeyboardStringComponent);
         const element: HTMLElement = document.documentElement;
         const rect = element.getBoundingClientRect();
-        const width = rect.width / 10 - 5;
-        const height = width * 1.2 * 5 + 45;
-        this.menuListenr = this.menu.show('bottom', height, factory, control).subscribe();
+        const height = (rect.width / 10 - 5) * 1.2;
+        const height2 = (height + 5) * 4 + 50;
+        this.menuListenr = this.menu.show('bottom', height2, factory, control).subscribe();
     }
 }

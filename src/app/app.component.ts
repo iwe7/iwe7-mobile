@@ -66,6 +66,10 @@ export class AppComponent extends Iwe7CoreComponent {
     this.title += '' + e;
   }
 
+  openKeyboardProvince(e: any) {
+    console.log(e);
+  }
+
   ngAfterViewInit() {
     const url = this.url.getOpenUrl('getWxConfig');
     this.http.get(url).pipe(

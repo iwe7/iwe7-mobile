@@ -21,11 +21,4 @@ export class KeyboardProvinceComponent extends KeyboardStringComponent {
     ) {
         super(ele, render, injector);
     }
-
-    _ngOnHover(e: any) {
-        super._ngOnHover(e);
-        setTimeout(() => {
-            this.sure();
-        }, 300);
-    }
 }

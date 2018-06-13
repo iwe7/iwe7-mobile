@@ -67,6 +67,7 @@
     "iwe7-jd-channel": "^0.0.1",
     "iwe7-jd-index": "^0.0.2",
     "iwe7-jssdk": "^0.3.1",
+    "iwe7-keyboard": "^0.0.8",
     "iwe7-layout": "^0.4.4",
     "iwe7-navbar": "^0.0.7",
     "iwe7-on-hover": "^0.0.1",

@@ -16,37 +16,6 @@
       "es2017",
       "dom"
     ],
-    "paths": {
-      "iwe7-account": [
-        "dist/iwe7-account"
-      ],
-      "iwe7-account/*": [
-        "dist/iwe7-account/*"
-      ],
-      "iwe7-car-brand": [
-        "dist/iwe7-car-brand"
-      ],
-      "iwe7-car-brand/*": [
-        "dist/iwe7-car-brand/*"
-      ],
-      "iwe7-car-plate": [
-        "dist/iwe7-car-plate"
-      ],
-      "iwe7-car-plate/*": [
-        "dist/iwe7-car-plate/*"
-      ],
-      "iwe7-keyboard": [
-        "dist/iwe7-keyboard"
-      ],
-      "iwe7-keyboard/*": [
-        "dist/iwe7-keyboard/*"
-      ],
-      "iwe7-on-hover": [
-        "dist/iwe7-on-hover"
-      ],
-      "iwe7-on-hover/*": [
-        "dist/iwe7-on-hover/*"
-      ]
-    }
+    "paths": {}
   }
 }

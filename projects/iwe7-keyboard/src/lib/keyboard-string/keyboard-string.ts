@@ -15,7 +15,6 @@ export class KeyboardStringComponent extends CustomComponent<any> {
         ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L'],
         ['Z', 'X', 'C', 'V', 'B', 'N', 'M', 'delete']
     ];
-    num: string = '';
     @ViewChild('container') container: ElementRef;
     @ViewChild(LayoutOutletComponent) layout: LayoutOutletComponent;
 
@@ -44,11 +43,6 @@ export class KeyboardStringComponent extends CustomComponent<any> {
             this.render.addClass(e.ele, 'active');
         } else {
             if (e.data) {
-                if (e.data !== 'delete') {
-                    this.num += e.data;
-                } else {
-                    this.num = this.num.substr(0, this.num.length - 1);
-                }
                 this._customData(e.data);
             }
             this.render.removeClass(e.ele, 'active');

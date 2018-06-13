@@ -19,6 +19,9 @@ export class OpenKeyboardNumberDirective {
         public resolver: ComponentFactoryResolver
     ) {
     }
+    hide() {
+        this.menu.hide();
+    }
 
     open() {
         const control = (data: string) => {

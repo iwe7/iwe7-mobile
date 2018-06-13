@@ -5515,6 +5515,12 @@ iwe7-jssdk@^0.3.1:
   dependencies:
     tslib "^1.9.0"
 
+iwe7-keyboard@^0.0.8:
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/iwe7-keyboard/-/iwe7-keyboard-0.0.8.tgz#9678b306c965de8d497b86f70b1a16c23cef2ddf"
+  dependencies:
+    tslib "^1.9.0"
+
 iwe7-layout@^0.4.4:
   version "0.4.4"
   resolved "https://registry.yarnpkg.com/iwe7-layout/-/iwe7-layout-0.4.4.tgz#21fe932898781763448961e045d98ae2a4173db9"

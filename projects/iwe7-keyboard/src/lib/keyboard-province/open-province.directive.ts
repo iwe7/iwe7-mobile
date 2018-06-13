@@ -4,7 +4,7 @@ import { Directive, ComponentFactoryResolver, EventEmitter, Output, HostListener
 
 @Directive({ selector: '[openKeyboardProvince]' })
 export class OpenKeyboardProvinceDirective {
-    @Output() openKeyboardString: EventEmitter<string> = new EventEmitter();
+    @Output() openKeyboardProvince: EventEmitter<string> = new EventEmitter();
     @HostListener('click', ['$event'])
     _click(e: any) {
         this.open();
@@ -15,9 +15,13 @@ export class OpenKeyboardProvinceDirective {
         public menu: Iwe7MenuService
     ) { }
 
+    hide() {
+        this.menu.hide();
+    }
+
     open() {
         const control = (data: string) => {
-            this.openKeyboardString.emit(data);
+            this.openKeyboardProvince.emit(data);
         };
         if (this.menuListenr) {
             this.menuListenr.unsubscribe();
@@ -25,8 +29,8 @@ export class OpenKeyboardProvinceDirective {
         const factory = this.resolver.resolveComponentFactory(KeyboardProvinceComponent);
         const element: HTMLElement = document.documentElement;
         const rect = element.getBoundingClientRect();
-        const width = rect.width / 10 - 5;
-        const height = width * 1.2 * 4 + 45;
-        this.menuListenr = this.menu.show('bottom', height, factory, control).subscribe();
+        const height = (rect.width / 10 - 5) * 1.2;
+        const height2 = (height + 5) * 3 + 50;
+        this.menuListenr = this.menu.show('bottom', height2, factory, control).subscribe();
     }
 }
